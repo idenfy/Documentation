@@ -4,7 +4,7 @@
 *   [Callbacks](#callbacks)
 *   [Customising flow](#customising-flow)
 *   [UI Customisation](#ui-customisation)
-*   [Advanced Liveness detection](# Advanced Liveness detection)
+*   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
 The SDK supports API Level 15 and above
