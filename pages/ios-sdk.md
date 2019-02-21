@@ -4,6 +4,7 @@
 *   [Callbacks](#callbacks)
 *   [Customising flow](#customising-flow)
 *   [UI Customisation](#ui-customisation)
+*   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
 
