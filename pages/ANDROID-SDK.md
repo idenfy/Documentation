@@ -189,7 +189,7 @@ In the app level gradle add following implementation:
 repositories {
   ...
   dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfyliveness:+' 
+      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:+' 
     }
 }
 ```
