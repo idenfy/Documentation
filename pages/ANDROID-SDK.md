@@ -183,6 +183,16 @@ More than 20 other color customisations available within SDK.
 IdenfySDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
  
 Attached liveness SDK will sync with **core** Idenfy SDK.
+
+In the app level gradle add following implementation:
+```gradle
+repositories {
+  ...
+  dependencies {  
+      implementation 'idenfySdk:com.idenfy.idenfyliveness:+' 
+    }
+}
+```
  
 *Note: Contact support for enabling liveness SDK
 
