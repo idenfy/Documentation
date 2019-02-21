@@ -134,4 +134,17 @@ The storyboard file can be *fully customised*. The only requirement is to includ
 ```
 *Note: If custom storyboard is selected, UISettings will still override Interface Builder.
 
+ ## Advanced Liveness detection
+SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
+ 
+Attached liveness SDK will sync with **core** Idenfy SDK.
 
+In the Podfile add following Pod:
+
+```ruby
+pod 'iDenfySDK/iDenfyLiveness'
+```
+
+Run `pod install` to install aditional module.
+ 
+*Note: Contact support for enabling liveness feature
