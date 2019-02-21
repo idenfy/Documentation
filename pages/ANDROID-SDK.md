@@ -178,6 +178,9 @@ Colors can be easily changed by overriding values of the colors.xml in the app m
 More than 20 other color customisations available within SDK.
 
 
+ ### 3. Advanced Liveness detection
+ IdenfySDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. The only requirement is to enable liveness, by generating authToken. The SDK is added as a separate module, which will sync with code idenfy SDK.
+
 
 
 
