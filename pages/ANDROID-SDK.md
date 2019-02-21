@@ -4,6 +4,7 @@
 *   [Callbacks](#callbacks)
 *   [Customising flow](#customising-flow)
 *   [UI Customisation](#ui-customisation)
+*   [Advanced Liveness detection](# Advanced Liveness detection)
 
 ## Getting started
 The SDK supports API Level 15 and above
@@ -181,7 +182,7 @@ More than 20 other color customisations available within SDK.
  ## Advanced Liveness detection
 IdenfySDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
  
-Attached liveness SDK will sync with code idenfy SDK.
+Attached liveness SDK will sync with core Idenfy SDK.
  
 *Note: Contact support for enabling liveness SDK
 
