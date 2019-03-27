@@ -22,8 +22,8 @@ Also, you can visit [https://www.idenfy.com/start-trial/](https://www.idenfy.com
 
 ## Interface customization
 - [WEB UI platform customization](https://github.com/idenfy/Documentation/blob/master/pages/WebUiCustomization.md)
-- Android SDK UI customization (in progress...)
-- iOS SDK UI customization (in progress...)
+- [Android SDK Customization](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md)
+- [iOS SDK Customization](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md)
 
 ## Functionality customisation
 - [Asking for a manual review](https://github.com/idenfy/Documentation/blob/master/pages/functionality-customisation/AskingForManualReview.md)

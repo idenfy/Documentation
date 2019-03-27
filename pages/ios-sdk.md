@@ -9,7 +9,8 @@
 ## Getting started
 
 * SDK supports iOS 9.0
-* SDK supports Swift 4.2
+* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.1*
+* SDK supports Swift 5.0 and Xcode 10.2 starting from version 1.1*
 
 ### 1. Obtaining token
 SDK requires token for starting initialization. [Token generation guide](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md)
@@ -55,14 +56,20 @@ SDK provides following callbacks: onSuccess, onError and onUserExit.
 
 Following method will provide callbacks from the SDK:
 
+After receiving **onSuccess or onError** response it is suggested to check status via API call.
+
 ### Swift
 ```swift
     idenfyController.handleIDenfyCallbacks(
             onSuccess: { (AuthenticationResultResponse) in
+            //user procceeded identification. Here you would typically check for Identification status and check response using API call
             }, 
+
             onError: { (IdenfyErrorResponse) in
+            //Error response
             }, 
             onUserExit: { 
+            //User exited the SDK
             })
 ```
 

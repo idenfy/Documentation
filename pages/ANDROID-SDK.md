@@ -11,11 +11,11 @@ The SDK supports API Level 15 and above
 
 Our current gradle configuration supports newest support library:
 
-`targetSdkVersion = 28`
+`targetSdkVersion = 27`
 
-`compileSdkVersion = 28`
+`compileSdkVersion = 27`
 
-`buildToolsVersion '28.0.3'`
+`buildToolsVersion '27.1.1'`
 
 
 ### 1. Obtaining token
@@ -74,6 +74,8 @@ SDK provides following callbacks: onSuccess, onError and onUserExit.
 
 It is required to override onActivityResult for receiving responses.
 
+After receiving **onSuccess or onError** response it is suggested to check status via API call.
+
 ### Java
 ```java
     @Override
@@ -83,6 +85,7 @@ It is required to override onActivityResult for receiving responses.
 
             if (resultCode == IdenfyController.AUTHENTICATION_RESULT_CODE) {
                 AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT);
+                //user procceeded identification. Here you would typically check for Identification status and check response using API call
             } else if (resultCode == IdenfyController.ERROR_CODE) {
                 IdenfyErrorResponse idenfyErrorResponse = data.getParcelableExtra(IdenfyController.ON_ERROR);
                 //Error response
@@ -166,18 +169,6 @@ IdenfyUISettings.IdenfyUIBuilder()
     withTypefacePath(String pathOfTypeface)
     ...
 ```
-Colors can be easily changed by overriding values of the colors.xml in the app module
-
-`idenfyColorPrimary`: Sets most attributes in the UI.
-
-`idenfyColorPrimaryDark`: Sets the background color of the`Toolbar`
-
-`idenfyColorAccent`: Sets the color of button, checkboxes, icons.
-
-`idenfyNextButtonColor`: Defines the color of the next button, inherits from idenfyColorAccent by default.
-
-More than 20 other color customisations available within SDK.
-
 
  ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
@@ -190,6 +181,17 @@ repositories {
   ...
   dependencies {  
       implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:+' 
+    }
+}
+```
+
+In the root level (project module) gradle add following implementation:
+
+```gradle
+repositories {
+    ...
+    maven {
+        url 'http://maven.facetec.com'
     }
 }
 ```
