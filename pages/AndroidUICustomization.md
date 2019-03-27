@@ -13,15 +13,14 @@ iDenfy SDK groups various components and enable different customization options.
  ### *  Back navigation components
 `idenfy_camera_session_back_navigation.xml` provides full customization via XML.
 
-Colors
+**Colors**
 
-`idenfyDocumentsCameraSessionBackArrowColor`:Defines the color of the back arrow, inside of documents camera session view.
-
-`idenfyDocumentsResultsBackArrowColor`:Defines the color of the back arrow, inside of documents result view.
-
-`idenfyFaceSessionCameraBackArrowColor`:Defines the color of the back arrow, inside of selfie camera session view.
-
-`idenfyFaceResultsCameraBackArrowColor`:Defines the color of the back arrow, inside of selfie result view.
+|Color name              |Description                     |
+|-------------------|-------------------------------|
+|`idenfyDocumentsCameraSessionBackArrowColor`   |Defines the color of the back arrow, inside of documents camera session view.                        |
+|`idenfyDocumentsResultsBackArrowColor`|Defines the color of the back arrow, inside of documents result view.                    |
+|`idenfyFaceSessionCameraBackArrowColor`  |Defines the color of the back arrow, inside of selfie camera session view.                     |
+|`idenfyFaceResultsCameraBackArrowColor`  |Defines the color of the back arrow, inside of selfie result view.                    |
 
 *Same pattern applies with text near the back icon.
 

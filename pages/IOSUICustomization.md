@@ -6,19 +6,11 @@
 *   [Liveness Customization](#liveness-customization)
 
 ## Getting started
-<<<<<<< HEAD
-IOS SDK provides various customization options with code or Idenfy.storyboard
-
-
-## Customization with Storyboard
-iDenfy SDK groups various components and enable different customization options.
-=======
 IOS SDK provides various customization options with *programming code* or *Idenfy.storyboard*.
 
 
 ## Customization with Storyboard
 iDenfy SDK groups various components and enables different customization options.
->>>>>>> upstream/master
 
 Full design changes can be adjusted with Storyboard.
 
@@ -27,6 +19,8 @@ Full design changes can be adjusted with Storyboard.
 In order to use custom design you would need to include attached **Idenfy.storyboard** file inside of your target application. 
 
 **IdenfyImages.xcassets** are also required in the target application to match storyboard content.
+
+*Note. Contact support for providing iDenfy resources.
 
 ### 2. Updating IdenfySettings
 
@@ -64,11 +58,7 @@ iDenfy SDK provides additional liveness customization.
  ### 1. Creating IdenfyLivenessUIHelper
 
  ```swift
-<<<<<<< HEAD
- let idenfyZoomSettings =            IdenfyLivenessUISettings()
-=======
- let idenfyZoomSettings = IdenfyLivenessUISettings()
->>>>>>> upstream/master
+ let idenfyLivenessUISettings = IdenfyLivenessUISettings()
 ```
  ### 2. Applying settings
 
@@ -77,32 +67,33 @@ iDenfy SDK provides additional liveness customization.
  ```swift
  
  //Allows you to change color of the feedback bar shown during Liveness
- idenfyZoomSettings.livenessFeedbackBackgroundColor  = UIColor.blue
+idenfyLivenessUISettings.livenessFeedbackBackgroundColor  = UIColor.blue
 
 //Allows you to change color of the feedback FontColor shown during Liveness
-idenfyZoomSettings.livenessFeedbackFontColor = UIColor.blue
+idenfyLivenessUISettings.livenessFeedbackFontColor = UIColor.blue
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' background
-idenfyZoomSettings.livenessMainBackgroundColor = UIColor.blue
+idenfyLivenessUISettings.livenessMainBackgroundColor = UIColor.blue
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' foreground
-idenfyZoomSettings.livenessMainForegroundColor = UIColor.blue
+idenfyLivenessUISettings.livenessMainForegroundColor = UIColor.blue
 
 // Color of the background surrounding the oval outline during Liveness
-idenfyZoomSettings.livenessFrameBackgroundColor = UIColor.blue
+idenfyLivenessUISettings.livenessFrameBackgroundColor = UIColor.blue
 
 // Color of the animated 'progress spinner' strokes during Liveness
-idenfyZoomSettings.livenessIdentificationOvalProgressColor1 = UIColor.blue
-        idenfyZoomSettings.livenessIdentificationOvalProgressColor2 = UIColor.white
+idenfyLivenessUISettings.livenessIdentificationOvalProgressColor1 = UIColor.blue
+
+idenfyLivenessUISettings.livenessIdentificationOvalProgressColor2 = UIColor.white
 
 // Color of the outline of the oval during Liveness
-idenfyZoomSettings.livenessIdentificationProgressStrokeColor = UIColor.blue
+idenfyLivenessUISettings.livenessIdentificationProgressStrokeColor = UIColor.blue
 
 // Thickness of the outline of the oval during Liveness
-idenfyZoomSettings.livenessIdentificationProgressStrokeWidth = 8.0
+idenfyLivenessUISettings.livenessIdentificationProgressStrokeWidth = 8.0
 
 // Radial offset of the animated 'progress spinner' strokes relative to the outermost bounds of the oval outline. As this value increases, animations move closer toward the oval's center
-idenfyZoomSettings.livenessIdentificationProgressRadialOffset = 16.0
+idenfyLivenessUISettings.livenessIdentificationProgressRadialOffset = 16.0
 ...
 ```
  ### 3. Updating IdenfyUISettings
