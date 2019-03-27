@@ -94,7 +94,6 @@ idenfyLivenessUISettings.livenessIdentificationProgressStrokeWidth = 8.0
 
 // Radial offset of the animated 'progress spinner' strokes relative to the outermost bounds of the oval outline. As this value increases, animations move closer toward the oval's center
 idenfyLivenessUISettings.livenessIdentificationProgressRadialOffset = 16.0
-...
 ```
  ### 3. Updating IdenfyUISettings
 
