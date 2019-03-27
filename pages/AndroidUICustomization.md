@@ -41,33 +41,27 @@ iDenfy SDK provides additional liveness customization.
 
  ```java
  //Allows you to change color of the feedback bar shown during Liveness
-
  idenfyLivenessUISettings.setLivenessFeedbackBackgroundColor(getResources().getColor(R.color.idenfyColorPrimaryDark));
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' background
-
  idenfyLivenessUISettings.setLivenessMainBackgroundColor(Integer integer);
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' foreground
-
  idenfyLivenessUISettings.setLivenessMainForegroundColor(getResources().getColor(R.color.idenfyColorPrimaryDark));
 
 // Color of the background surrounding the oval outline during Liveness
-
  idenfyLivenessUISettings.setLivenessFrameBackgroundColor(getResources().getColor(R.color.idenfyColorPrimaryDark));
-// Color of the animated 'progress spinner' strokes during Liveness
 
+// Color of the animated 'progress spinner' strokes during Liveness
 idenfyLivenessUISettings.setLivenessIdentificationOvalProgressColor1(getResources().getColor(R.color.idenfyColorPrimary));
 
 idenfyLivenessUISettings.setLivenessIdentificationOvalProgressColor2(getResources().getColor(R.color.idenfyColorPrimary));
 
 // Color of the outline of the oval during Liveness
-
 idenfyLivenessUISettings.setLivenessIdentificationProgressStrokeColor(getResources().getColor(R.color.idenfyColorPrimary));
 
 // Thickness of the outline of the oval during Liveness
 idenfyLivenessUISettings.setLivenessIdentificationProgressStrokeWidth(14);
-
 
 // Radial offset of the animated 'progress spinner' strokes relative to the outermost bounds of the oval outline. As this value increases, animations move closer toward the oval's center
 idenfyLivenessUISettings.setLivenessIdentificationProgressRadialOffset(16);

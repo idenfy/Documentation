@@ -26,8 +26,8 @@ SDK needs to be comnfigured in order to use custom storyboard.
 
 ```swift
    IdenfyBuilder()
+   ...
     .withCustomStoryboard(true)
-    ...
 ```
 
 ## Customization of elements
@@ -45,8 +45,8 @@ Some elements in SDK could be configured with code to enable easier integration 
 
  ```swift
    IdenfyUIBuilder()
-   .withCustomDocumentsOverlayText(overlayDocumentsText: textBuilder)
     ...
+    withCustomDocumentsOverlayText(overlayDocumentsText: textBuilder)
 ```
 
 ## Liveness Customization
@@ -63,36 +63,31 @@ iDenfy SDK provides additional liveness customization.
  Atrributes of IdenfyLiveness UISettings
 
  ```swift
+ 
  //Allows you to change color of the feedback bar shown during Liveness
-
  idenfyZoomSettings.livenessFeedbackBackgroundColor  = UIColor.blue
 
 //Allows you to change color of the feedback FontColor shown during Liveness
 idenfyZoomSettings.livenessFeedbackFontColor = UIColor.blue
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' background
-
 idenfyZoomSettings.livenessMainBackgroundColor = UIColor.blue
 
 // Color of the mainscreen, Pre-Enrollment, and Retry screens' foreground
-
 idenfyZoomSettings.livenessMainForegroundColor = UIColor.blue
 
 // Color of the background surrounding the oval outline during Liveness
-
 idenfyZoomSettings.livenessFrameBackgroundColor = UIColor.blue
-// Color of the animated 'progress spinner' strokes during Liveness
 
+// Color of the animated 'progress spinner' strokes during Liveness
 idenfyZoomSettings.livenessIdentificationOvalProgressColor1 = UIColor.blue
         idenfyZoomSettings.livenessIdentificationOvalProgressColor2 = UIColor.white
 
 // Color of the outline of the oval during Liveness
-
 idenfyZoomSettings.livenessIdentificationProgressStrokeColor = UIColor.blue
 
 // Thickness of the outline of the oval during Liveness
 idenfyZoomSettings.livenessIdentificationProgressStrokeWidth = 8.0
-
 
 // Radial offset of the animated 'progress spinner' strokes relative to the outermost bounds of the oval outline. As this value increases, animations move closer toward the oval's center
 idenfyZoomSettings.livenessIdentificationProgressRadialOffset = 16.0

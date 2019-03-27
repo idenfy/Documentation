@@ -9,8 +9,8 @@
 ## Getting started
 
 * SDK supports iOS 9.0
-* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.1*
-* SDK supports Swift 5.0 and Xcode 10.2 starting from version 1.1*
+* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.2*
+* SDK supports Swift 5.0 and Xcode 10.2 starting from version 1.2*
 
 ### 1. Obtaining token
 SDK requires token for starting initialization. [Token generation guide](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md)
@@ -25,6 +25,11 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 ```ruby
 pod 'iDenfySDK'
+```
+
+*Swift 4.2 or below should use:
+```ruby
+pod 'iDenfySDK', '<1.2'
 ```
 
 Run `pod install` to get the sdk.
