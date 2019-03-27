@@ -6,11 +6,19 @@
 *   [Liveness Customization](#liveness-customization)
 
 ## Getting started
+<<<<<<< HEAD
 IOS SDK provides various customization options with code or Idenfy.storyboard
 
 
 ## Customization with Storyboard
 iDenfy SDK groups various components and enable different customization options.
+=======
+IOS SDK provides various customization options with *programming code* or *Idenfy.storyboard*.
+
+
+## Customization with Storyboard
+iDenfy SDK groups various components and enables different customization options.
+>>>>>>> upstream/master
 
 Full design changes can be adjusted with Storyboard.
 
@@ -56,7 +64,11 @@ iDenfy SDK provides additional liveness customization.
  ### 1. Creating IdenfyLivenessUIHelper
 
  ```swift
+<<<<<<< HEAD
  let idenfyZoomSettings =            IdenfyLivenessUISettings()
+=======
+ let idenfyZoomSettings = IdenfyLivenessUISettings()
+>>>>>>> upstream/master
 ```
  ### 2. Applying settings
 
