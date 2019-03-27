@@ -32,7 +32,6 @@ iDenfy SDK provides additional liveness customization.
 
  ```java
  IdenfyLivenessUISettings idenfyLivenessUISettings = new IdenfyLivenessUISettings();
-    ...
 ```
  ### 2. Applying settings
 
@@ -69,9 +68,9 @@ idenfyLivenessUISettings.setLivenessIdentificationProgressRadialOffset(16);
 
 ```java
  IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder().
-        ...
-        withLivenessUISettings(idenfyLivenessUISettings).
-                        build();
+    ...
+    withLivenessUISettings(idenfyLivenessUISettings).
+    build();
 ```
 
 
