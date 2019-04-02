@@ -3,6 +3,7 @@
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
 *   [Customising flow](#customising-flow)
+*   [Customising Results Callbacks](#customising-f)
 *   [UI Customisation](#ui-customisation)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
@@ -138,6 +139,10 @@ The language of SDK is selected by the language configurations of the **device**
     .withCustomSelectedLocale("locale")
     ...
 ```
+## Customising Results Callbacks
+
+SDK provides set of options to customize results view and callbacks handling. 
+
 ## UI Customisation
 
 SDK provides various ways of changing UI for better design integration.
