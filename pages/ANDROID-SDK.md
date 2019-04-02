@@ -152,11 +152,11 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     }
 
     /**
-     * @param documentsUploaded indicated that documents have been uploaded
+     * @param photosUploaded indicated that photos have been uploaded
      */
     @Override
-    public void onDocumentsUploaded(boolean documentsUploaded) {
-        Log.d("userFlowCallback", String.valueOf(documentsUploaded));
+    public void onPhotosUploaded(boolean photosUploaded) {
+        Log.d("userFlowCallbacks", String.valueOf(photosUploaded));
     }
 
     /**
