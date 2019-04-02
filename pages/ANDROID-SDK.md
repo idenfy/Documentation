@@ -120,24 +120,24 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     @Override
     public void onDocumentSelected(@NotNull String documentType) {
         Log.d("userFlowCallback", documentType);
-        callNetworkRequest();
+        setDocumentType(documentType);
     }
 
     /**
-     * possible network request to indicate event success
+     * an example of a network request to indicate event success
      */
-    public void callNetworkRequest() {
+    public void setDocumentType(String documentType) {
         //...
-        retrofit2.Call<AuthToken> authenticationResultResponseCall =
+        retrofit2.Call<DemoResponse> demoRequest =
                 RetrofitFactory.create().demoRequest();
-        authenticationResultResponseCall.enqueue(new Callback<AuthToken>() {
+        demoRequest.enqueue(new Callback<DemoResponse>() {
 
             @Override
-            public void onResponse(retrofit2.Call<AuthToken> call, Response<AuthToken> response) {
+            public void onResponse(retrofit2.Call<DemoResponse> call, Response<DemoResponse> response) {
             }
 
             @Override
-            public void onFailure(retrofit2.Call<AuthToken> call, Throwable t) {
+            public void onFailure(retrofit2.Call<DemoResponse> call, Throwable t) {
             }
         });
     }
@@ -228,7 +228,7 @@ The language of SDK is selected by the language configurations of the **device**
 
 SDK provides set of options to customize results view and callbacks handling.
 
-*Note callbacks will occur as usual with onActivityResult().
+*Note: callbacks will continue to occur as usual in onActivityResult().
 
  ### 1. Create the IdenfyIdentificationResultsSettings class
 
