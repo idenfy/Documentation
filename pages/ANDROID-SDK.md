@@ -2,8 +2,9 @@
 
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
+*   [User events callbacks](#user-events-callbacks)
 *   [Customizing flow](#customizing-flow)
-*   [Customizing Results Callbacks](#customising-results-callbacks)
+*   [Customizing results callbacks](#customizing-results-callbacks)
 *   [UI Customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
@@ -101,6 +102,90 @@ After receiving **onSuccess or onError** response it is suggested to check statu
 
 [Additional information about callbacks](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
+## User events callbacks
+
+SDK provides callbacks from the user flow throughout identification process.
+Results will be delivered while identification process is occurring and application is presenting views of the SDK.
+
+ ### 1. Declare a class for receiving events
+
+Declare a class that implements IdenfyUserFlowHandler to call your backend service, log events or apply changes.
+
+```java
+public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
+
+    /**
+     * @param documentType Selected document type
+     */
+    @Override
+    public void onDocumentSelected(@NotNull String documentType) {
+        Log.d("userFlowCallback", documentType);
+        callNetworkRequest();
+    }
+
+    /**
+     * possible network request to indicate event success
+     */
+    public void callNetworkRequest() {
+        //...
+        retrofit2.Call<AuthToken> authenticationResultResponseCall =
+                RetrofitFactory.create().demoRequest();
+        authenticationResultResponseCall.enqueue(new Callback<AuthToken>() {
+
+            @Override
+            public void onResponse(retrofit2.Call<AuthToken> call, Response<AuthToken> response) {
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<AuthToken> call, Throwable t) {
+            }
+        });
+    }
+
+    /**
+     * @param issuingCountryCode Selected issuingCountryCode
+     */
+    @Override
+    public void onCountrySelected(@NotNull String issuingCountryCode) {
+        Log.d("userFlowCallback", issuingCountryCode);
+
+    }
+
+    /**
+     * @param documentsUploaded indicated that documents have been uploaded
+     */
+    @Override
+    public void onDocumentsUploaded(boolean documentsUploaded) {
+        Log.d("userFlowCallback", String.valueOf(documentsUploaded));
+    }
+
+    /**
+     * @param processingStarted indicates that processing has started
+     */
+    @Override
+    public void onProcessingStarted(boolean processingStarted) {
+        Log.d("userFlowCallback", String.valueOf(processingStarted));
+
+    }
+}
+```
+ ### 2. Configure application class
+Set IdenfyUserFlowController to reference idenfyUserFlowCallbacksHandler in the application class.
+
+```java
+public class TestApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        IdenfyUserFlowCallbacksHandler idenfyUserFlowCallbacksHandler =
+                new IdenfyUserFlowCallbacksHandler();
+        IdenfyUserFlowController.setIdenfyUserFlowHandler(idenfyUserFlowCallbacksHandler);
+    }
+}
+```
+*Note it is required to set callbacks handler in the **application** class to ensure that listener will be set again after application process has stopped.
+
+
 ## Customizing flow
  SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder()
  
@@ -139,24 +224,26 @@ The language of SDK is selected by the language configurations of the **device**
     .withCustomSelectedLocale("locale")
     ...
 ```
-## Customizing Results Callbacks
+## Customizing results callbacks
 
 SDK provides set of options to customize results view and callbacks handling.
+
+*Note callbacks will occur as usual with onActivityResult().
 
  ### 1. Create the IdenfyIdentificationResultsSettings class
 
 Create the IdenfyIdentificationResultsSettings instance and apply settings:
 
 ```java
-    IdenfyIdentificationResultsSettings idenfyIdentificationResultsSettings = new    IdenfyIdentificationResultsSettings();
+IdenfyIdentificationResultsSettings idenfyIdentificationResultsSettings = new IdenfyIdentificationResultsSettings();
 
-    idenfyIdentificationResultsSettings.setSuccessResultsViewVisible(true);
+idenfyIdentificationResultsSettings.setSuccessResultsViewVisible(true);
 
-    idenfyIdentificationResultsSettings.setErrorResultsViewVisible(false);
+idenfyIdentificationResultsSettings.setErrorResultsViewVisible(false);
 
-    idenfyIdentificationResultsSettings.setRetryErrorResultsViewVisible(true);
+idenfyIdentificationResultsSettings.setRetryErrorResultsViewVisible(true);
 
-    idenfyIdentificationResultsSettings.setRetryingIdentificationAvailable(false);
+idenfyIdentificationResultsSettings.setRetryingIdentificationAvailable(false);
 ```
 
 |Method name              |Description                     |
@@ -174,7 +261,6 @@ Update idenfyBuilder to apply changes:
     .withCustomIdentificationResultsSettings(idenfyIdentificationResultsSettings)
     ...
 ```
-*After applying changes, default callbacks logic won't change.*
 ## UI Customization
 
 SDK provides various ways of changing UI for better design integration.
