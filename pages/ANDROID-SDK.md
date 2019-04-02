@@ -2,9 +2,9 @@
 
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
-*   [Customising flow](#customising-flow)
-*   [Customising Results Callbacks](#customising-f)
-*   [UI Customisation](#ui-customisation)
+*   [Customizing flow](#customizing-flow)
+*   [Customizing Results Callbacks](#customising-results-callbacks)
+*   [UI Customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
@@ -101,7 +101,7 @@ After receiving **onSuccess or onError** response it is suggested to check statu
 
 [Additional information about callbacks](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
-## Customising flow
+## Customizing flow
  SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder()
  
  *Note: SDK provides Builder pattern to improve code testibility and maitanance. Equivalently setters can also be used.
@@ -117,7 +117,7 @@ If default document country was selected during **token generation** the terms o
 
 ### 2. Setting custom results view
 
-If results view UI is not suitable for your design we provide customisation. We provide full xml file of results view
+If results view UI is not suitable for your design we provide customization. We provide full xml file of results view
 ```java
    IdenfySettings.IdenfyBuilder()
     .withCustomResultsView(true)
@@ -139,11 +139,43 @@ The language of SDK is selected by the language configurations of the **device**
     .withCustomSelectedLocale("locale")
     ...
 ```
-## Customising Results Callbacks
+## Customizing Results Callbacks
 
-SDK provides set of options to customize results view and callbacks handling. 
+SDK provides set of options to customize results view and callbacks handling.
 
-## UI Customisation
+ ### 1. Create the IdenfyIdentificationResultsSettings class
+
+Create the IdenfyIdentificationResultsSettings instance and apply settings:
+
+```java
+    IdenfyIdentificationResultsSettings idenfyIdentificationResultsSettings = new    IdenfyIdentificationResultsSettings();
+
+    idenfyIdentificationResultsSettings.setSuccessResultsViewVisible(true);
+
+    idenfyIdentificationResultsSettings.setErrorResultsViewVisible(false);
+
+    idenfyIdentificationResultsSettings.setRetryErrorResultsViewVisible(true);
+
+    idenfyIdentificationResultsSettings.setRetryingIdentificationAvailable(false);
+```
+
+|Method name              |Description                     |
+|-------------------|-------------------------------|
+|`setSuccessResultsViewVisible(true)`   |Sets success results view visible, before providing callback. Default is true.                        |
+|`setErrorResultsViewVisible(false)`|Sets general error results view visible, before providing callback. Default is true.                   |
+|`setRetryErrorResultsViewVisible(true)`  |Sets retrying identification results view visible. Default is true.                 |
+|`setRetryingIdentificationAvailable(true)`  |Enables identification retrying after unsuccessful identification.                 |
+
+ ### 2. Update IdenfyBuilder
+
+Update idenfyBuilder to apply changes:
+```java
+   IdenfySettings.IdenfyBuilder()
+    .withCustomIdentificationResultsSettings(idenfyIdentificationResultsSettings)
+    ...
+```
+*After applying changes, default callbacks logic won't change.*
+## UI Customization
 
 SDK provides various ways of changing UI for better design integration.
  ### 1. UI settings
@@ -154,7 +186,7 @@ IdenfyUISettings idenfyUISettings = new
 IdenfyUISettings.IdenfyUIBuilder()
     .build();
 ```
- ### 2. Customisable features
+ ### 2. Customizable features
  Setting different progress indicator for custom layout
 ```java
 IdenfyUISettings.IdenfyUIBuilder()

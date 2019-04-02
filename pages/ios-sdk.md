@@ -2,8 +2,8 @@
 
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
-*   [Customising flow](#customising-flow)
-*   [UI Customisation](#ui-customisation)
+*   [Customizing flow](#customizing-flow)
+*   [UI Customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
@@ -82,7 +82,7 @@ Alternatively each callback can be listened separately, by only calling particul
 
  [Additional information about callbacks](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
- ## Customising flow
+ ## Customizing flow
  SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder()
 
 
@@ -109,7 +109,7 @@ The language of SDK is selected by the language configurations of the **device**
     .withCustomSelectedLocale("locale")
     ...
 ```
-## UI Customisation
+## UI Customization
 
 SDK provides various ways of changing UI for better design integration.
  ### 1. UI settings
@@ -136,9 +136,9 @@ var idenfyColorAccent:UIColor = UIColor(red:139/255.0, green: 199/255.0, blue: 2
 ```
  ### 2. Custom Storyboard
  
-Additionaly SDK provides storyboard file, which contains whole design of an SDK. 
+Additionally SDK provides storyboard file, which contains whole design of an SDK. 
 
-The storyboard file can be *fully customised*. The only requirement is to include storyboard file in the **app folder** of your application and provide following method:
+The storyboard file can be *fully customized*. The only requirement is to include storyboard file in the **app folder** of your application and provide following method:
 
 ```swift
    IdenfyBuilder()
@@ -150,12 +150,10 @@ The storyboard file can be *fully customised*. The only requirement is to includ
  ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
  
-Attached liveness SDK will sync with **core** Idenfy SDK.
-
-In the Podfile add following Pod:
+In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
 pod 'iDenfySDK/iDenfyLiveness'
 ```
-Run `pod install` to add additional Pod
+Run `pod install` to configure iDenfySDK
  
 *Note: Contact support for enabling liveness feature
