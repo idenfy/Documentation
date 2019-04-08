@@ -98,6 +98,8 @@ This is an example JSON body in the callback HTTP request.
   "platform": "MOBILE_APP",
   "status": {
     "overall": "APPROVED",
+    "startTime": 1554726960.324056, 
+    "finishTime": 1554727002.254685,
     "suspicionReasons": [],
     "autoDocument": "DOC_VALIDATED",
     "autoFace": "FACE_MATCH",
