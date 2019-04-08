@@ -47,6 +47,8 @@ Request HTTP body is in JSON format which is described in tables below:
 |`lid`       |`Object`|-                |Dictionary that contains lost-invalid-documents (LID) service data. Only applicable if LID is enabled for you. [Refer to LID documentation](https://github.com/idenfy/Documentation/blob/master/pages/additional-services/lid.md).|
 |`scanRef`   |`String`|- Max length 36  |A unique string to trace back an identification on iDenfy’s side.                                             |
 |`clientId`  |`String`|- Max length 100 |A unique string to trace back a client on your side.                                                          |
+|`startTime` |`Float `|-                |A timestamp of when a client starts the identification process.|
+|`finishTime`|`Float `|-                |A timestamp of when the final decision for automatic processing was made.|
 
 
 ### Identification status table
@@ -54,8 +56,6 @@ Request HTTP body is in JSON format which is described in tables below:
 |JSON key          |Type    |Constraints      |Explanation|
 |------------------|--------|-----------------|-----------|
 |`overall`         |`String`|- Max length 30  |An overall status of the identification. It is a combination of manual and automatic verification results. Possible values:<br>- APPROVED<br>- DENIED<br>- SUSPECTED<br>- REVIEWING<br>- ACTIVE<br>- EXPIRED<br>[For value explanations refer to status vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md#identification-status-values-vocabulary).                                              |
-|`startTime`       |`Float `|-                |A timestamp of when a client starts the identification process.|
-|`finishTime`      |`Float `|-                |A timestamp of when the final decision for automatic processing was made.|
 |`suspicionReasons`|`List  `|-                |A list of suspicion reasons constants (strings) indicating why identification was suspected.|
 |`autoFace`        |`String`|- Max length 30  |An automatic face analysis result (decision made by an automated platform). Possible values:<br>- FACE_MATCH<br>- FACE_MISMATCH<br>- NO_FACE_FOUND<br>- TOO_MANY_FACES<br>- FACE_TOO_BLURRY<br>- FACE_ERROR<br>- AUTO_UNVERIFIABLE<br>[For value explanations refer to status vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md#identification-status-values-vocabulary).  |
 |`manualFace`      |`String`|- Max length 30  |A manual face analysis result (decision made by a human). Possible values are the same as  `autoFace` field.                                                                                                                        |
@@ -96,10 +96,10 @@ This is an example JSON body in the callback HTTP request.
   "clientId": "123",
   "scanRef": "scan-ref",
   "platform": "MOBILE_APP",
+  "startTime": 1554726960.324056, 
+  "finishTime": 1554727002.254685,
   "status": {
     "overall": "APPROVED",
-    "startTime": 1554726960.324056, 
-    "finishTime": 1554727002.254685,
     "suspicionReasons": [],
     "autoDocument": "DOC_VALIDATED",
     "autoFace": "FACE_MATCH",
