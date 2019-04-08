@@ -54,8 +54,8 @@ Request HTTP body is in JSON format which is described in tables below:
 |JSON key          |Type    |Constraints      |Explanation|
 |------------------|--------|-----------------|-----------|
 |`overall`         |`String`|- Max length 30  |An overall status of the identification. It is a combination of manual and automatic verification results. Possible values:<br>- APPROVED<br>- DENIED<br>- SUSPECTED<br>- REVIEWING<br>- ACTIVE<br>- EXPIRED<br>[For value explanations refer to status vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md#identification-status-values-vocabulary).                                              |
-|`startTime`       |`String`|-                |A timestamp of when a client starts the identification process.|
-|`finishTime`      |`String`|-                |A timestamp of when the final decision for automatic processing was made.|
+|`startTime`       |`Float `|-                |A timestamp of when a client starts the identification process.|
+|`finishTime`      |`Float `|-                |A timestamp of when the final decision for automatic processing was made.|
 |`suspicionReasons`|`List  `|-                |A list of suspicion reasons constants (strings) indicating why identification was suspected.|
 |`autoFace`        |`String`|- Max length 30  |An automatic face analysis result (decision made by an automated platform). Possible values:<br>- FACE_MATCH<br>- FACE_MISMATCH<br>- NO_FACE_FOUND<br>- TOO_MANY_FACES<br>- FACE_TOO_BLURRY<br>- FACE_ERROR<br>- AUTO_UNVERIFIABLE<br>[For value explanations refer to status vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md#identification-status-values-vocabulary).  |
 |`manualFace`      |`String`|- Max length 30  |A manual face analysis result (decision made by a human). Possible values are the same as  `autoFace` field.                                                                                                                        |
