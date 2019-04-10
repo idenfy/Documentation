@@ -47,8 +47,8 @@ Request HTTP body is in JSON format which is described in tables below:
 |`lid`       |`Object`|-                |Dictionary that contains lost-invalid-documents (LID) service data. Only applicable if LID is enabled for you. [Refer to LID documentation](https://github.com/idenfy/Documentation/blob/master/pages/additional-services/lid.md).|
 |`scanRef`   |`String`|- Max length 36  |A unique string to trace back an identification on iDenfy’s side.                                             |
 |`clientId`  |`String`|- Max length 100 |A unique string to trace back a client on your side.                                                          |
-|`startTime` |`Float `|-                |A timestamp of when a client starts the identification process.|
-|`finishTime`|`Float `|-                |A timestamp of when the final decision for automatic processing was made.|
+|`startTime` |`Int   `|-                |A timestamp of when a client starts the identification process.|
+|`finishTime`|`Int   `|-                |A timestamp of when the final decision for automatic processing was made.|
 
 
 ### Identification status table
@@ -96,8 +96,8 @@ This is an example JSON body in the callback HTTP request.
   "clientId": "123",
   "scanRef": "scan-ref",
   "platform": "MOBILE_APP",
-  "startTime": 1554726960.324056, 
-  "finishTime": 1554727002.254685,
+  "startTime": 1554726960, 
+  "finishTime": 1554727002,
   "status": {
     "overall": "APPROVED",
     "suspicionReasons": [],
