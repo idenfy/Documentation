@@ -6,7 +6,7 @@ This list tells what documents are supported for a client's identification.
 #### Possible values
 - ID card **(Default)**
 - Passport **(Default)**
-- Residence permit
+- Residence permit **(Default)**
 - Driver license
 - Other documents
 

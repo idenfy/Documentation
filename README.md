@@ -40,6 +40,9 @@ Also, you can visit [https://www.idenfy.com/start-trial/](https://www.idenfy.com
 - [AML, PEP & Sanctions](https://github.com/idenfy/Documentation/blob/master/pages/additional-services/aml.md)
 - [Lost & Invalid documents](https://github.com/idenfy/Documentation/blob/master/pages/additional-services/lid.md)
 
+## Security
+- [Callback signing](https://github.com/idenfy/Documentation/blob/master/pages/CallbackSigning.md)
+
 ## Extra
 - [Vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md)
 - [API error messages](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
