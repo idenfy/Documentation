@@ -3,6 +3,8 @@
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
 *   [Customizing flow](#customizing-flow)
+*   [Customizing results callbacks](#customizing-results-callbacks)
+*   [Customizing localization](#customizing-localization)
 *   [UI Customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
@@ -109,6 +111,97 @@ The language of SDK is selected by the language configurations of the **device**
     .withCustomSelectedLocale("locale")
     ...
 ```
+
+## Customizing results callbacks
+
+SDK provides set of options to customize results view and callbacks handling.
+
+*Note: callbacks will continue to occur as usual in idenfyController.handleIDenfyCallbacks().
+
+ ### 1. Customizing identification results views
+
+Create the IdenfyIdentificationResultsSettings instance and apply settings:
+
+```swift
+let idenfyIdentificationResults = IdenfyIdentificationResultsSettings()
+
+    idenfyIdentificationResults.isSuccessResultsViewVisible = true
+    idenfyIdentificationResults.isErrorResultsViewVisible = false
+    idenfyIdentificationResults.isRetryErrorResultsViewVisible = true
+    idenfyIdentificationResults.isRetryingIdentificationAvailable = false
+```
+
+|Method name              |Description                     |
+|-------------------|-------------------------------|
+|`isSuccessResultsViewVisible`   |Sets success results view visible, before providing callback. Default is true.                        |
+|`isErrorResultsViewVisible`|Sets general error results view visible, before providing callback. Default is true.                   |
+|`isRetryErrorResultsViewVisible`  |Sets retrying identification results view visible. Default is true.                 |
+|`isRetryingIdentificationAvailable`  |Enables identification retrying after unsuccessful identification. Default is true.                 |
+
+
+
+### 2. Manually dismiss IdentificationResultsViewController
+SDK provides optional configuration, which enables to dismiss IdentificationResultsViewController manually. Apply the following settings:
+```swift
+    idenfyIdentificationResults.isAutoDismissOnSuccessEvent = false
+    idenfyIdentificationResults.isAutoDismissOnErrorEvent = false
+    idenfyIdentificationResults.isAutoDismissOnUserExitEvent = false
+```
+
+|Method name              |Description                     |
+|-------------------|-------------------------------|
+|`isAutoDismissOnSuccessEvent`   |Handles auto dismissing after receiving identification results. Default is true.                       |
+|`isAutoDismissOnErrorEvent`|Handles auto dismissing after error occurrence within identification process. Default is true.               |
+|`isAutoDismissOnUserExitEvent`  |Handles auto dismissing after user exits identification, without completing process. Default is true.          |            |
+
+After applying these settings you could dismiss idenfyVC in a following way:
+
+```swift
+    idenfyController.handleIDenfyCallbacks(
+            onSuccess: { (AuthenticationResultResponse) in
+            }, 
+                idenfyVC.dismiss(animated: true, completion: nil)
+
+            onError: { (IdenfyErrorResponse) in
+                idenfyVC.dismiss(animated: true, completion: nil)
+
+            }, 
+            onUserExit: { 
+                idenfyVC.dismiss(animated: true, completion: nil)
+
+            })
+```
+
+ ### 3. Update IdenfyBuilder
+
+Update idenfyBuilder to apply changes:
+```swift
+    let idenfySettings = IdenfyBuilder()
+    .withCustomIdentificationResultsSettings(idenfyIdentificationResults)
+    ...
+```
+
+## Customizing Strings resources
+SDK provides set of tools to customize strings resources used in iDenfy SDK.
+
+### 1. Including Idenfy.strings in the app target
+
+Include specific Idenfy.strings file from the Pod directory inside of your app target. 
+
+Ensure that localization is applied to that specific file and that **strings keys** remain default.
+
+You can supply **partial translations**. That way if some key will be missing, iDenfySDK will use default string value.
+
+ ### 2. Update IdenfyBuilder
+
+ Update idenfyBuilder to apply changes:
+```swift
+    let idenfySettings = IdenfyBuilder()
+    .withCustomLocalization()
+    ...
+```
+
+
 ## UI Customization
 
 SDK provides various ways of changing UI for better design integration.
