@@ -4,7 +4,7 @@
 *   [Callbacks](#callbacks)
 *   [Customizing flow](#customizing-flow)
 *   [Customizing results callbacks](#customizing-results-callbacks)
-*   [Customizing localization](#customizing-localization)
+*   [Customizing Strings resources](#customizing-strings-resources)
 *   [UI Customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
@@ -186,7 +186,7 @@ SDK provides set of tools to customize strings resources used in iDenfy SDK.
 
 ### 1. Including Idenfy.strings in the app target
 
-Include specific Idenfy.strings file from the Pod directory inside of your app target. 
+Include specific Idenfy.strings file from the Pod directory inside of your **app target**. 
 
 Ensure that localization is applied to that specific file and that **strings keys** remain default.
 
