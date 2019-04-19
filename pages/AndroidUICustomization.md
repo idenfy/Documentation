@@ -1,16 +1,38 @@
 ## Table of contents
 
 *   [Getting started](#getting-started)
-*   [Customization of elements](#customization-of-elements)
-*   [Liveness Customization](#liveness-customization)
+*   [Customization of components](#customization-of-components)
+*   [Liveness customization](#liveness-customization)
 
 ## Getting started
-Android SDK provides various customization options with code or xml
+Android SDK provides various customization options with *programming code* or or *xml files*.
 
-## Customization of elements
+### 1. Create IdenfyUISettings
+
+Create an instance of IdenfyUISettings class:
+
+### Java
+```java
+IdenfyUISettings idenfyUISettings = new 
+IdenfyUISettings.IdenfyUIBuilder()
+    .build();
+```
+### 2.Update IdenfyUISettings
+
+```java
+    IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
+    .withUISettings(idenfyUISettings)
+    ...
+    build();
+    
+```
+
+## Customization of components
+
 iDenfy SDK groups various components and enable different customization options.
 
  ### *  Back navigation components
+
 `idenfy_camera_session_back_navigation.xml` provides full customization via XML.
 
 **Colors**
@@ -24,7 +46,31 @@ iDenfy SDK groups various components and enable different customization options.
 
 *Same pattern applies with text near the back icon.
 
-## Liveness Customization
+### *  Loading view
+
+ Setting different progress indicator for custom layout.
+```java
+IdenfyUISettings.IdenfyUIBuilder()
+    withCustomLoadingView(Integer drawableId)
+    ...
+```
+### *  ActionBarLayout
+
+Removing actionBarLayout from UI. Helps to easier customize UI.
+```java
+IdenfyUISettings.IdenfyUIBuilder()
+    withAppBarLayoutEnabled(boolean isActionBarEnabled)
+    ...
+```
+### *  Typeface of UI elements
+
+Setting custom typeface for all UI elements.
+```java
+IdenfyUISettings.IdenfyUIBuilder()
+    withTypefacePath(String pathOfTypeface)
+    ...
+```
+## Liveness customization
 
 iDenfy SDK provides additional liveness customization.
 
@@ -35,7 +81,7 @@ iDenfy SDK provides additional liveness customization.
 ```
  ### 2. Applying settings
 
- Atrributes of IdenfyLiveness UISettings
+ iDenfySDK provides the following attributes for liveness customization:
 
  ```java
  //Allows you to change color of the feedback bar shown during Liveness
@@ -68,9 +114,8 @@ idenfyLivenessUISettings.setLivenessIdentificationProgressRadialOffset(16);
 
 ```java
  IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder().
-    ...
     withLivenessUISettings(idenfyLivenessUISettings).
-    build();
+    ...
 ```
 
 

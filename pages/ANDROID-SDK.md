@@ -5,11 +5,12 @@
 *   [User events callbacks](#user-events-callbacks)
 *   [Customizing flow](#customizing-flow)
 *   [Customizing results callbacks](#customizing-results-callbacks)
-*   [UI Customization](#ui-customization)
+*   [UI customization](#ui-customization)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
-The SDK supports API Level 15 and above
+
+The SDK supports API Level 15 and above.
 
 Our current gradle configuration supports newest support library:
 
@@ -21,9 +22,11 @@ Our current gradle configuration supports newest support library:
 
 
 ### 1. Obtaining token
+
 SDK requires token for starting initialization. [Token generation guide](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md)
 
 ### 2. Adding the SDK dependency
+
 In the root level (project module) gradle add following implementation:
 
 ```gradle
@@ -45,6 +48,7 @@ repositories {
 ```
 *Note: All new versions will support backwards compatibility.
 ### 3. Enabling Java 8 support
+
 It is required to enable Java 8 support, if it was already not provided:
 ```gradle
  compileOptions {
@@ -54,6 +58,7 @@ It is required to enable Java 8 support, if it was already not provided:
 ```
 
 ### 4. Configuring SDK
+
 It is required to provide following configuration:
 ### Java
 ```java
@@ -64,6 +69,7 @@ IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
 
 
 ### 5. Presenting Activity
+
 Instance of IdenfyController is required for starting a flow.
 
 ### Java
@@ -72,6 +78,7 @@ Instance of IdenfyController is required for starting a flow.
    //context must be of a activity type
 ```
 ## Callbacks
+
 SDK provides following callbacks: onSuccess, onError and onUserExit.
 
 It is required to override onActivityResult for receiving responses.
@@ -87,20 +94,19 @@ After receiving **onSuccess or onError** response it is suggested to check statu
 
             if (resultCode == IdenfyController.AUTHENTICATION_RESULT_CODE) {
                 AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT);
-                //user procceeded identification. Here you would typically check for Identification status and check response using API call
+                //user proceeded identification. Here you would typically check for Identification status and check response using API call
             } else if (resultCode == IdenfyController.ERROR_CODE) {
                 IdenfyErrorResponse idenfyErrorResponse = data.getParcelableExtra(IdenfyController.ON_ERROR);
-                //Error response
+               //Error occurred within identification process.
             } else if (resultCode == IdenfyController.USER_EXIT_CODE) {
-                //User exited the SDK
+               //User exited the SDK without completing identification process.
             }
             
         }
     }
 ```
 
-
-[Additional information about callbacks](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
+[Additional information about error responses](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
 ## User events callbacks
 
@@ -170,6 +176,7 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
 }
 ```
  ### 2. Configure application class
+
 Set IdenfyUserFlowController to reference idenfyUserFlowCallbacksHandler in the application class.
 
 ```java
@@ -187,9 +194,10 @@ public class TestApplication extends Application {
 
 
 ## Customizing flow
- SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder()
+
+ SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder().
  
- *Note: SDK provides Builder pattern to improve code testibility and maitanance. Equivalently setters can also be used.
+ *Note: SDK provides Builder pattern to improve code testability and maintenance. Equivalently setters can also be used.
  
  ### 1. Removing initial Fragment
 
@@ -202,7 +210,7 @@ If default document country was selected during **token generation** the terms o
 
 ### 2. Setting custom results view
 
-If results view UI is not suitable for your design we provide customization. We provide full xml file of results view
+If results view UI is not suitable for your design we provide customization. We provide full xml file of results view.
 ```java
    IdenfySettings.IdenfyBuilder()
     .withCustomResultsView(true)
@@ -214,11 +222,11 @@ If results view UI is not suitable for your design we provide customization. We 
  By default SDK provides following translations:
 
  - English (en) GB
- - Polish (es) PL
- - Russian (es) RU
- - Lithuanian (es) LT
+ - Polish (pl) PL
+ - Russian (ru) RU
+ - Lithuanian (lt) LT
 
-The language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called
+The default language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called:
 ```java
    IdenfySettings.IdenfyBuilder()
     .withCustomSelectedLocale("locale")
@@ -261,39 +269,14 @@ Update idenfyBuilder to apply changes:
     .withCustomIdentificationResultsSettings(idenfyIdentificationResultsSettings)
     ...
 ```
-## UI Customization
+## UI customization
 
-SDK provides various ways of changing UI for better design integration.
- ### 1. UI settings
+Please take a look at UI customization page:
+[UI customization guidelines](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md)
 
-### Java
-```java
-IdenfyUISettings idenfyUISettings = new 
-IdenfyUISettings.IdenfyUIBuilder()
-    .build();
-```
- ### 2. Customizable features
- Setting different progress indicator for custom layout
-```java
-IdenfyUISettings.IdenfyUIBuilder()
-    withCustomLoadingView(Integer drawableId)
-    ...
-```
-Removing actionBarLayout from UI. Helps to easier customize UI.
-```java
-IdenfyUISettings.IdenfyUIBuilder()
-    withAppBarLayoutEnabled(boolean isActionBarEnabled)
-    ...
-```
 
-For setting custom typeface.
-```java
-IdenfyUISettings.IdenfyUIBuilder()
-    withTypefacePath(String pathOfTypeface)
-    ...
-```
+## Advanced Liveness detection
 
- ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
  
 Attached liveness SDK will sync with **core** Idenfy SDK.
@@ -319,7 +302,7 @@ repositories {
 }
 ```
  
-*Note: Contact support for enabling liveness feature
+*Note: Contact support for enabling liveness feature.
 
 
 
