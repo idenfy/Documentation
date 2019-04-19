@@ -6,6 +6,7 @@
 *   [Customizing results callbacks](#customizing-results-callbacks)
 *   [Customizing Strings resources](#customizing-strings-resources)
 *   [UI customization](#ui-customization)
+*   [Sample SDK code](#sample-sdk-code)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
@@ -44,7 +45,7 @@ Run `pod install` to get the SDK or `pod update` to update current iDenfySDK.
 It is required to provide following configuration:
 ### Swift
 ```swift
- let idenfySettings = IdenfyBuilder()
+let idenfySettings = IdenfyBuilder()
     .withAuthToken("AUTH_TOKEN")
     .build()
 
@@ -56,9 +57,8 @@ Instance of IdenfyController is required for managing iDenfy ViewController.
 Following code will present initial ViewController:
 ### Swift
 ```swift
-   let idenfyVC = idenfyController.instantiateNavigationController()         
-
-   self.present(idenfyVC, animated: true, completion: nil)
+let idenfyVC = idenfyController.instantiateNavigationController()         
+self.present(idenfyVC, animated: true, completion: nil)
 ```
 
 ## Callbacks
@@ -212,6 +212,56 @@ You can supply **partial translations**. That way if some key will be missing,iD
 
 Please take a look at UI customization page:
 [UI customization guidelines](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md)
+
+## Sample SDK code
+A following code demonstrates possible iDenfySDK configuration with applied settings:
+
+```swift
+    private func initializeIDenfySDK(authToken:String)
+    {
+
+        let idenfyIdentificationResults = IdenfyIdentificationResultsSettings()
+        idenfyIdentificationResults.isAutoDismissOnSuccessEvent = true
+        idenfyIdentificationResults.isAutoDismissOnErrorEvent = true
+        idenfyIdentificationResults.isAutoDismissOnUserExitEvent = false
+        
+        let overlayTextSettings = OverlayTextBuilder()
+            .withCustomSettings(fontSize: 16, fontColor: UIColor.blue, font:UIFont.systemFont(ofSize: 26))
+            .build()
+        
+        let idenfyUISettings = IdenfyUIBuilder()
+            .withCustomDocumentsOverlayText(overlayDocumentsText: overlayTextSettings)
+            .withCustomColors(colorPrimary: UIColor.black, colorPrimaryDark: UIColor.white, colorAccent: UIColor.black)
+            .withCustomDocumentBorderColor(borderColor: UIColor.black)
+            .withCustomLoadingView(loadingView: myview)
+            .withLivenessUISettings(livenessUISettings: idenfyZoomSettings)
+            .build()
+        
+        let idenfySettings = IdenfyBuilder()
+            .withAuthToken(authToken)
+            .withUISettings(idenfyUISettings)
+            .withCustomSelectedLocale("en")
+            .withCustomIdentificationResultsSettings(idenfyIdentificationResults)
+            .withCustomLocalization()
+            .build()
+        
+        let idenfyController = IdenfyController(idenfySettings: idenfySettings)
+        let idenfyVC = idenfyController.instantiateNavigationController()
+        
+        self.present(idenfyVC, animated: true, completion: nil)
+        idenfyController.handleIDenfyCallbacks(
+            onSuccess: { (AuthenticationResultResponse
+                ) in
+                print(AuthenticationResultResponse)
+        },
+            onError: { (IdenfyErrorResponse) in
+                print(IdenfyErrorResponse.message)
+                
+        },  onUserExit: {
+        })
+    }
+```
+
 
  ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 

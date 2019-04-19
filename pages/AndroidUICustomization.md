@@ -48,7 +48,7 @@ iDenfy SDK groups various components and enable different customization options.
 
 ### *  Loading view
 
- Setting different progress indicator for custom layout.
+ Setting different progress indicator for custom results layout.
 ```java
     IdenfyUISettings.IdenfyUIBuilder()
     withCustomLoadingView(Integer drawableId)

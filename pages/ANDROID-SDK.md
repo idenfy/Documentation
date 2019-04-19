@@ -6,6 +6,7 @@
 *   [Customizing flow](#customizing-flow)
 *   [Customizing results callbacks](#customizing-results-callbacks)
 *   [UI customization](#ui-customization)
+*   [Sample SDK code](#sample-sdk-code)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Getting started
@@ -274,6 +275,34 @@ Update idenfyBuilder to apply changes:
 Please take a look at UI customization page:
 [UI customization guidelines](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md)
 
+## Sample SDK code
+A following code demonstrates possible iDenfySDK configuration with applied settings:
+
+```java
+    private void initializeIDenfySDK(String authToken) 
+    {
+        
+        IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder()
+                .withCustomLoadingView(R.drawable.custom_progress_bar)
+                .build();
+
+        IdenfyIdentificationResultsSettings idenfyIdentificationResultsSettings = new IdenfyIdentificationResultsSettings();
+        idenfyIdentificationResultsSettings.setSuccessResultsViewVisible(true);
+        idenfyIdentificationResultsSettings.setErrorResultsViewVisible(false);
+        idenfyIdentificationResultsSettings.setRetryErrorResultsViewVisible(true);
+        idenfyIdentificationResultsSettings.setRetryingIdentificationAvailable(false);
+
+        IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
+                .withAuthToken(authToken)
+                .withUISettings(idenfyUISettings)
+                .withCustomSelectedLocale("en")
+                .withCustomIdentificationResultsSettings(idenfyIdentificationResultsSettings)
+                .withCustomResultsView(true)
+                .build();
+
+        IdenfyController.getInstance().startActivityForResult(this, IdenfyController.IDENFY_REQUEST_CODE, idenfySettings);
+    }
+```
 
 ## Advanced Liveness detection
 
