@@ -73,12 +73,13 @@ After receiving **onSuccess or onError** response it is suggested to check statu
 ```swift
     idenfyController.handleIDenfyCallbacks(
             onSuccess: { (AuthenticationResultResponse) in
-            //user proceeded identification. Here you would typically check for Identification status and check response using API call
+            //user proceeded identification. Here you would typically check for Identification status and check response using API call.
             }, 
 
             onError: { (IdenfyErrorResponse) in
             //Error occurred within identification process.
             }, 
+
             onUserExit: { 
             //User exited the SDK without completing identification process.
             })
@@ -172,6 +173,7 @@ After applying these settings you could dismiss idenfyVC in a following way:
                 idenfyVC.dismiss(animated: true, completion: nil)
 
             }, 
+            
             onUserExit: { 
                 idenfyVC.dismiss(animated: true, completion: nil)
 

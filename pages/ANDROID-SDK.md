@@ -307,7 +307,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
         if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
 
             if (resultCode == IdenfyController.AUTHENTICATION_RESULT_CODE) {
-                AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT);
+                AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT;
                 Log.d("iDenfySDK", authenticationResultResponse.toString());
             } else if (resultCode == IdenfyController.ERROR_CODE) {
                 IdenfyErrorResponse idenfyErrorResponse = data.getParcelableExtra(IdenfyController.ON_ERROR);
