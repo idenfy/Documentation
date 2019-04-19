@@ -219,7 +219,6 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 ```swift
     private func initializeIDenfySDK(authToken:String)
     {
-
         let idenfyIdentificationResults = IdenfyIdentificationResultsSettings()
         idenfyIdentificationResults.isAutoDismissOnSuccessEvent = true
         idenfyIdentificationResults.isAutoDismissOnErrorEvent = true
@@ -246,6 +245,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
             .build()
         
         let idenfyController = IdenfyController(idenfySettings: idenfySettings)
+        
         let idenfyVC = idenfyController.instantiateNavigationController()
         
         self.present(idenfyVC, animated: true, completion: nil)
@@ -258,6 +258,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
                 print(IdenfyErrorResponse.message)
                 
         },  onUserExit: {
+                print("user exits")
         })
     }
 ```

@@ -32,17 +32,15 @@ In the root level (project module) gradle add following implementation:
 
 ```gradle
 repositories {
-  ...
-  maven {
-    url  "https://dl.bintray.com/idenfy/idenfy"
+    maven {
+        url  "https://dl.bintray.com/idenfy/idenfy"
   }
 }
 ```
 In the app level gradle add following implementation:
 ```gradle
 repositories {
-  ...
-  dependencies {  
+    dependencies {  
       implementation 'idenfySdk:com.idenfy.idenfySdk:+' 
     }
 }
@@ -281,7 +279,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 ```java
     private void initializeIDenfySDK(String authToken) 
     {
-        
+
         IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder()
                 .withCustomLoadingView(R.drawable.custom_progress_bar)
                 .build();
@@ -302,6 +300,25 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 
         IdenfyController.getInstance().startActivityForResult(this, IdenfyController.IDENFY_REQUEST_CODE, idenfySettings);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
+
+            if (resultCode == IdenfyController.AUTHENTICATION_RESULT_CODE) {
+                AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT);
+                Log.d("iDenfySDK", authenticationResultResponse.toString());
+            } else if (resultCode == IdenfyController.ERROR_CODE) {
+                IdenfyErrorResponse idenfyErrorResponse = data.getParcelableExtra(IdenfyController.ON_ERROR);
+                Log.d("iDenfySDK", idenfyErrorResponse.toString());
+            } else if (resultCode == IdenfyController.USER_EXIT_CODE) {
+                Log.d("iDenfySDK", "user exits");
+            }
+
+        }
+        
+    }
 ```
 
 ## Advanced Liveness detection
@@ -313,8 +330,7 @@ Attached liveness SDK will sync with **core** Idenfy SDK.
 In the app level gradle add following implementation:
 ```gradle
 repositories {
-  ...
-  dependencies {  
+    dependencies {  
       implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:+' 
     }
 }
@@ -324,7 +340,6 @@ In the root level (project module) gradle add following implementation:
 
 ```gradle
 repositories {
-    ...
     maven {
         url 'http://maven.facetec.com'
     }
