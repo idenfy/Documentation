@@ -21,7 +21,7 @@ let idenfyUISettings = IdenfyUIBuilder()
 ### 2.Update IdenfyUISettings
 
 ```swift
-    let idenfySettings = IdenfyBuilder()
+let idenfySettings = IdenfyBuilder()
     .withUISettings(idenfyUISettings)
     ...
     .build()
@@ -31,7 +31,7 @@ let idenfyUISettings = IdenfyUIBuilder()
 ## Customization with storyboard
 iDenfy SDK groups various components and enables different customization options.
 
-Full design changes can be adjusted with storyboard file.
+Full design changes can be adjusted with Idenfy storyboard.
 
 ### 1. Including Storyboard and assets
 
@@ -86,11 +86,11 @@ Some elements in SDK could be configured with code to enable easier integration 
 
  ```swift
     IdenfyUIBuilder()
-    withCustomDocumentsOverlayText(overlayDocumentsText: textBuilder)
+    .withCustomDocumentsOverlayText(overlayDocumentsText: textBuilder)
     ...
 ```
 
-## Liveness customization
+## Liveness Customization
 
 iDenfy SDK provides additional liveness customization.
 

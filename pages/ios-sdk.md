@@ -48,7 +48,7 @@ It is required to provide following configuration:
     .withAuthToken("AUTH_TOKEN")
     .build()
 
-    let idenfyController = IdenfyController(idenfySettings: idenfySettings)
+let idenfyController = IdenfyController(idenfySettings: idenfySettings)
 ```
 ### 5. Presenting ViewController
 
@@ -97,7 +97,7 @@ Alternatively each callback can be listened separately, by only calling particul
 
 If default document country was selected during **token generation** the terms of services and country information View can be removed.
 ```swift
-   IdenfyBuilder()
+    IdenfyBuilder()
     .withPresentInitialView(false)
     ...
 ```
@@ -112,7 +112,7 @@ If default document country was selected during **token generation** the terms o
 
 The default language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called:
 ```swift
-   IdenfyBuilder()
+    IdenfyBuilder()
     .withCustomSelectedLocale("locale")
     ...
 ```
@@ -182,7 +182,7 @@ After applying these settings you could dismiss idenfyVC in a following way:
 
 Update idenfyBuilder to apply changes:
 ```swift
-    let idenfySettings = IdenfyBuilder()
+    IdenfyBuilder()
     .withCustomIdentificationResultsSettings(idenfyIdentificationResults)
     ...
 ```
@@ -203,7 +203,7 @@ You can supply **partial translations**. That way if some key will be missing,iD
 
  Update idenfyBuilder to apply changes:
 ```swift
-    let idenfySettings = IdenfyBuilder()
+    IdenfyBuilder()
     .withCustomLocalization()
     ...
 ```

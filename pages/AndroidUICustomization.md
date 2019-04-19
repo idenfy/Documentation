@@ -5,7 +5,7 @@
 *   [Liveness customization](#liveness-customization)
 
 ## Getting started
-Android SDK provides various customization options with *programming code* or or *xml files*.
+Android SDK provides various customization options with *programming code* or *xml files*.
 
 ### 1. Create IdenfyUISettings
 
@@ -13,8 +13,8 @@ Create an instance of IdenfyUISettings class:
 
 ### Java
 ```java
-IdenfyUISettings idenfyUISettings = new 
-IdenfyUISettings.IdenfyUIBuilder()
+    IdenfyUISettings idenfyUISettings = new 
+    IdenfyUISettings.IdenfyUIBuilder()
     .build();
 ```
 ### 2.Update IdenfyUISettings
@@ -50,7 +50,7 @@ iDenfy SDK groups various components and enable different customization options.
 
  Setting different progress indicator for custom layout.
 ```java
-IdenfyUISettings.IdenfyUIBuilder()
+    IdenfyUISettings.IdenfyUIBuilder()
     withCustomLoadingView(Integer drawableId)
     ...
 ```
@@ -58,7 +58,7 @@ IdenfyUISettings.IdenfyUIBuilder()
 
 Removing actionBarLayout from UI. Helps to easier customize UI.
 ```java
-IdenfyUISettings.IdenfyUIBuilder()
+    IdenfyUISettings.IdenfyUIBuilder()
     withAppBarLayoutEnabled(boolean isActionBarEnabled)
     ...
 ```
@@ -66,7 +66,7 @@ IdenfyUISettings.IdenfyUIBuilder()
 
 Setting custom typeface for all UI elements.
 ```java
-IdenfyUISettings.IdenfyUIBuilder()
+    IdenfyUISettings.IdenfyUIBuilder()
     withTypefacePath(String pathOfTypeface)
     ...
 ```
@@ -77,7 +77,7 @@ iDenfy SDK provides additional liveness customization.
  ### 1. Creating IdenfyLivenessUIHelper
 
  ```java
- IdenfyLivenessUISettings idenfyLivenessUISettings = new IdenfyLivenessUISettings();
+    IdenfyLivenessUISettings idenfyLivenessUISettings = new IdenfyLivenessUISettings();
 ```
  ### 2. Applying settings
 
@@ -113,7 +113,7 @@ idenfyLivenessUISettings.setLivenessIdentificationProgressRadialOffset(16);
  ### 3. Updating IdenfyUISettings
 
 ```java
- IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder().
+    IdenfyUISettings idenfyUISettings = new IdenfyUISettings.IdenfyUIBuilder().
     withLivenessUISettings(idenfyLivenessUISettings).
     ...
 ```

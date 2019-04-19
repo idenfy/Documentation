@@ -75,7 +75,7 @@ Instance of IdenfyController is required for starting a flow.
 ### Java
 ```java
    IdenfyController.getInstance().startActivityForResult(context, IdenfyController.IDENFY_REQUEST_CODE, idenfySettings);
-   //context must be of a activity type
+   //context must be of an activity type.
 ```
 ## Callbacks
 
@@ -203,7 +203,7 @@ public class TestApplication extends Application {
 
 If default document country was selected during **token generation** the terms of services and country information View can be removed.
 ```java
-   IdenfySettings.IdenfyBuilder()
+    IdenfySettings.IdenfyBuilder()
     .withPresentInitialView(false)
     ...
 ```
@@ -212,7 +212,7 @@ If default document country was selected during **token generation** the terms o
 
 If results view UI is not suitable for your design we provide customization. We provide full xml file of results view.
 ```java
-   IdenfySettings.IdenfyBuilder()
+    IdenfySettings.IdenfyBuilder()
     .withCustomResultsView(true)
     ...
 ```
@@ -228,7 +228,7 @@ If results view UI is not suitable for your design we provide customization. We 
 
 The default language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called:
 ```java
-   IdenfySettings.IdenfyBuilder()
+    IdenfySettings.IdenfyBuilder()
     .withCustomSelectedLocale("locale")
     ...
 ```
@@ -265,7 +265,7 @@ idenfyIdentificationResultsSettings.setRetryingIdentificationAvailable(false);
 
 Update idenfyBuilder to apply changes:
 ```java
-   IdenfySettings.IdenfyBuilder()
+    IdenfySettings.IdenfyBuilder()
     .withCustomIdentificationResultsSettings(idenfyIdentificationResultsSettings)
     ...
 ```
