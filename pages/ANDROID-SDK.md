@@ -93,7 +93,7 @@ After receiving **onSuccess or onError** response it is suggested to check statu
 
             if (resultCode == IdenfyController.AUTHENTICATION_RESULT_CODE) {
                 AuthenticationResultResponse authenticationResultResponse = data.getParcelableExtra(IdenfyController.ON_AUTHENTICATION_RESULT);
-                //user proceeded identification. Here you would typically check for Identification status and check response using API call
+                //user proceeded identification. Here you would typically check for Identification status and check response using API call.
             } else if (resultCode == IdenfyController.ERROR_CODE) {
                 IdenfyErrorResponse idenfyErrorResponse = data.getParcelableExtra(IdenfyController.ON_ERROR);
                //Error occurred within identification process.
@@ -120,7 +120,7 @@ Declare a class that implements IdenfyUserFlowHandler to call your backend servi
 public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
 
     /**
-     * @param documentType Selected document type
+     * @param documentType Selected document type.
      */
     @Override
     public void onDocumentSelected(@NotNull String documentType) {
@@ -129,7 +129,7 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     }
 
     /**
-     * an example of a network request to indicate event success
+     * An example of a network request to save successful event.
      */
     public void setDocumentType(String documentType) {
         //...
@@ -148,7 +148,7 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     }
 
     /**
-     * @param issuingCountryCode Selected issuingCountryCode
+     * @param issuingCountryCode Selected issuingCountryCode.
      */
     @Override
     public void onCountrySelected(@NotNull String issuingCountryCode) {
@@ -157,7 +157,7 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     }
 
     /**
-     * @param photosUploaded indicated that photos have been uploaded
+     * @param photosUploaded indicates that photos have been uploaded.
      */
     @Override
     public void onPhotosUploaded(boolean photosUploaded) {
@@ -165,7 +165,7 @@ public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
     }
 
     /**
-     * @param processingStarted indicates that processing has started
+     * @param processingStarted indicates that processing has started.
      */
     @Override
     public void onProcessingStarted(boolean processingStarted) {

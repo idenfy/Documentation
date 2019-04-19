@@ -11,9 +11,9 @@
 
 ## Getting started
 
-* SDK supports iOS 9.0
-* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.2*
-* SDK supports Swift 5.0 and Xcode 10.2 starting from version 1.2*
+* SDK supports iOS 9.0.
+* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.2*.
+* SDK supports Swift 5.0 and Xcode 10.2 starting from version 1.2*.
 
 ### 1. Obtaining token
 
