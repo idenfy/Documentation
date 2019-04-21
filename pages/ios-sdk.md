@@ -229,13 +229,16 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
         let overlayTextSettings = OverlayTextBuilder()
             .withCustomSettings(fontSize: 16, fontColor: UIColor.blue, font:UIFont.systemFont(ofSize: 26))
             .build()
+
+        let cgRect = CGRect(x: 10, y: 10, width:100, height:100)
+        let customLoadingView = UIView(frame: cgRect)
+        customLoadingView.backgroundColor = UIColor.blue
         
         let idenfyUISettings = IdenfyUIBuilder()
             .withCustomDocumentsOverlayText(overlayDocumentsText: overlayTextSettings)
             .withCustomColors(colorPrimary: UIColor.black, colorPrimaryDark: UIColor.white, colorAccent: UIColor.black)
             .withCustomDocumentBorderColor(borderColor: UIColor.black)
-            .withCustomLoadingView(loadingView: myview)
-            .withLivenessUISettings(livenessUISettings: idenfyZoomSettings)
+            .withCustomLoadingView(loadingView: customLoadingView)
             .build()
         
         let idenfySettings = IdenfyBuilder()
