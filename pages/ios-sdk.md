@@ -161,8 +161,9 @@ SDK provides optional configuration, which enables to dismiss IdentificationResu
 |`isAutoDismissOnErrorEvent`|Handles auto dismissing after error occurrence within identification process. Default is true.               |
 |`isAutoDismissOnUserExitEvent`  |Handles auto dismissing after user exits identification, without completing process. Default is true.          |            |
 
-It is essential to clear remaining resources and references from SDK for preventing memory leaks (automatic dismiss clears resources itself)
-Before dismissing UIViewController it is necessary to call following method:
+It is essential to clear remaining resources and references from SDK for preventing memory leaks if custom settings are applied (automatic dismiss of UIViewController clears resources itself).
+
+Before dismissing UINavigationController from SDK it is necessary to call following method:
 
 ```swift
  idenfyVC.deinitResources()
