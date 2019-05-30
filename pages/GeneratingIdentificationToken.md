@@ -7,7 +7,7 @@ The request must contain *basic auth* headers where *username* is *api key* and 
 The request must contain JSON with optional and mandatory parameters:
 
 |Key|Required|Explanation|Type|Constraints<img width=/>|Default value|
-|-|-|-|-|-|-|
+|---|---|---|---|---|---|
 |`clientId`|Yes|A unique string identifying a client.|String|- Not null<br>- Max length 100<img width=750/>|-|
 |`firstName`|No|A name(s) of a client to be identified.|String|- Min length 1<br>- Max length 100|-|
 |`lastName`|No|A surname(s) of a client to be identified.|String|- Min length 1<br>- Max length 100|-|
@@ -18,9 +18,16 @@ The request must contain JSON with optional and mandatory parameters:
 |`sessionLength`|No|Length of time in seconds where a client is given to identify himself in indentification UI.|Integer|- More than 60<br>- Less than 3600|`600`|
 |`country`|No|A default document country in alpha-2 code for a client. A client will not be able to select a different country.|String|- Any country in alpha-2 code|`null`|
 |`documents`|No|Supported identification documents for the client.|List\[String\]|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ID_CARD`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`PASSPORT`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`RESIDENCE_PERMIT`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`DRIVER_LICENSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`OTHER`|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ID_CARD`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`PASSPORT`|
+|`dateOfBirth`|No|Date of birth of a client.| | |
+|`dateOfExpiry`|No|Date of expiry for a client.| | |
+|`dateOfIssue`|No| | | |
+|`nationality`|No| | | |
+|`personalNumber`|No| | | |
+|`documentNumber`|No| | | |
+|`sex`|No| | | |
 ### Receiving response
 |Key|Explanation|Constraints|Example value|
-|-|-|-|-|
+|---|---|---|---|
 |`message`|A message for a developer about the status of generated token.|- Max length 100<img width=375/>|`"Token created successfully"`
 |`authToken`|A unique string for identification process (will be passed as an url parameter when redirecting a client to identification platform).|- Length <= 40|`"3FA5TFPA2ZE3LMPGGS1EGOJNJE"`
 |`scanRef`|A unique string identifying a client identification in iDenfy’s side.|- Length <= 40|`"d2714c8a-ec05-11e8-834f-067891e3383a"`
@@ -39,7 +46,7 @@ You can choose not to send any data regarding your client that needs to be ident
    "clientId":"100000"
 }
 ```
-As our only mandatory parameter is **clientId**, howerver we strongly recommend that you would append at least client’s name and surname if possible. It increases the success rate of identification verification.
+As our only mandatory parameter is **clientId**, however we strongly recommend that you would append at least client’s name and surname if possible. It increases the success rate of identification verification.
 ```json
 {  
    "clientId":"100000",
