@@ -1,18 +1,37 @@
 ## Table of contents
 
 *   [Getting started](#getting-started)
-*   [Customization with Storyboard](#customization-with-storyboard)
-*   [Customization of elements](#customization-of-elements)
-*   [Liveness Customization](#liveness-customization)
+*   [Customization with storyboard](#customization-with-storyboard)
+*   [Customization of colors](#customization-of-colors)
+*   [Customization of components](#customization-of-components)
+*   [Liveness customization](#liveness-customization)
 
 ## Getting started
 IOS SDK provides various customization options with *programming code* or *Idenfy.storyboard*.
 
+### 1. Create IdenfyUISettings
 
-## Customization with Storyboard
+Create an instance of IdenfyUISettings class:
+
+### Swift
+```swift
+let idenfyUISettings = IdenfyUIBuilder()
+    .build()
+```
+### 2.Update IdenfyUISettings
+
+```swift
+let idenfySettings = IdenfyBuilder()
+    .withUISettings(idenfyUISettings)
+    ...
+    .build()
+    
+```
+
+## Customization with storyboard
 iDenfy SDK groups various components and enables different customization options.
 
-Full design changes can be adjusted with Storyboard.
+Full design changes can be adjusted with Idenfy storyboard.
 
 ### 1. Including Storyboard and assets
 
@@ -24,31 +43,51 @@ In order to use custom design you would need to include attached **Idenfy.storyb
 
 ### 2. Updating IdenfySettings
 
-SDK needs to be comnfigured in order to use custom storyboard.
+SDK needs to be configured in order to use custom storyboard.
 
 ```swift
-   IdenfyBuilder()
-   ...
+    IdenfyBuilder()
     .withCustomStoryboard(true)
+    ...
+```
+*Note: If custom storyboard is selected, UISettings **will override** Interface Builder.
+
+## Customization of colors
+
+SDK provides colors customization:
+```swift
+let idenfyUISettings = IdenfyUIBuilder()
+    .withCustomColors(colorPrimary: UIColor, colorPrimaryDark: UIColor, colorAccent: UIColor)
+    .withCustomDocumentBorderColor(borderColor: UIColor.black)
+    ...
 ```
 
-## Customization of elements
+Information about colors:
+
+|Color name              |Description                     |Default color value
+|-------------------|-------------------------------|------------------------------------
+|`idenfyColorPrimary`   |Defines the default theme color.                 |UIColor(red: 54.0/255.0, green: 70.0/255.0, blue: 93.0/255.0, alpha: 1.0)
+|`idenfycolorPrimaryDark`|Defines the default color of the retake button. |UIColor(red: 43/255.0, green: 56/255.0, blue: 74/255.0, alpha: 1.0)
+|`idenfycolorAccent`  |Defines the color of results spinner and proceed button color.             |UIColor(red:139/255.0, green: 199/255.0, blue: 224/255.0, alpha: 1.0)
+|`idenfyDocumentBorderColor`  |Defines the color of the document border, which appears during identification flow. |UIColor(red:139/255.0, green: 199/255.0, blue: 224/255.0, alpha: 1.0)  
+
+## Customization of components
 Some elements in SDK could be configured with code to enable easier integration and UI logic reuse.
 
  ### *  Documents text overlay customization
  #### 1. Creating OverlayText
 
 ```swift
- let textBuilder = OverlayTextBuilder()
+ let overlayText = OverlayTextBuilder()
     .withCustomSettings(fontSize: 16, fontColor: UIColor.blue, font:UIFont.systemFont(ofSize: 26))
-    .build()
+    ...
 ```
  #### 2. Updating IdenfyUISettings
 
  ```swift
-   IdenfyUIBuilder()
+    IdenfyUIBuilder()
+    .withCustomDocumentsOverlayText(overlayDocumentsText: overlayText)
     ...
-    withCustomDocumentsOverlayText(overlayDocumentsText: textBuilder)
 ```
 
 ## Liveness Customization
@@ -62,7 +101,7 @@ iDenfy SDK provides additional liveness customization.
 ```
  ### 2. Applying settings
 
- Atrributes of IdenfyLiveness UISettings
+ iDenfySDK provides the following attributes for liveness customization:
 
  ```swift
  
@@ -99,9 +138,8 @@ idenfyLivenessUISettings.livenessIdentificationProgressRadialOffset = 16.0
 
 ```swift
 let idenfyUISettings = IdenfyUIBuilder()
-    ...
     .withLivenessUISettings(livenessUISettings: idenfyZoomSettings)
-    .build()
+    ...
 ```
 
 

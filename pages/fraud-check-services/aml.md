@@ -1,5 +1,5 @@
-# AML, PEP & Sanctions
-This service checks whether given person is not in PEP or sanctions list.
+# AML, PEP & Sanctions, Negative news
+This service checks whether given person is in PEP or sanctions list, checks negative news.
 
 #### Pricing
 Please contact _iDenfy_ support for a detailed price-sheet.
@@ -29,7 +29,7 @@ Overall response can be seen in the table below:
 |`serviceUsed`       |`Bool`      |Indicated whether a service was used.                                   |
 |`overallStatus`     |`String`    |A mapping string indicating overall status of the check.                |
 
-##### Data table
+##### Data table for AML name check service
 A service response in `data` field returns a list of objects which are detailed in the table below:
 
 |JSON key            |Type        |Explanation                                                |
@@ -45,7 +45,17 @@ A service response in `data` field returns a list of objects which are detailed 
 |`isPerson`          |`Bool`      |Indicates whether the record is about a person.            |
 |`isActive`          |`Bool`      |Indicated whether a record is active.                      |
 
-#### Example response
+##### Data table for AML negative news service
+A service response in `data` field returns a list of objects which are detailed in the table below:
+
+|JSON key            |Type        |Explanation                                                |
+|--------------------|------------|-----------------------------------------------------------|
+|`title`             |`String`    |The title of the news article.                             | 
+|`url`               |`String`    |Url pointing to the news article.                          |
+|`text`              |`String`    |An short extract of the news article text.                 |
+|`type`              |`String`    |The type of the news article.                              |
+
+#### Example response for AML name check service
 
 ```json
 {
@@ -86,5 +96,59 @@ A service response in `data` field returns a list of objects which are detailed 
     "serviceGroupType": "AML",
     "uid": "OHT8GR5ESRF5XROWE5ZGCC49A",
     "errorMessage": null
+}
+```
+
+#### Example response for AML negative news service
+
+```json
+{
+  "AML": [
+    {
+      "status": {
+        "serviceSuspected": true,
+        "serviceUsed": true,
+        "serviceFound": true,
+        "checkSuccessful": true,
+        "overallStatus": "SUSPECTED"
+      },
+      "serviceName": "PilotApiAmlV2NegativeNews",
+      "serviceGroupType": "AML",
+      "uid": "Z3LN8T2AU4467DYUTJ3S7PPG1",
+      "errorMessage": null,
+      "data": [
+        {
+          "title": "BARACK OBAMA (@BARACKOBAMA) | TWITTER",
+          "url": "HTTPS://TWITTER.COM/BARACKOBAMA",
+          "text": "THE LATEST TWEETS FROM BARACK OBAMA (@BARACKOBAMA). DAD, HUSBAND, PRESIDENT, CITIZEN. WASHINGTON, DC",
+          "type": "NEGATIVE"
+        },
+        {
+          "title": "WELCOME TO THE OBAMA FOUNDATION",
+          "url": "HTTPS://WWW.OBAMA.ORG/",
+          "text": "-- THE OBAMA FOUNDATION (@OBAMAFOUNDATION) APRIL 26, 2019 A SCHOLAR'S STORY: DR. BONAVENTURE DZEKEM DR. BONAVENTURE DZEKEM IS AN OBAMA FOUNDATION SCHOLAR CURRENTLY STUDYING AT THE UNIVERSITY OF CHICAGO.",
+          "type": "NEGATIVE"
+        },
+        {
+          "title": "BARACK OBAMA | THE WHITE HOUSE",
+          "url": "HTTPS://WWW.WHITEHOUSE.GOV/ABOUT-THE-WHITE-HOUSE/PRESIDENTS/BARACK-OBAMA/",
+          "text": "BARACK OBAMA SERVED AS THE 44TH PRESIDENT OF THE UNITED STATES. HIS STORY IS THE AMERICAN STORY -- VALUES FROM THE HEARTLAND, A MIDDLE-CLASS UPBRINGING IN A STRONG FAMILY, HARD WORK AND EDUCATION ...",
+          "type": "NEGATIVE"
+        },
+        {
+          "title": "BARACK OBAMA | FOX NEWS",
+          "url": "HTTPS://WWW.FOXNEWS.COM/CATEGORY/PERSON/BARACK-OBAMA",
+          "text": "BARACK OBAMA SERVED AS THE 44TH PRESIDENT OF THE UNITED STATES FROM 2009 TO 2017 AND IS THE FIRST AFRICAN-AMERICAN EVER ELECTED TO THE OFFICE. HE IS A MEMBER OF THE DEMOCRATIC PARTY AND PREVIOUSLY ...",
+          "type": "NEGATIVE"
+        },
+        {
+          "title": "BARACK OBAMA - U.S. PRESIDENCY, FAMILY & QUOTES - BIOGRAPHY",
+          "url": "HTTPS://WWW.BIOGRAPHY.COM/US-PRESIDENT/BARACK-OBAMA",
+          "text": "LEARN MORE ABOUT PRESIDENT BARACK OBAMA'S FAMILY BACKGROUND, EDUCATION AND CAREER, INCLUDING HIS 2012 ELECTION WIN. FIND OUT HOW HE BECAME THE FIRST AFRICAN-AMERICAN U.S. PRESIDENT, VIEW VIDEO ...",
+          "type": "NEGATIVE"
+        }
+      ]
+    }
+  ]
 }
 ```
