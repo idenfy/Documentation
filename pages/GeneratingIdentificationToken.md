@@ -18,14 +18,17 @@ The request must contain JSON with optional and mandatory parameters:
 |`sessionLength`|No|Length of time in seconds where a client is given to identify himself in indentification UI.|Integer|- More than 60<br>- Less than 3600|`600`|
 |`country`|No|A default document country in alpha-2 code for a client. A client will not be able to select a different country.|String|- Any country in alpha-2 code|`null`|
 |`documents`|No|Supported identification documents for the client.|List\[String\]|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ID_CARD`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`PASSPORT`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`RESIDENCE_PERMIT`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`DRIVER_LICENSE`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`OTHER`|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ID_CARD`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`PASSPORT`|
-|`dateOfBirth`|No|Date of birth of a client.| | |
-|`dateOfExpiry`|No|Date of expiry for a client.| | |
-|`dateOfIssue`|No| | | |
-|`nationality`|No| | | |
-|`personalNumber`|No| | | |
-|`documentNumber`|No| | | |
-|`sex`|No| | | |
+|`dateOfBirth`|No|Date of birth of a client.|String|- Format: YYYY-MM-DD|`null`|
+|`dateOfExpiry`|No|Date of expiry of a client document.|String|- Format: YYYY-MM-DD|`null`|
+|`dateOfIssue`|No|Date of issue of a client document.|String|- Format: YYYY-MM-DD|`null`|
+|`nationality`|No|Nationality of a client.|String|- Any country in alpha-2 code|`null`|
+|`personalNumber`|No|Personal/national number of a client.|String|- Min length 1|`null`|
+|`documentNumber`|No|Number of a client document.|String|- Min length 1|`null`|
+|`sex`|No|Gender of a client.|String|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`M`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`F`|`null`|
 ### Receiving response
+The response JSON contains exact same fields as JSON during token generation. It also returns default values for fields
+that were optional and not specified during token generation. Additionally, the response also provides these fields below.
+
 |Key|Explanation|Constraints|Example value|
 |---|---|---|---|
 |`message`|A message for a developer about the status of generated token.|- Max length 100<img width=375/>|`"Token created successfully"`
