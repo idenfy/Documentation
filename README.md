@@ -28,6 +28,10 @@ Also, you can visit [https://www.idenfy.com/start-trial/](https://www.idenfy.com
 - [Webhook callback](https://github.com/idenfy/Documentation/blob/master/pages/ResultCallback.md)
 - [Additional identification data retrieval](https://github.com/idenfy/Documentation/blob/master/pages/IdentificationDataRetrieval.md)
 
+*Fourthly (optional)*, delete client data from iDenfy databases.
+
+- [Deleting client data](https://github.com/idenfy/Documentation/blob/master/pages/IdentificationDeletion.md)
+
 ## Interface customization
 - [WEB UI platform customization](https://github.com/idenfy/Documentation/blob/master/pages/WebUiCustomization.md)
 - [Android SDK Customization](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md)
