@@ -44,7 +44,7 @@ that were optional and not specified during token generation. Additionally, the 
 #### Example requests
 
 You can choose not to send any data regarding your client that needs to be identified. The only mandatory parameter is **clientId**.
-```json 
+```json
 {  
    "clientId":"100000"
 }
@@ -54,7 +54,7 @@ As our only mandatory parameter is **clientId**, however we strongly recommend t
 {  
    "clientId":"100000",
    "firstName":"John Tom",
-   "lastName":"Smith "
+   "lastName":"Smith"
 }
 ```
 Specify all of the parameters for full control.
@@ -62,27 +62,86 @@ Specify all of the parameters for full control.
 {  
    "clientId":"100000",
    "firstName":"John Tom",
-   "lastName":"Smith ",
+   "lastName":"Smith",
    "successUrl":"https://www.my-company.com/idenfy/success",
    "errorUrl":"https://www.my-company.com/idenfy/fail",
    "locale":"en",
    "expiryTime":600,
    "sessionLength":600,
    "country":"lt",
-   "documents":["PASSPORT", "OTHER"]
+   "documents":["PASSPORT", "OTHER"],
+   "dateOfBirth": "1990-12-20",
+   "dateOfExpiry": "1990-12-20",
+   "dateOfIssue": "1990-12-20",
+   "nationality": "lt",
+   "personalNumber": "123456789",
+   "documentNumber": "123456",
+   "sex": "M"
 }
 ```
 
-#### Example response
+#### Example responses
 If supplied data in JSON and ***API key*** with ***API secret*** are valid, you should receive a successful response providing you ***scanRef*** which is the main identifier of an identification in *iDefny* platform.
 
+##### An example response with all fields provided:
+```json
+{
+   "message": "Token created successfully",
+   "authToken": "pgYQX0z2T8mtcpNj9I20uWVCLKNuG0vgr12f0wAC",
+   "scanRef": "ec6a7108-8c26-11e9-9758-309c231b1bac",
+   "clientId": "100000",
+   "firstName": "JOHN TOM",
+   "lastName": "SMITH",
+   "successUrl": "https://www.my-company.com/idenfy/success",
+   "errorUrl": "https://www.my-company.com/idenfy/fail",
+   "locale": "en",
+   "country": "lt",
+   "expiryTime": 600,
+   "sessionLength": 600,
+   "documents": [
+     "PASSPORT",
+     "OTHER"
+   ],
+   "dateOfBirth": "1990-12-20",
+   "dateOfExpiry": "1990-12-20",
+   "dateOfIssue": "1990-12-20",
+   "nationality": "lt",
+   "personalNumber": "123456789",
+   "documentNumber": "123456",
+   "sex": "M"
+}
+```
+
+##### An example response with no fields provided:
 ```json
 {
   "message": "Token created successfully",
-  "authToken": "3FA5TFPA2ZE3LMPGGS1EGOJNJE",
-  "scanRef": "d2714c8a-ec05-11e8-834f-067891e3383a",
-  "clientId": 100000
+  "authToken": "LEWCd6xHTW2auHrst9MEqZN8tUgKsUQ8hSMNYoLI",
+  "scanRef": "9b11acb2-8c27-11e9-9758-309c231b1bac",
+  "clientId": "100000",
+  "personScanRef": "100000",
+  "firstName": null,
+  "lastName": null,
+  "successUrl": null,
+  "errorUrl": null,
+  "locale": "en",
+  "country": null,
+  "expiryTime": 3600,
+  "sessionLength": 300,
+  "documents": [
+    "ID_CARD",
+    "PASSPORT",
+    "RESIDENCE_PERMIT",
+    "DRIVER_LICENSE",
+    "OTHER"
+  ],
+  "dateOfBirth": null,
+  "dateOfExpiry": null,
+  "dateOfIssue": null,
+  "nationality": null,
+  "personalNumber": null,
+  "documentNumber": null,
+  "sex": null
 }
 ```
-
 Note that in case of a malformed JSON body or API key/secret mismatch you will receive a standart *iDenfy* API error response. For more on *iDenfy* API responses visit [iDenfy error messages](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md).
