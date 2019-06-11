@@ -37,6 +37,10 @@ This status means that our algorithms have detected a possible fraudulent activi
 identification process e.g. printed document or a face from mobile screen, etc. In such case
 identification is terminated and a notification is sent with overall status as "SUSPECTED". 
 
+- ##### What does "AUTO_UNVERIFIABLE" mean and when is it triggered?
+This status means that the identification can not be reviewed automatically. Some of most common scenarios when this 
+status is triggered is when a user select "Other documents" to do an identification (may not be applicable to you) or explicitly asks for a manual review (may not be applicable to you).
+
 - ##### What causes identification to be denied?
 There are many reasons why an identification can be denied. There might be various cases
 associated with document scanning e.g. could not locate a face in a document, could 
@@ -100,3 +104,11 @@ state is associated with the identification. If user has successfully identified
 and callback has failed, a user will see an information popup, where it states that 
 identification succeeded but there was an issue saving data. Also, a user will be 
 redirected to a failure page.
+
+## Camera issues FAQ's
+
+- ##### Why your platform can not detect camera when using an iPhone with Chrome or Firefox web-browser?
+Currently (as of 2019-05) apple does not allow accessing camera to any browser except Safari.
+
+- ##### Why your platform can not detect camera on Chrome with iFrame integration?
+When using an `iframe` tag, make sure to add an attribute `allow="camera"`. 
