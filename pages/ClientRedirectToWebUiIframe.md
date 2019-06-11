@@ -35,8 +35,9 @@ An example redirect url with english locale:<br>https://ui.idenfy.com/?authToken
   <iframe 
     id='iframe' 
     style="width:80%; height:800px;" 
-    src="https://ui.idenfy.com/?authToken=3FA5TFPA2ZE3LMPGGS1EGOJNJE">
-  </iframe>
+    src="https://ui.idenfy.com/?authToken=3FA5TFPA2ZE3LMPGGS1EGOJNJE"
+    allow="camera"
+  ></iframe>
   
   <p id='display'></p>
   
