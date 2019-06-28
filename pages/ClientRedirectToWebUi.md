@@ -1,6 +1,6 @@
 # Client redirect to WEB UI
 
-After successfully generating token you should have a valid **authToken** which looks similarly to this *"3FA5TFPA2ZE3LMPGGS1EGOJNJE"*.
+After successfully generating token you should have a valid **authToken** which looks similar to this *"3FA5TFPA2ZE3LMPGGS1EGOJNJE"*.
 
 ### Redirect action
 
