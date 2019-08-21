@@ -35,7 +35,7 @@ Example snippet for iFrame implementation with the redirection URL and [iFrame p
   <iframe 
     id='iframe' 
     style="width:80%; height:800px;" 
-    src="https://ivs.idenfy.com/api/v2/redirect?authToken=53dsPAquTfKJwnU0TT227BO09GWVCk3Zps5aZej8"
+    src="https://ui.idenfy.com/api/v2/redirect?authToken=53dsPAquTfKJwnU0TT227BO09GWVCk3Zps5aZej8"
     allow="camera"
   ></iframe>
   
