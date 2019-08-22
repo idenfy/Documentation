@@ -1,11 +1,11 @@
 # Direct processing
 
-This endpoint lets you upload customer photos automatically and start processing instantly. The identification token is deactivated after this request.
+This endpoint lets you upload customer photos yourself and start processing instantly. The identification token is deactivated after this request.
 
 ### Sending request
 Send a *HTTP Post* request to: `https://ivs.idenfy.com/api/v2/process`<br>
 The request must contain *basic auth* headers where *username* is *api key* and *password* is *api secret*.<br>
-The request must contain JSON with optional and mandatory parameters:
+The request must contain JSON with these parameters:
 
 |      Key       | Required |              Explanation              |   Type   |                                     Constraints<img width=/>                                     |
 | -------------- | -------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------ |
@@ -43,11 +43,11 @@ Images required for a specific document should be provided, usually at least `FR
 ```
 
 #### Example responses
-For successful API calls, which correctly delete all data, there will be no message, just a response with a positive **200** status.
+For successful API calls, which start the processing, there will be no message, just a response with a positive **200** status.
 
 
 ##### An example response that failed
-Failed API calls will return a message containing, identifying the problem.
+Failed API calls will return a message identifying the problem.
 
 ```json
 {
