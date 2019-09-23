@@ -32,10 +32,20 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ```ruby
 pod 'iDenfySDK'
 ```
+Support for Swift versions:
 
-*Swift 4.2 or below should use:
+*Swift <= 4.2:
 ```ruby
 pod 'iDenfySDK', '<1.2'
+```
+
+*Swift 5.0:
+```ruby
+pod 'iDenfySDK', '<1.3'
+```
+*Swift >= 5.1 (module stability):
+```ruby
+pod 'iDenfySDK'
 ```
 
 Run `pod install` to get the SDK or `pod update` to update current iDenfySDK.
