@@ -1,5 +1,5 @@
 ## Table of contents
-
+*   [Changelog](#changelog)
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
 *   [Customizing flow](#customizing-flow)
@@ -8,6 +8,28 @@
 *   [UI customization](#ui-customization)
 *   [Sample SDK code](#sample-sdk-code)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
+
+
+## Changelog
+All updates will be written in this section.
+
+Our SDK versioning comforms to [Semantic Versioning 2.0.0](https://semver.org/).
+
+The structure of our changes follow practises from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
+
+
+## [2.0.0] - 2020-05-04
+
+### Added:
+* Support for French, Italian and German languages. 
+
+
+### Changed:
+* Removed previously deprecated UIWebView references from Storyboard. If custom storyboard was used for initializing SDK it will cause a **runtime crash**, because of UIWebView presence in the **FaceCameraViewController**. After upgrading the SDK, remove UIWebView reference in the **FaceCameraViewController**. 
+
+    No changes are needed if UIWebView is already removed from custom Idenfy.storyboard.
+
+* Renamed withCustomsStoryboard -> withCustomLocalStoryboard initialization method.
 
 ## Getting started
 

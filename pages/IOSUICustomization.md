@@ -47,7 +47,7 @@ SDK needs to be configured in order to use custom storyboard.
 
 ```swift
     IdenfyBuilder()
-    .withCustomStoryboard(true)
+    .withCustomLocalStoryboard(true)
     ...
 ```
 *Note: If custom storyboard is selected, UISettings **will override** Interface Builder.
