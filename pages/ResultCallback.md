@@ -27,7 +27,7 @@ In total you should expect two consecutive callbacks per identification:
 - One generated for an automatic verification.
 - Second generated for a manual verification.
 
-Two consecutive callbacks are represented in an UML activity graph below:
+Two consecutive callbacks are represented in a UML activity graph below:
 
 <img src="https://raw.githubusercontent.com/idenfy/Documentation/master/resources/ClientIdentificationWorkflowActivityDiagram.jpg" alt="Token generation UML activity diagram" width="700">
 
@@ -42,7 +42,7 @@ Request HTTP body is in JSON format which is described in tables below:
 |`platform`  |`String`|- Max length 30  |Tells from which device (platform) a client completed an identification. Possible values:<br>- PC<br>- MOBILE<br>- TABLET<br>- MOBILE_APP<br>- MOBILE_SDK<br>- OTHER|
 |`status`    |`Object`|-                |Dictionary that contains the status of the identification. [Refer to status table](#identification-status-table).                                      |
 |`data`      |`Object`|-                |Dictionary that contains parsed data from clients identity document. [Refer to data table](#data-table).                                          |
-|`fileUrls`  |`Object`|-                |Dictionary that contains url links to download or view client's identification photos. [Refer to file urls table](#file-urls-table)                        |
+|`fileUrls`  |`Object`|-                |Dictionary that contains url links to download or view client's identification photos and videos. [Refer to file urls table](#file-urls-table)                        |
 |`aml`       |`Object`|-                |Dictionary that contains anti-money-laundering (AML) service data. Only applicable if AML is enabled for you. [Refer to AML documentation](https://github.com/idenfy/Documentation/blob/master/pages/fraud-check-services/aml.md). |
 |`lid`       |`Object`|-                |Dictionary that contains lost-invalid-documents (LID) service data. Only applicable if LID is enabled for you. [Refer to LID documentation](https://github.com/idenfy/Documentation/blob/master/pages/fraud-check-services/lid.md).|
 |`scanRef`   |`String`|- Max length 36  |A unique string to trace back an identification on iDenfy’s side.                                             |
@@ -90,9 +90,12 @@ Note, that any of the specified fields below can be `null`.
 
 |JSON key    |Type          |Can be null|Constraints      |Explanation|
 |------------|--------------|-----------|-----------------|-----------|
-|`FRONT`     |`String (URL)`|Yes        |- Max length 500 |An URL to download front document side photo with which a client has completed an identification.|
-|`BACK`      |`String (URL)`|Yes        |- Max length 500 |An URL to download back document side photo with which a client has completed an identification.|
-|`FACE`      |`String (URL)`|Yes        |- Max length 500 |An URL to download face photo with which a client has completed an identification.|
+|`FRONT`     |`String (URL)`|Yes        |- Max length 500 |A URL to download front document side photo with which a client has completed an identification.|
+|`BACK`      |`String (URL)`|Yes        |- Max length 500 |A URL to download back document side photo with which a client has completed an identification.|
+|`FACE`      |`String (URL)`|Yes        |- Max length 500 |A URL to download face photo with which a client has completed an identification.|
+|`FRONT_VIDEO` |`String (URL)`|Yes      |- Max length 500 |A URL to download the video of a client taking the front photo.|
+|`BACK_VIDEO`  |`String (URL)`|Yes      |- Max length 500 |A URL to download the video of a client taking the back photo.|
+|`FACE_VIDEO`  |`String (URL)`|Yes      |- Max length 500 |A URL to download the video of a client taking the face photo.|
 
 ## Examples
 
