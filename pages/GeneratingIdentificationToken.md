@@ -11,9 +11,9 @@ The request must contain JSON with optional and mandatory parameters:
 |`clientId`|Yes|A unique string identifying a client.|String|- Not null<br>- Max length 100<img width=750/>|-|
 |`firstName`|No|A name(s) of a client to be identified.|String|- Min length 1<br>- Max length 100 <br>- Not digits <br>- Not characters: ~!@#$%^*()_+={}[]\|:;",<>/? |-|
 |`lastName`|No|A surname(s) of a client to be identified.|String|- Min length 1<br>- Max length 100 <br>- Not digits <br>- Not characters: ~!@#$%^*()_+={}[]\|:;",<>/?|-|
-|`successUrl`|No|An url where a client will be redirected after a successful identification.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=success`|
-|`errorUrl`|No|An url where a client will be redirected after a failed identification.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=fail`|
-|`unverifiedUrl`|No|An url where a client will be redirected after a not analyzed identification. E.g. user immediately cancels process.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=unverified`|
+|`successUrl`|No|A url where a client will be redirected after a successful identification.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=success`|
+|`errorUrl`|No|A url where a client will be redirected after a failed identification.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=fail`|
+|`unverifiedUrl`|No|A url where a client will be redirected after a not analyzed identification. E.g. user immediately cancels process.|String|- Min length 5<br>- Max length 2048|`https://`<br>`ui.idenfy.com/`<br>`result?status=unverified`|
 |`locale`|No|A country code in alpha-2 format. Determines what default language a client will see in identification UI.|String|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`lt`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`en`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ru`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`pl`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`ro`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`lv`|`en`|
 |`expiryTime`|No|Length of time in seconds after which a newly generated token will become invalid.|Integer|- More than 0|`3600`|
 |`sessionLength`|No|Length of time in seconds where a client is given to identify himself in indentification UI.|Integer|- More than 60<br>- Less than 3600|`600`|
@@ -33,7 +33,7 @@ that were optional and not specified during token generation. Additionally, the 
 |Key|Explanation|Constraints|Example value|
 |---|---|---|---|
 |`message`|A message for a developer about the status of generated token.|- Max length 100<img width=375/>|`"Token created successfully"`
-|`authToken`|A unique string for identification process (will be passed as an url parameter when redirecting a client to identification platform).|- Length <= 40|`"3FA5TFPA2ZE3LMPGGS1EGOJNJE"`
+|`authToken`|A unique string for identification process (will be passed as a url parameter when redirecting a client to identification platform).|- Length <= 40|`"3FA5TFPA2ZE3LMPGGS1EGOJNJE"`
 |`scanRef`|A unique string identifying a client identification on iDenfy’s side.|- Length <= 40|`"d2714c8a-ec05-11e8-834f-067891e3383a"`
 |`clientId`|A unique string identifying a client on your companies side. (The same value when requesting to generate a token)|- Not null<br>- Max length 100|`"5F7E4FR14"`
 
