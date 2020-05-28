@@ -1,0 +1,56 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/idenfy_confirmation_item_step_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/idenfy_ic_confirmation_item_step_circle" />
+
+    <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+        android:id="@+id/idenfy_confirmation_item_step_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textAlignment="center"
+        android:theme="@style/idenfyDocumentConfirmationViewDocumentStepItemNumberStyle"
+        app:customfont="hkgrotesk_bold.ttf"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_confirmation_item_step_circle"
+        android:gravity="center" />
+
+    <!--TODO issue with long text, does not fill the whole height, should expand-->
+    <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+        android:id="@+id/idenfy_confirmation_item_step_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:paddingRight="50dp"
+        android:text=""
+        android:theme="@style/idenfyDocumentConfirmationViewDocumentStepItemTitleStyle"
+        app:customfont="hkgrotesk_regular.ttf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

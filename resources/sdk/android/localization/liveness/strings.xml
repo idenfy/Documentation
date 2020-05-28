@@ -1,0 +1,40 @@
+<resources>
+
+    <string name="zoom_accessibility_torch_button">Toggle Light</string>
+    <string name="zoom_instructions_header_ready">Get Ready For Your Video Selfie</string>
+    <string name="zoom_instructions_message_ready">Please Frame Your Face In The Small Oval, Then The Big Oval</string>
+    <string name="zoom_action_ok">OK</string>
+    <string name="zoom_action_im_ready">I\'M READY</string>
+    <string name="zoom_action_take_photo">TAKE PHOTO</string>
+    <string name="zoom_action_retake_photo">RETAKE</string>
+    <string name="zoom_action_accept_photo">ACCEPT</string>
+    <string name="zoom_result_success_message">Success</string>
+    <string name="zoom_camera_permission_header">Enable Camera</string>
+    <string name="zoom_camera_permission_message_enroll">Please enable\nyour selfie camera.</string>
+    <string name="zoom_camera_permission_message_auth">Your camera permissions are disabled. Tap below to edit your settings.</string>
+    <string name="zoom_camera_permission_enable_camera">ENABLE CAMERA</string>
+    <string name="zoom_camera_permission_launch_settings">LAUNCH SETTINGS</string>
+    <string name="zoom_retry_header">Let\'s try that again</string>
+    <string name="zoom_retry_subheader_message">But first, please take a look at your photo and correct your environment.</string>
+    <string name="zoom_retry_instruction_message_1">Neutral Expression, No Smiling</string>
+    <string name="zoom_retry_instruction_message_2">No Glare or Extreme Lighting</string>
+    <string name="zoom_retry_instruction_message_3" />
+    <string name="zoom_retry_your_image_label">Your Selfie</string>
+    <string name="zoom_retry_ideal_image_label">Ideal Pose</string>
+    <string name="zoom_result_facemap_upload_message">Checking liveliness…</string>
+
+    <string name="zoom_feedback_center_face">Center Your Face</string>
+    <string name="zoom_feedback_face_not_found">Frame Your Face</string>
+    <string name="zoom_feedback_face_not_looking_straight_ahead">Look Straight Ahead</string>
+    <string name="zoom_feedback_face_not_upright">Keep Your Head Straight</string>
+    <string name="zoom_feedback_hold_steady">Hold Steady</string>
+    <string name="zoom_feedback_move_phone_away">Move Phone Away</string>
+    <string name="zoom_feedback_move_tablet_away">Move Tablet Away</string>
+    <string name="zoom_feedback_move_phone_closer">Move Phone Closer</string>
+    <string name="zoom_feedback_move_phone_even_closer">Even Closer</string>
+    <string name="zoom_feedback_move_tablet_closer">Move Tablet In</string>
+    <string name="zoom_feedback_move_phone_to_eye_level">Move Phone Up To Eye Level</string>
+    <string name="zoom_feedback_move_tablet_to_eye_level">Move Tablet Up To Eye Level</string>
+    <string name="zoom_feedback_use_even_lighting">Light Face More Evenly</string>
+
+</resources>

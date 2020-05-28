@@ -1,0 +1,159 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:clickable="true"
+    android:focusable="true">
+
+    <include layout="@layout/idenfy_app_bar_layout_camera_session_v2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/idenfyFaceCameraPreviewSessionBackgroundColor"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="0dp">
+
+
+        <io.fotoapparat.view.CameraView
+            android:id="@+id/idenfy_camera_view_face_camera_preview_session"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dp">
+
+        </io.fotoapparat.view.CameraView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitCenter"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/idenfy_view_bottom_action_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/idenfyFaceCameraPreviewSessionBottomActionButtonsViewBackgroundColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_horizontal_085">
+
+        </View>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/idenfy_fab_take_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/idenfyFaceCameraPreviewSessionTakePhotoButtonUnFocusedTintColor"
+            app:backgroundTint="@color/idenfyFaceCameraPreviewSessionTakePhotoButtonUnFocusedBackgroundColor"
+            app:fabCustomSize="52dp"
+            app:layout_constraintBottom_toBottomOf="@+id/idenfy_view_bottom_action_buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/idenfy_view_bottom_action_buttons"
+            app:layout_constraintTop_toTopOf="@+id/idenfy_view_bottom_action_buttons" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/idenfy_fab_take_photo_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/idenfy_fab_take_photo"
+            app:layout_constraintEnd_toEndOf="@+id/idenfy_fab_take_photo"
+            app:layout_constraintStart_toStartOf="@+id/idenfy_fab_take_photo"
+            app:layout_constraintTop_toTopOf="@+id/idenfy_fab_take_photo"
+            app:srcCompat="@drawable/idenfy_custom_drawable_camera_preview_session_take_photo_icon_v2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/idenfy_iv_upload_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/idenfy_view_bottom_action_buttons"
+            app:layout_constraintEnd_toStartOf="@+id/idenfy_fab_take_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_085"
+            app:srcCompat="@drawable/idenfy_custom_drawable_camera_preview_session_upload_photo_icon_v2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/navbar_guidline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="48dp" />
+
+        <ImageView
+            android:id="@+id/idenfy_iv_oval_face"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/idenfy_custom_drawable_face_camera_preview_session_oval_face_v2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:foregroundGravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_085"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_150" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:elevation="4dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/idenfy_view_bottom_action_buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/idenfy_view_bottom_action_buttons"
+            app:srcCompat="@drawable/idenfy_custom_drawable_camera_preview_session_take_photo_icon_background_v2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_150"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="150dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_085"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/idenfy_view_liveness_mask_preview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/idenfyFaceCameraPreviewSessionLivenessMaskColor"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/idenfy_face_camera_layout_instructions_top_sheet_root_v2" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

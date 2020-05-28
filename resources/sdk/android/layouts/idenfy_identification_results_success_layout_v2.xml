@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/idenfyIdentificationSuccessResultsViewBackgroundColor"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <include layout="@layout/idenfy_app_bar_layout_no_back_button_v2" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/idenfy_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/idenfyIdentificationSuccessResultsViewBackgroundColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+
+        <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:id="@+id/idenfy_results_view_success_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="@string/idenfy_identification_results_success_fragment_title_v2"
+            android:textAlignment="center"
+            android:theme="@style/idenfyIdentificationSuccessResultsViewTitleStyle"
+            app:customfont="hkgrotesk_bold.ttf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:id="@+id/idenfy_results_view_success_description"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/idenfy_identification_results_success_fragment_description_v2"
+            android:textAlignment="center"
+            android:theme="@style/idenfyIdentificationSuccessResultsViewDescriptionStyle"
+            app:customfont="hkgrotesk_regular.ttf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_results_view_success_title"
+            android:gravity="center_horizontal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/idenfy_results_view_success_center_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/idenfyIdentificationSuccessResultsViewBackgroundColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_title_layout">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/idenfy_results_view_success_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/idenfy_ic_results_success_layout_image" />
+
+        <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/idenfy_identifiaction_results_success_fragment_identified_v2"
+            android:theme="@style/idenfyIdentificationSuccessResultsViewIdentifiedStyle"
+            app:customfont="hkgrotesk_bold.ttf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_results_view_success_image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="idenfyIdentificationResultsViewTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyIdentificationResultsViewTitleTextColor</item>
+        <item name="android:textSize">
+            @dimen/idenfy_dimen_identification_results_view_information_title_text_size
+        </item>
+    </style>
+
+    <style name="idenfyIdentificationResultsViewDescriptionStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyIdentificationResultsViewDescriptionTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyIdentificationResultsViewDocumentStepTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyIdentificationResultsViewDocumentStepTitleTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyIdentificationResultsViewRetakeButtonStyle" parent="android:Widget.Button">
+        <item name="android:textColor">@color/idenfyIdentificationResultsViewRetakeButtonTextColor
+        </item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

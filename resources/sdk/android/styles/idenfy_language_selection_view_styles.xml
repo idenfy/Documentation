@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="idenfyLanguageSelectionViewTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyLanguageSelectionViewTitleTextColor</item>
+        <item name="android:textSize">
+            @dimen/idenfy_dimen_country_selection_view_information_title_text_size
+        </item>
+    </style>
+
+    <style name="idenfyLanguageSelectionViewLanguageRecyclerViewItemTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyLanguageSelectionViewLanguageRecyclerViewItemTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

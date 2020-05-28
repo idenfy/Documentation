@@ -1,0 +1,410 @@
+///*V1*///
+/*Idenfy Initial Agreement View*/
+"idenfy_initial_agreement_button_issuing_country_selection_title" = "Country:";
+"idenfy_initial_agreement_title_terms_and_conditions"  = "Terms and conditions";
+"idenfy_initial_agreement_title_issuing_document_country" = "Select your document issuing country";
+"idenfy_initial_agreement_confirm_button_title"  = "Let\'s begin";
+"idenfy_initial_agreement_toolbar_title" = "Start identity verification";
+"idenfy_initial_agreement_title_issuing_document_country_predefined" = "Document country of issue:";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_1_message" = "I do confirm, that information (identification pictures) that I provide is not fake or forged.";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_1"  = "I do understand that in case of";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_2"  = "fraudulent";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_3"  = "actions or any attempt of";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_4"  = "forgery";
+"idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_5"  = "we are obliged to contact authorities and report about the criminal incident.";
+
+/*Idenfy Documents Selection View*/
+"idenfy_documents_selection_top_information_title" = "Select document type";
+"idenfy_documents_selection_toolbar_title"  = "iDenfy";
+"idenfy_documents_selection_list_item_document_type_passport"  = "PASSPORT";
+"idenfy_documents_selection_list_item_document_type_id_card" = "IDENTITY CARD";
+"idenfy_documents_selection_list_item_document_type_other"  = "OTHER";
+"idenfy_documents_selection_list_item_document_type_driver_licence"  = "DRIVER LICENSE";
+"idenfy_documents_selection_list_item_document_type_residence_permit" = "RESIDENCE PERMIT";
+
+/*Idenfy Document Camera Preview Session View*/
+"idenfy_document_camera_preview_session_message_part_0_document_type_default" = "Place";
+"idenfy_document_camera_preview_session_message_part_1_front_document_type_default" = "the front";
+"idenfy_document_camera_preview_session_message_part_1_back_document_type_default"  = "the back";
+"idenfy_document_camera_preview_session_message_part_2_document_type_default"  = "of the document into a white frame and then take a picture. ";
+"idenfy_document_camera_preview_session_message_document_type_id_card_front"  = "Fit the front of identification card into the frame and press circle button";
+"idenfy_document_camera_preview_session_message_document_type_id_card_back" = "Fit the back of identification card into the frame and press circle button";
+"idenfy_document_camera_preview_session_message_document_type_passport" = "Fit the passport main part into the frame and press circle button";
+
+/*Idenfy Document Camera Results View*/
+"idenfy_document_camera_results_message_document_type_passport" = "Document information must be clearly visible and hologram should not cover your face, otherwise - make photo one more time";
+"idenfy_document_camera_results_message_document_type_id_card_back"  = "Document information must be clearly visible, otherwise - make photo one more time";
+"idenfy_document_camera_results_message_document_type_default" = "Caution: Make sure the document is fully visible and the text is readable.";
+
+/*Idenfy Face Camera Preview Session View*/
+"idenfy_face_camera_preview_session_message"  = "When the face is in frames and is fully captured, take a photo.";
+
+/*Idenfy Face Camera Results View*/
+"idenfy_face_camera_results_message"  = "Keep your face in white frame, make sure your shoulders are visible.";
+
+/*Idenfy Document And Face Results View*/
+"idenfy_document_and_face_camera_results_button_retake_photo_title"  = "Retake";
+"idenfy_document_and_face_camera_results_button_next_step_title"  = "Right";
+
+/*Idenfy Document And Face Camera Preview Session*/
+"idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_default_front"  = "FRONT";
+"idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_default_back" = "BACK";
+"idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_utility_bill"  = "UTILITY BILL";
+"idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_passport_cover" = "PASSPORT COVER";
+"idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_passport_front" = "PASSPORT MAIN PAGE";
+
+/*Idenfy Identification Results View */
+"idenfy_identification_results_title_identification_status_loading" = "Please wait a moment...";
+"idenfy_identification_results_title_identification_status_success" = "Identification succeeded!";
+"idenfy_identification_results_title_identification_status_error" = "Identification failed";
+"idenfy_identification_results_proceed_button_title"  = "Proceed";
+"idenfy_identification_results_title_face_step" = "Face photo";
+"idenfy_identification_results_title_front_document_step" = "Document front photo";
+"idenfy_identification_results_title_back_document_step"  = "Document back photo";
+
+/*Idenfy UI Error messages*/
+"idenfy_error_message_agree_with_terms_of_service"  = "Agree with terms of service";
+"idenfy_error_message_select_your_document_issuing_country_message" = "Select your document issuing country";
+
+///*V2*///
+/*Idenfy Splash Screen V2*/
+"idenfy_splash_screen_title_v2" = "Quick and reliable identity verification";
+
+/*Idenfy Start Identification Predefined View V2*/
+"idenfy_start_identification_predefined_view_information_title_v2" = "Start identity verification";
+"idenfy_start_identification_predefined_view_information_description_v2" = "Document country of issue";
+"idenfy_start_identification_predefined_view_begin_identification_button_v2" = "Let\'s begin";
+
+/*Idenfy Country Selection View V2*/
+"idenfy_country_selection_view_information_title_v2" = "Select issuing country";
+"idenfy_country_selection_view_information_description_v2" = "Please choose the country where your document was issued";
+"idenfy_country_selection_view_searchbar_hint_v2" = "Search document\'s country…";
+
+/*Idenfy Language Selection View V2*/
+"idenfy_language_selection_view_information_title_v2" = "Select a language";
+"idenfy_language_selection_name_lt_v2" = "Lietuvių";
+"idenfy_language_selection_name_en_v2" = "English";
+"idenfy_language_selection_name_ru_v2" = "Pусский";
+"idenfy_language_selection_name_ro_v2" = "Română";
+"idenfy_language_selection_name_lv_v2" = "Latviešu";
+"idenfy_language_selection_name_pl_v2" = "Polski";
+"idenfy_language_selection_name_de_v2" = "Deutsch";
+"idenfy_language_selection_name_fr_v2" = "Français";
+"idenfy_language_selection_name_it_v2" = "Italiano";
+
+/*Idenfy Documents Selection View V2*/
+"idenfy_documents_selection_view_information_title_v2" = "Select a document";
+"idenfy_documents_selection_view_information_description_v2" = "Which document type would you want to identify?";
+"idenfy_documents_selection_view_list_item_document_type_passport_title_v2" = "Passport";
+"idenfy_documents_selection_view_list_item_document_type_id_card_title_v2" = "Identity Card";
+"idenfy_documents_selection_view_list_item_document_type_other_title_v2" = "Other";
+"idenfy_documents_selection_view_list_item_document_type_driver_licence_title_v2" = "Driver\'s License";
+"idenfy_documents_selection_view_list_item_document_type_residence_permit_titlev2" = "Residence Permit";
+
+/*Idenfy Confirmation View V2*/
+"idenfy_confirmation_view_information_title_v2" = "Confirm document type";
+"idenfy_confirmation_view_information_description_type_id_card_description_placeholder_v2" = "Please have your **identity card** ready to identify";
+"idenfy_confirmation_view_information_description_type_passport_description_placeholder_v2" = "Please have your **passport** ready to identify";
+"idenfy_confirmation_view_information_description_type_residence_permit_placeholder_v2" = "Please have your **residence permit** ready to identify";
+"idenfy_confirmation_view_information_description_type_driver_licence_placeholder_v2" = "Please have your **driver\'s license** ready to identify";
+"idenfy_confirmation_view_information_description_type_other_placeholder_v2" = "Please have your **document** ready to identify";
+"idenfy_confirmation_view_information_description_part_1_v2" = "Please have your";
+"idenfy_confirmation_view_information_document_type_id_card_description_part_2_v2" = "identity card";
+"idenfy_confirmation_view_information_document_type_passport_description_part_2_v2" = "passport";
+"idenfy_confirmation_view_information_document_type_residence_permit_description_part_2_v2" = "residence permit";
+"idenfy_confirmation_view_information_document_type_driver_licence_description_part_2_v2" = "driver\'s license";
+"idenfy_confirmation_view_information_document_type_other_description_part_2_v2" = "document";
+"idenfy_confirmation_view_information_description_part_3_v2" = "ready to identify";
+"idenfy_confirmation_view_document_steps_title_part_placeholder_v2" = "Identification will take **5** steps:";
+"idenfy_confirmation_view_document_steps_title_part_1_v2" = "Identification will take";
+"idenfy_confirmation_view_document_steps_title_part_2_v2" = "5";
+"idenfy_confirmation_view_document_steps_title_part_3_v2" = "steps:";
+"idenfy_confirmation_view_document_steps_step_front_title_v2" = "Document front photo";
+"idenfy_confirmation_view_document_steps_step_back_title_v2" = "Document back photo";
+"idenfy_confirmation_view_document_steps_step_face_title_v2" = "Face photo";
+"idenfy_confirmation_view_document_steps_step_liveliness_title_v2" = "Liveliness check";
+"idenfy_confirmation_view_document_steps_step_passport_cover_title_v2" = "Passport cover photo";
+"idenfy_confirmation_view_document_steps_step_utility_bill_title_v2" = "Utility bill photo";
+"idenfy_confirmation_view_upload_image_title_v2" = "You can upload photos in every step";
+"idenfy_confirmation_view_begin_identification_title_v2" = "BEGIN IDENTIFICATION";
+
+/*Idenfy Document Camera Preview Session View V2*/
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_id_card_title_v2" = "Front of identity card";
+"idenfy_document_camera_preview_session_view_information_step_back_document_type_id_card_title_v2" = "Back of identity card";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_other_title_v2" = "Front of document";
+"idenfy_document_camera_preview_session_view_information_step_back_document_type_other_title_v2" = "Back of document";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_residence_permit_title_v2" = "Front of residence permit";
+"idenfy_document_camera_preview_session_view_information_step_back_document_type_residence_permit_title_v2" = "Back of residence permit";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_driver_license_title_v2" = "Front of driver\'s license";
+"idenfy_document_camera_preview_session_view_information_step_back_document_type_driver_license_title_v2" = "Back of driver\'s license";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_passport_cover_title_v2" = "Front of passport cover";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_passport_title_v2" = "Passport face page";
+"idenfy_document_camera_preview_session_view_information_step_front_document_type_utility_bill_title_v2" = "Utility bill capturing";
+"idenfy_document_camera_preview_session_view_information_description_v2" = "Place your document into the frame and take a clear photo";
+
+/*Idenfy Document Camera Results View V2*/
+"idenfy_document_camera_results_view_information_step_front_document_type_id_card_title_v2" = "Front of identity card";
+"idenfy_document_camera_results_view_information_step_back_document_type_id_card_title_v2" = "Back of identity card";
+"idenfy_document_camera_results_view_information_step_front_document_type_other_title_v2" = "Front of document";
+"idenfy_document_camera_results_view_information_step_back_document_type_other_title_v2" = "Back of document";
+"idenfy_document_camera_results_view_information_step_front_document_type_residence_permit_title_v2" = "Front of residence permit";
+"idenfy_document_camera_results_view_information_step_back_document_type_residence_permit_title_v2" = "Back of residence permit";
+"idenfy_document_camera_results_view_information_step_front_document_type_driver_license_title_v2" = "Front of driver\'s license";
+"idenfy_document_camera_results_view_information_step_back_document_type_driver_license_title_v2" = "Back of driver\'s license";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_title_v2" = "Front of passport cover";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_title_v2" = "Passport face page";
+"idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_title_v2" = "Utility bill";
+"idenfy_document_camera_results_view_information_step_front_document_type_id_card_description_placeholder_v2" = "Is your **front of identity card** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_back_document_type_id_card_description_placeholder_v2" = "Is your **back of identity card** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_other_description_placeholder_v2" = "Is your **front of document** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_back_document_type_other_description_placeholder_v2" = "Is your **back of document** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_residence_permit_description_placeholder_v2" = "Is your **front of residence permit** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_back_document_type_residence_permit_description_placeholder_v2" = "Is your **back of residence permit** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_driver_license_description_placeholder_v2" = "Is your **front of driver\'s license** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_back_document_type_driver_license_description_placeholder_v2" = "Is your **back of driver\'s license** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_description_placeholder_v2" = "Is your **front of passport cover** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_description_placeholder_v2" = "Is your **utility bill** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_description_placeholder_v2" = "Is your **passport face page** clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_description_part_1_v2" = "Is your";
+"idenfy_document_camera_results_view_information_step_front_document_type_id_card_description_part_2_v2" = "front of identity card";
+"idenfy_document_camera_results_view_information_step_back_document_type_id_card_description_part_2_v2" = "back of identity card";
+"idenfy_document_camera_results_view_information_step_front_document_type_other_description_part_2_v2" = "front of document";
+"idenfy_document_camera_results_view_information_step_back_document_type_other_description_part_2_v2" = "back of document";
+"idenfy_document_camera_results_view_information_step_front_document_type_residence_permit_description_part_2_v2" = "front of residence permit";
+"idenfy_document_camera_results_view_information_step_back_document_type_residence_permit_description_part_2_v2" = "back of residence permit";
+"idenfy_document_camera_results_view_information_step_front_document_type_driver_license_description_part_2_v2" = "front of driver\'s license";
+"idenfy_document_camera_results_view_information_step_back_document_type_driver_license_description_part_2_v2" = "back of driver\'s license";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_description_part_2_v2" = "front of passport cover";
+"idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_description_part_2_v2" = "utility bill";
+"idenfy_document_camera_results_view_information_step_front_document_type_passport_description_part_2_v2" = "passport face page";
+"idenfy_document_camera_results_view_information_description_part_3_v2" = "clearly visible and in the frame?";
+
+/*Idenfy Face Camera Preview Session View V2*/
+"idenfy_face_camera_preview_session_description_v2" = "Place your face into the marked area and take a clear photo";
+"idenfy_face_camera_preview_title_v2" = "Take your face photo";
+
+/*Idenfy Face Camera Results View V2*/
+"idenfy_face_camera_results_title_v2" = "Confirm face photo";
+"idenfy_face_camera_results_description_v2" = "Is your face photo clearly visible and in the frame?";
+"idenfy_document_camera_results_view_information_step_face_description_placeholder_v2" = "Is your **face photo** clearly visible and in the frame?";
+
+/*Idenfy Document And Face Results View V2*/
+"idenfy_document_and_face_camera_results_button_retake_photo_title_v2" = "TAKE A NEW PHOTO";
+"idenfy_document_and_face_camera_results_button_next_step_title_v2" = "YES, CONTINUE";
+
+/*Upload document photo V2*/
+"idenfy_upload_results_view_information_step_front_document_type_id_card_title_v2" = "Front of identity card";
+"idenfy_upload_results_view_information_step_back_document_type_id_card_title_v2" = "Back of identity card";
+"idenfy_upload_results_view_information_step_front_document_type_other_title_v2" = "Front of document";
+"idenfy_upload_results_view_information_step_back_document_type_other_title_v2" = "Back of document";
+"idenfy_upload_results_view_information_step_front_document_type_residence_permit_title_v2" = "Front of residence permit";
+"idenfy_upload_results_view_information_step_back_document_type_residence_permit_title_v2" = "Back of residence permit";
+"idenfy_upload_results_view_information_step_front_document_type_driver_license_title_v2" = "Front of driver\'s license";
+"idenfy_upload_results_view_information_step_back_document_type_driver_license_title_v2" = "Back of driver\'s license";
+"idenfy_upload_results_view_information_step_front_document_type_passport_cover_title_v2" = "Front of passport cover";
+"idenfy_upload_results_view_information_step_front_document_type_passport_title_v2" = "Passport face page";
+"idenfy_upload_results_view_information_step_front_document_type_utility_bill_title_v2" = "Utility bill";
+"idenfy_upload_results_view_information_step_face_title_v2" = "Confirm face photo";
+"idenfy_upload_results_view_cropping_description_v2" = "Align uploaded photo into the marked area";
+"idenfy_upload_results_view_choose_another_photo_button_title_v2" = "CHOOSE ANOTHER ONE";
+"idenfy_upload_results_view_document_continue_button_title_v2" = "CONTINUE";
+
+/*Idenfy Identification Results View V2*/
+"idenfy_identification_results_identification_status_loading_title_v2" = "Analysing your verification…";
+"idenfy_identification_results_identification_status_loading_description_v2" = "Please wait while we set things up for you!";
+"idenfy_identification_results_identification_status_error_title_v2" = "Identification failed";
+"idenfy_identification_results_step_front_document_type_id_card_title_v2" = "Front of identity card";
+"idenfy_identification_results_step_back_document_type_id_card_title_v2" = "Back of identity card";
+"idenfy_identification_results_step_passport_cover_title_v2" = "Front of passport cover";
+"idenfy_identification_results_step_utility_bill_title_v2" = "Utility Bill";
+"idenfy_identification_results_step_front_document_type_passport_title_v2" = "Passport face page";
+"idenfy_identification_results_step_front_document_type_other_title_v2" = "Front of document";
+"idenfy_identification_results_step_back_document_type_other_title_v2" = "Back of document";
+"idenfy_identification_results_step_front_document_type_residence_permit_title_v2" = "Front of residence permit";
+"idenfy_identification_results_step_back_document_type_residence_permit_title_v2" = "Back of residence permit";
+"idenfy_identification_results_step_front_document_type_driver_license_title_v2" = "Front of driver\'s license";
+"idenfy_identification_results_step_back_document_type_driver_license_title_v2" = "Back of driver\'s license";
+"idenfy_identification_results_step_face" = "Face photo";
+"idenfy_identification_results_retake_button_title_v2" = "TRY AGAIN";
+"idenfy_identification_results_error_continue_button_title_v2" = "CONTINUE";
+
+/*Idenfy Identification Results Success View V2*/
+"idenfy_identification_results_success_fragment_title_v2" = "Identification succeeded";
+"idenfy_identifiaction_results_success_fragment_identified_v2" = "Identified";
+
+///*Core strings*///
+
+/*Idenfy Permissions*/
+"idenfy_permission_asks_to_provide_camera_permission_manually" = "Provide permissions manually";
+
+/*Idenfy Error messages*/
+"IDENFY_FACE_LIVENESS_MESSAGE" = "Too many times failed the liveliness check";
+"IDENFY_SERVER_ERROR_MESSAGE" = "Oops! Something went wrong.";
+"IDENFY_TOKEN_NOT_VALID_MESSAGE" = "Session expired!";
+"IDENFY_TOO_MANY_REATTEMPTS_MESSAGE" = "Too many attempts!";
+
+/*Idenfy navigation*/
+"idenfy_common_title_navigation_back" = "Back";
+
+/*Idenfy Identification Results Additional Information*/
+"idenfy_identification_results_title_additional_info_uploading_front_document_photo" = "Uploading document\'s front photo…";
+"idenfy_identification_results_title_additional_info_uploading_back_document_photo" = "Uploading document\'s back photo…";
+"idenfy_identification_results_title_additional_info_uploading_face_document_photo" = "Uploading document\'s face photo…";
+"idenfy_identification_results_title_additional_info_uploading_liveness_document_photo" = "Checking liveliness…";
+"idenfy_identification_results_title_additional_info_uploading_passport_cover_photo" = "Uploading passport cover photo…";
+"idenfy_identification_results_title_additional_info_uploading_utility_bill_photo" = "Uploading utility bill photo…";
+
+/*Idenfy Alerts*/
+
+/*Manual Reviewing Alert*/
+"idenfy_alert_positive_button_manual_reviewing_information" = "Proceed";
+"idenfy_alert_title_manual_reviewing_information" = "INFORMATION";
+"idenfy_alert_message_manual_reviewing_information" = "Because you chose a document other than an id card or passport, we are required to review your case one more time.";
+
+/*Document Analysis Alert*/
+"idenfy_alert_positive_button_document_analysis_information" = "Continue";
+"idenfy_alert_title_document_analysis_information" = "OH NO!";
+"idenfy_alert_message_document_analysis_information" = "Could not determine document type. Please select document type in the next step.";
+
+
+/*Abort Identification Alert*/
+"idenfy_alert_message_abort_identification_information" = "Are you sure you want to abort identification?";
+"idenfy_alert_title_abort_identification_information" = "Abort identification";
+"idenfy_alert_positive_button_abort_identification_information" = "YES";
+"idenfy_alert_negative_button_abort_identification_information" = "NO";
+
+/*Abort Restart Identification Alert*/
+"idenfy_alert_message_restart_identification_information" = "Are you sure you want start over?";
+"idenfy_alert_title_restart_identification_information" = "Start over";
+"idenfy_alert_positive_button_restart_identification_information" = "YES";
+"idenfy_alert_negative_button_restart_identification_information" = "NO";
+
+/*Unknown Document Analysis Alert*/
+"idenfy_document_and_face_camera_results_document_analysis_title" = "Analysing…";
+"idenfy_document_and_face_camera_results_document_analysis_description" = "Please wait a moment.";
+
+
+/*Idenfy Instruction strings */
+
+/* Passport */
+"idenfy_instructions_passport_correct_title" = "Show your passport";
+"idenfy_instructions_passport_correct_text" = "Make sure you show your passport during identification and not another document.";
+
+"idenfy_instructions_passport_mrz_title" = "Passport has MRZ area";
+"idenfy_instructions_passport_mrz_text" = "Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select OTHER DOCUMENTS in the document selection window.";
+
+"idenfy_instructions_passport_fits_frame_title" = "The passport fits in white frames";
+"idenfy_instructions_passport_fits_frame_text" = "Make sure the passport fits into white frames and does not go beyond the borders of the frame, and the document shown is not blurred and clearly legible.";
+
+"idenfy_instructions_passport_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_passport_finger_text" = "Do not cover your face or any other information in the document.";
+
+"idenfy_instructions_passport_reflection_title" = "There is no reflection of light";
+"idenfy_instructions_passport_reflection_text" = "Make sure the light reflection or document hologram does not cover the face or other important document information.";
+
+/* ID-Card front */
+"idenfy_instructions_id_front_correct_title" = "Show your ID card";
+"idenfy_instructions_id_front_correct_text" = "Make sure you show the ID card at the time of identification, not the other document.";
+
+"idenfy_instructions_id_front_fit_frame_title" = "The ID card front fits in white frames";
+"idenfy_instructions_id_front_fit_frame_text" = "Make sure the front of the ID card fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.";
+
+"idenfy_instructions_id_front_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_id_front_finger_text" = "Do not cover your face or any other information in the document.";
+
+"idenfy_instructions_id_front_reflection_title" = "There is no reflection of light";
+"idenfy_instructions_id_front_reflection_text" = "Make sure the light reflection or document hologram does not cover the face or other important document information.";
+
+/* ID-Card back */
+"idenfy_instructions_id_back_correct_title" = "Show your ID card back";
+"idenfy_instructions_id_back_correct_text" = "Make sure you are showing the back of the ID card.";
+
+"idenfy_instructions_id_back_mrz_title" = "The document has the MRZ area";
+"idenfy_instructions_id_back_mrz_text" = "Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select OTHER DOCUMENTS in the document selection window.";
+
+"idenfy_instructions_id_back_fit_frame_title" = "The back of the ID card fits in white frames";
+"idenfy_instructions_id_back_fit_frame_text" = "Make sure the back of the ID card fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.";
+
+"idenfy_instructions_id_back_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_id_back_finger_text" = "Do not cover the information in the document with your finger.";
+
+/* Residence-permit front */
+"idenfy_instructions_residence_permit_front_correct_title" = "Show your Residence permit";
+"idenfy_instructions_residence_permit_front_correct_text" = "Make sure you show the Residence permit at the time of identification, not the other document.";
+
+"idenfy_instructions_residence_permit_front_fit_frame_title" = "The Residence permit front fits in white frames";
+"idenfy_instructions_residence_permit_front_fit_frame_text" = "Make sure the front of the Residence permit fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.";
+
+"idenfy_instructions_residence_permit_front_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_residence_permit_front_finger_text" = "Do not cover your face or any other information in the document.";
+
+"idenfy_instructions_residence_permit_front_reflection_title" = "There is no reflection of light";
+"idenfy_instructions_residence_permit_front_reflection_text" = "Make sure the light reflection or document hologram does not cover the face or other important document information.";
+
+/* Residence-permit back */
+"idenfy_instructions_residence_permit_back_correct_title" = "Show the back of your Residence permit";
+"idenfy_instructions_residence_permit_back_correct_text" = "Make sure you are showing the back of the Residence permit.";
+
+"idenfy_instructions_residence_permit_back_mrz_title" = "The document has the MRZ area";
+"idenfy_instructions_residence_permit_back_mrz_text" = "Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select OTHER DOCUMENTS in the document selection window.";
+
+"idenfy_instructions_residence_permit_back_fit_frame_title" = "The back of the Residence permit fits in white frames";
+"idenfy_instructions_residence_permit_back_fit_frame_text" = "Make sure the back of the Residence permit fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.";
+
+"idenfy_instructions_residence_permit_back_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_residence_permit_back_finger_text" = "Do not cover the information in the document with your finger.";
+
+/* Driver-license front */
+"idenfy_instructions_driver_license_front_correct_title" = "Show your Driving license";
+"idenfy_instructions_driver_license_front_correct_text" = "Make sure you show the Driver license at the time of identification, not the other document.";
+
+"idenfy_instructions_driver_license_front_fit_frame_title" = "The Driving license front fits in white frames";
+"idenfy_instructions_driver_license_front_fit_frame_text" = "Make sure the front of the Driving license fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.";
+
+"idenfy_instructions_driver_license_front_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_driver_license_front_finger_text" = "Do not cover your face or any other information in the document.";
+
+"idenfy_instructions_driver_license_front_reflection_title" = "There is no reflection of light";
+"idenfy_instructions_driver_license_front_reflection_text" = "Make sure the light reflection or document hologram does not cover the face or other important document information.";
+
+/* Other documents front */
+"idenfy_instructions_other_front_mrz_title" = "Show your document that does not have MRZ";
+"idenfy_instructions_other_front_mrz_text" = "Make sure you show the document that does not have MRZ.";
+
+"idenfy_instructions_other_front_fit_frame_title" = "The front of the document fits in white frames";
+"idenfy_instructions_other_front_fit_frame_text" = "Make sure the front of the document fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and is clearly legible.";
+
+"idenfy_instructions_other_front_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_other_front_finger_text" = "Do not cover your face or any other information in the document.";
+
+"idenfy_instructions_other_front_reflection_title" = "There is no reflection of light";
+"idenfy_instructions_other_front_reflection_text" = "Make sure the light reflection or document hologram does not cover the face or other important document information.";
+
+/* Other documents back */
+"idenfy_instructions_other_back_fit_frame_title" = "The back of the document fits in white frames";
+"idenfy_instructions_other_back_fit_frame_text" = "Make sure the back of the document fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and is clearly legible.";
+
+"idenfy_instructions_other_back_finger_title" = "The finger does not cover the document";
+"idenfy_instructions_other_back_finger_text" = "Do not cover the information in the document with your finger.";
+
+/* Face camera */
+"idenfy_instructions_face_fit_frame_title" = "Face fits in white frames";
+"idenfy_instructions_face_fit_frame_text" = "Make sure your face fits into white frames.";
+
+"idenfy_instructions_face_one_face_title" = "Only one face is visible";
+"idenfy_instructions_face_one_face_text" = "Make sure, there is no other faces visible in the picture.";
+
+"idenfy_instructions_face_shadow_title" = "The face is not covered by a shadow";
+"idenfy_instructions_face_shadow_text" = "Make sure your face is well lit and there is no shadow on it.";
+
+"idenfy_instructions_face_zoom_title" = "Face fits in the frame";
+"idenfy_instructions_face_zoom_text" = "Make sure your face fits into the frame. After taking the selfie move your face closer.";
+
+/**/
+
+
+///*System specific*///
+/* <!--Camera Permission Not Enabled Alert--> */
+"idenfy_alert_title_camera_permission_not_enabled" = "Unable to access the camera";
+"idenfy_alert_message_camera_permission_not_enabled" = "To enable access, go to Settings > Privacy > Camera and turn on Camera access for this app.";
+"idenfy_alert_positive_button_camera_permission_not_enabled" = "OK";

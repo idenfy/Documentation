@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="idenfyDocumentConfirmationViewTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyDocumentConfirmationViewTitleTextColor</item>
+        <item name="android:textSize">
+            @dimen/idenfy_dimen_document_confirmation_view_information_title_text_size
+        </item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewDescriptionStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyDocumentConfirmationViewDescriptionTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewBeginIdentificationButtonStyle" parent="android:Widget.Button">
+        <item name="android:textColor">
+            @color/idenfyDocumentConfirmationViewBeginIdentificationButtonTextColor
+        </item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewDocumentStepTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyDocumentConfirmationViewDocumentStepTitleTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewDocumentStepItemNumberStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyDocumentConfirmationViewDocumentStepItemNumberTextColor
+        </item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewDocumentStepItemTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyDocumentConfirmationViewDocumentStepItemTitleTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyDocumentConfirmationViewUploadDocumentPhotoTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyDocumentConfirmationViewUploadDocumentPhotoTitleTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

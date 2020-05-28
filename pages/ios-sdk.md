@@ -2,9 +2,10 @@
 *   [Changelog](#changelog)
 *   [Getting started](#getting-started)
 *   [Callbacks](#callbacks)
-*   [Customizing flow](#customizing-flow)
-*   [Customizing results callbacks](#customizing-results-callbacks)
-*   [Customizing Strings resources](#customizing-strings-resources)
+*   [Customizing SDK V2 (optional)](#customizing-sdk-v2-optional)
+*   [Customizing SDK V1 (optional)](#customizing-sdk-v1-optional)
+*   [Customizing results callbacks V2 (optional)](#customizing-results-callbacks-v2-optional)
+*   [Customizing results callbacks V1 (optional)](#customizing-results-callbacks-v1-optional)
 *   [UI customization](#ui-customization)
 *   [Sample SDK code](#sample-sdk-code)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
@@ -13,23 +14,19 @@
 ## Changelog
 All updates will be written in this section.
 
-Our SDK versioning comforms to [Semantic Versioning 2.0.0](https://semver.org/).
+Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
-The structure of our changes follow practises from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
+The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
 
-## [2.0.0] - 2020-05-04
+## [3.0.0] - 2020-05-29
 
 ### Added:
-* Support for French, Italian and German languages. 
+* Idenfy V2 SDK flow has been released!
 
 
 ### Changed:
-* Removed previously deprecated UIWebView references from Storyboard. If custom storyboard was used for initializing SDK it will cause a **runtime crash**, because of UIWebView presence in the **FaceCameraViewController**. After upgrading the SDK, remove UIWebView reference in the **FaceCameraViewController**. 
-
-    No changes are needed if UIWebView is already removed from custom Idenfy.storyboard.
-
-* Renamed withCustomsStoryboard -> withCustomLocalStoryboard initialization method.
+* Liveliness feature has been updated to V8! Please, update your current liveliness implementation as soon as possible. The only changes are related to UI customization. More about this here.
 
 ## Getting started
 
@@ -75,7 +72,19 @@ Run `pod install` to get the SDK or `pod update` to update current iDenfySDK.
 ### 4. Configuring SDK
 
 It is required to provide following configuration:
-### Swift
+#### V2
+##### Swift
+```swift
+let idenfySettingsV2 = IdenfyBuilderV2()
+    .withAuthToken("AUTH_TOKEN")
+    .build()
+
+let idenfyController = IdenfyController.shared
+idenfyController.initializeIdenfySDKV2(idenfySettingsV2: idenfySettingsV2)
+```
+
+#### V1
+##### Swift
 ```swift
 let idenfySettings = IdenfyBuilder()
     .withAuthToken("AUTH_TOKEN")
@@ -83,11 +92,13 @@ let idenfySettings = IdenfyBuilder()
 
 let idenfyController = IdenfyController(idenfySettings: idenfySettings)
 ```
+
 ### 5. Presenting ViewController
 
 Instance of IdenfyController is required for managing iDenfy ViewController.
 Following code will present initial ViewController:
-### Swift
+#### V2, V1
+##### Swift
 ```swift
 let idenfyVC = idenfyController.instantiateNavigationController()         
 self.present(idenfyVC, animated: true, completion: nil)
@@ -99,13 +110,28 @@ SDK provides following callbacks: onSuccess, onError and onUserExit.
 
 Following method will provide callbacks from the SDK:
 
-After receiving **onSuccess or onError** response it is suggested to check status via API call.
-
+#### V1, V2
 ### Swift
 ```swift
     idenfyController.handleIDenfyCallbacks(
             onSuccess: { (AuthenticationResultResponse) in
-            //user proceeded identification. Here you would typically check for Identification status and check response using API call.
+             //user proceeded identification. Here you would typically check for Identification status to determine your application flow.
+             switch AuthenticationResultResponse.idenfyIdentificationStatus{
+                        
+                    case .APPROVED: break
+                         //user was suspected, while performing
+                        
+                    case .DENIED: break
+                        //identification was denied.
+                        
+                    case .SUSPECTED: break
+                         //identification was approved.
+                        
+                    case .REVIEWING: break
+                        //identification is still under review.
+                        
+                    }
+
             }, 
 
             onError: { (IdenfyErrorResponse) in
@@ -117,11 +143,38 @@ After receiving **onSuccess or onError** response it is suggested to check statu
             })
 ```
 
-Alternatively each callback can be listened separately, by only calling particular closure.
 
 [Additional information about error responses](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
- ## Customizing flow
+## Customizing SDK V2 (optional)
+SDK provides various options for changing identification flow. All requirements can be specified with IdenfyBuilderV2().
+
+
+### 1. Localization
+By default SDK provides following translations:
+
+- English (en) GB
+- Polish (pl) PL
+- Russian (ru) RU
+- Lithuanian (lt) LT
+- German (de) DE
+- French (fr) FR
+- Italian (it) IT
+- Latvian (lv) LV
+- Romanian (ro) RO
+
+All keys are located in [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/localization/).  You can supply partial translations, meaning if you don't include a translation to particular key, then our SDK will use default keys. In order to see changes add Idenfy.strings to your app target and changes will take effect.
+
+### 2. Forcing specific language
+The default language of SDK is selected by the language configurations of the **device**. In order to force particular locale use:
+##### Java
+```java
+    IdenfySettingsV2.IdenfyBuilderV2()
+    .withSelectedLocale(IdenfyLocaleEnum.EN)
+    ...
+```
+
+## Customizing SDK V1 (optional)
 
  SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder().
 
@@ -150,7 +203,18 @@ The default language of SDK is selected by the language configurations of the **
     ...
 ```
 
-## Customizing results callbacks
+## Customizing results callbacks V2 (optional)
+Identification results window provides sets of option to customize identification results look and interaction. For instance, if you have implemented manual callback it might be wise to disable **DENIED** or **APPROVED** views for better UI/UX. 
+
+For handling identification status yourself, **immediate redirect feature** can be applied. After enabling immediate redirect the following results will take place:
+### APPROVED screen will not be visible
+If identification was approved, user will not see successful screen. SDK will be closed while displaying a loading screen. That way you can show a success screen yourself at particular time.
+### DENIED screen will not be visible
+Denied screen will not be visible. SDK will be closed while displaying a loading screen. That way you can display a error screen yourself at particular time.
+
+*Note: For enabling immediate redirect contact support@idenfy.com.
+
+## Customizing results callbacks V1 (optional)
 
 SDK provides set of options to customize results view and callbacks handling.
 
@@ -221,27 +285,6 @@ Update idenfyBuilder to apply changes:
     ...
 ```
 
-## Customizing Strings resources
-
-SDK provides set of tools to customize strings resources used in iDenfy SDK.
-
-### 1. Including Idenfy.strings in the app target
-
-Include specific Idenfy.strings file from the Pod directory inside of your **app target**. 
-
-Ensure that localization is applied to that specific file and that **strings keys** remain default.
-
-You can supply **partial translations**. That way if some key will be missing,iDenfySDK will use default string value.
-
- ### 2. Update IdenfyBuilder
-
- Update idenfyBuilder to apply changes:
-```swift
-    IdenfyBuilder()
-    .withCustomLocalization()
-    ...
-```
-
 ## UI customization
 
 Please take a look at UI customization page:
@@ -249,7 +292,39 @@ Please take a look at UI customization page:
 
 ## Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
+#### V2
+##### Swift
+```swift
+    private func initializeIDenfySDK(authToken:String)
+    {
+        let idenfyUISettingsV2 = IdenfyUIBuilderV2()
+            .withLanguageSelection(true)
+            .build()
+        
+        let idenfySettingsV2 = IdenfyBuilderV2()
+            .withAuthToken(authToken)
+            .build()
+        
+        let idenfyController = IdenfyController.shared
+        idenfyController.initializeIdenfySDKV2(idenfySettingsV2: idenfySettingsV2)
+        
+        self.present(idenfyVC, animated: true, completion: nil)
+        idenfyController.handleIDenfyCallbacks(
+            onSuccess: { (AuthenticationResultResponse
+                ) in
+                print(AuthenticationResultResponse)
+        },
+            onError: { (IdenfyErrorResponse) in
+                print(IdenfyErrorResponse.message)
+                
+        },  onUserExit: {
+                print("user exits")
+        })
+    }
+```
 
+#### V1
+##### Swift
 ```swift
     private func initializeIDenfySDK(authToken:String)
     {
@@ -303,7 +378,9 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 
  ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
- 
+
+New major liveness version is released every 6-12 months. After major version release SDK must be updated also.
+
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
 pod 'iDenfySDK/iDenfyLiveness'

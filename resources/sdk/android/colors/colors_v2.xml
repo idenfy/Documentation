@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="idenfyBackgroundColorV2">#FBFBFB</color>
+    <color name="idenfyMainColorV2">#536DFE</color>
+    <color name="idenfySecondColorV2">#F2353B4E</color>
+    <color name="idenfyMainColor50percentV2">#80536DFE</color>
+    <color name="idenfySecondColor6percentV2">#0F353B4E</color>
+    <color name="idenfySecondColor20percentV2">#33353B4E</color>
+    <color name="idenfySecondColor50percentV2">#80353B4E</color>
+    <color name="idenfyInactiveColorV2">#EFF1F8</color>
+    <color name="idenfyStepSuccessColorV2">#5D7CE4</color>
+    <color name="idenfyStepErrorColorV2">#D32F2F</color>
+    <color name="idenfyGradientAccentV2">#8D6CFB</color>
+    <color name="idenfyFaceOvalStrokeColor">#FFFFFF</color>
+    <color name="idenfyTakePhotoButtonBackgroundFocused">#5D7CE4</color>
+    <color name="idenfyTakePhotoButtonIconUnFocused">#5D7CE4</color>
+    <color name="idenfyTransparentCameraOverlayV2">#4D000000</color>
+    <color name="idenfyDrawerCurrentInstructionIndicatorColorV2">@color/idenfyMainColorV2</color>
+    <color name="idenfyDrawerInstructionControlsTintColorV2">#FFFFFF</color>
+</resources>

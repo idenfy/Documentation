@@ -1,0 +1,34 @@
+"zoom_accessibility_torch_button" = "Toggle Light";
+"zoom_instructions_header_ready" = "Get Ready For Your Video Selfie";
+"zoom_instructions_message_ready" = "Please Frame Your Face In The Small Oval, Then The Big Oval";
+"zoom_action_ok" = "OK";
+"zoom_action_im_ready" = "I\'M READY";
+"zoom_action_take_photo" = "TAKE PHOTO";
+"zoom_action_retake_photo" = "RETAKE";
+"zoom_action_accept_photo" = "ACCEPT";
+"zoom_result_success_message" = "Success";
+"zoom_camera_permission_header" = "Enable Camera";
+"zoom_camera_permission_message_enroll" = "Please enable\nyour selfie camera.";
+"zoom_camera_permission_message_auth" = "Your camera permissions are disabled. Tap below to edit your settings.";
+"zoom_camera_permission_enable_camera" = "ENABLE CAMERA";
+"zoom_camera_permission_launch_settings" = "LAUNCH SETTINGS";
+"zoom_retry_header" = "Let\'s try that again";
+"zoom_retry_subheader_message" = "But first, please take a look at your photo and correct your environment.";
+"zoom_retry_instruction_message_1" = "Neutral Expression, No Smiling";
+"zoom_retry_instruction_message_2" = "No Glare or Extreme Lighting";
+"zoom_retry_instruction_message_3" = "";
+"zoom_retry_your_image_label" = "Your Selfie";
+"zoom_retry_ideal_image_label" = "Ideal Pose";
+"zoom_result_facemap_upload_message" = "Checking liveliness…";
+
+"zoom_feedback_center_face" = "Center Your Face";
+"zoom_feedback_face_not_found" = "Frame Your Face";
+"zoom_feedback_face_not_looking_straight_ahead" = "Look Straight Ahead";
+"zoom_feedback_face_not_upright" = "Hold Your Head Straight";
+"zoom_feedback_hold_steady" = "Hold Steady";
+"zoom_feedback_move_phone_away" = "Move Away";
+"zoom_feedback_move_phone_closer" = "Move Closer";
+"zoom_feedback_move_phone_even_closer" = "Even Closer";
+"zoom_feedback_move_phone_to_eye_level" = "Raise Camera Up To Eye Level";
+"zoom_feedback_use_even_lighting" = "Light Face More Evenly";
+

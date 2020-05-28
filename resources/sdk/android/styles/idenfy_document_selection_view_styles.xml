@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="idenfyDocumentSelectionViewTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyDocumentSelectionViewTitleTextColor</item>
+        <item name="android:textSize">
+            @dimen/idenfy_dimen_document_selection_view_information_title_text_size
+        </item>
+    </style>
+
+    <style name="idenfyDocumentSelectionViewDescriptionStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/idenfyDocumentSelectionViewDescriptionTextColor</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="idenfyDocumentSelectionViewDocumentRecyclerViewItemTitleStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">
+            @color/idenfyDocumentSelectionViewRecyclerViewItemTitleTextColor
+        </item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+</resources>

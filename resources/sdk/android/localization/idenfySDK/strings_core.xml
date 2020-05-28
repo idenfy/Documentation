@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Idenfy Permissions-->
+    <string name="idenfy_permission_asks_to_provide_camera_permission_manually">Provide permissions manually</string>
+
+    <!--Idenfy Error messages-->
+    <string name="IDENFY_FACE_LIVENESS_MESSAGE">Too many times failed the liveliness check</string>
+    <string name="IDENFY_SERVER_ERROR_MESSAGE">Oops! Something went wrong.</string>
+    <string name="IDENFY_TOKEN_NOT_VALID_MESSAGE">Session expired!</string>
+    <string name="IDENFY_TOO_MANY_REATTEMPTS_MESSAGE">Too many attempts!</string>
+
+    <!--Idenfy navigation-->
+    <string name="idenfy_common_title_navigation_back">Back</string>
+
+    <!--Idenfy Identification Results Additional Information-->
+    <string name="idenfy_identification_results_title_additional_info_uploading_front_document_photo">Uploading document\'s front photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_back_document_photo">Uploading document\'s back photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_face_document_photo">Uploading document\'s face photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_liveness_document_photo">Checking liveliness…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_passport_cover_photo">Uploading passport cover photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_utility_bill_photo">Uploading utility bill photo…</string>
+
+    <!--Idenfy Alerts-->
+
+    <!--Manual Reviewing Alert-->
+    <string name="idenfy_alert_positive_button_manual_reviewing_information">Proceed</string>
+    <string name="idenfy_alert_title_manual_reviewing_information">INFORMATION</string>
+    <string name="idenfy_alert_message_manual_reviewing_information">Because you chose a document other than an id card or passport, we are required to review your case one more time.</string>
+
+    <!--Document Analysis Alert-->
+    <string name="idenfy_alert_positive_button_document_analysis_information">Continue</string>
+    <string name="idenfy_alert_title_document_analysis_information">OH NO!</string>
+    <string name="idenfy_alert_message_document_analysis_information">Could not determine document type. Please select document type in the next step.</string>
+
+
+    <!--Abort Identification Alert-->
+    <string name="idenfy_alert_message_abort_identification_information">Are you sure you want to abort identification?</string>
+    <string name="idenfy_alert_title_abort_identification_information">Abort identification</string>
+    <string name="idenfy_alert_positive_button_abort_identification_information">YES</string>
+    <string name="idenfy_alert_negative_button_abort_identification_information">NO</string>
+
+    <!--Abort Restart Identification Alert-->
+    <string name="idenfy_alert_message_restart_identification_information">Are you sure you want start over?</string>
+    <string name="idenfy_alert_title_restart_identification_information">Start over</string>
+    <string name="idenfy_alert_positive_button_restart_identification_information">YES</string>
+    <string name="idenfy_alert_negative_button_restart_identification_information">NO</string>
+
+    <!--Unknown Document Analysis Alert-->
+    <string name="idenfy_document_and_face_camera_results_document_analysis_title">Analysing…</string>
+    <string name="idenfy_document_and_face_camera_results_document_analysis_description">Please wait a moment.</string>
+
+    <!---->
+
+    <!--Idenfy Instruction strings -->
+
+    <!-- Passport -->
+    <string name="idenfy_instructions_passport_correct_title">Show your passport</string>
+    <string name="idenfy_instructions_passport_correct_text">Make sure you show your passport during identification and not another document.</string>
+
+    <string name="idenfy_instructions_passport_mrz_title">Passport has MRZ area</string>
+    <string name="idenfy_instructions_passport_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+
+    <string name="idenfy_instructions_passport_fits_frame_title">The passport fits in white frames</string>
+    <string name="idenfy_instructions_passport_fits_frame_text">Make sure the passport fits into white frames and does not go beyond the borders of the frame, and the document shown is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_passport_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_passport_finger_text">Do not cover your face or any other information in the document.</string>
+
+    <string name="idenfy_instructions_passport_reflection_title">There is no reflection of light</string>
+    <string name="idenfy_instructions_passport_reflection_text">Make sure the light reflection or document hologram does not cover the face or other important document information.</string>
+
+    <!-- ID-Card front -->
+    <string name="idenfy_instructions_id_front_correct_title">Show your ID card</string>
+    <string name="idenfy_instructions_id_front_correct_text">Make sure you show the ID card at the time of identification, not the other document.</string>
+
+    <string name="idenfy_instructions_id_front_fit_frame_title">The ID card front fits in white frames</string>
+    <string name="idenfy_instructions_id_front_fit_frame_text">Make sure the front of the ID card fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_id_front_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_id_front_finger_text">Do not cover your face or any other information in the document.</string>
+
+    <string name="idenfy_instructions_id_front_reflection_title">There is no reflection of light</string>
+    <string name="idenfy_instructions_id_front_reflection_text">Make sure the light reflection or document hologram does not cover the face or other important document information.</string>
+
+    <!-- ID-Card back -->
+    <string name="idenfy_instructions_id_back_correct_title">Show your ID card back</string>
+    <string name="idenfy_instructions_id_back_correct_text">Make sure you are showing the back of the ID card.</string>
+
+    <string name="idenfy_instructions_id_back_mrz_title">The document has the MRZ area</string>
+    <string name="idenfy_instructions_id_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+
+    <string name="idenfy_instructions_id_back_fit_frame_title">The back of the ID card fits in white frames</string>
+    <string name="idenfy_instructions_id_back_fit_frame_text">Make sure the back of the ID card fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_id_back_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_id_back_finger_text">Do not cover the information in the document with your finger.</string>
+
+    <!-- Residence-permit front -->
+    <string name="idenfy_instructions_residence_permit_front_correct_title">Show your Residence permit</string>
+    <string name="idenfy_instructions_residence_permit_front_correct_text">Make sure you show the Residence permit at the time of identification, not the other document.</string>
+
+    <string name="idenfy_instructions_residence_permit_front_fit_frame_title">The Residence permit front fits in white frames</string>
+    <string name="idenfy_instructions_residence_permit_front_fit_frame_text">Make sure the front of the Residence permit fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_residence_permit_front_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_residence_permit_front_finger_text">Do not cover your face or any other information in the document.</string>
+
+    <string name="idenfy_instructions_residence_permit_front_reflection_title">There is no reflection of light</string>
+    <string name="idenfy_instructions_residence_permit_front_reflection_text">Make sure the light reflection or document hologram does not cover the face or other important document information.</string>
+
+    <!-- Residence-permit back -->
+    <string name="idenfy_instructions_residence_permit_back_correct_title">Show the back of your Residence permit</string>
+    <string name="idenfy_instructions_residence_permit_back_correct_text">Make sure you are showing the back of the Residence permit.</string>
+
+    <string name="idenfy_instructions_residence_permit_back_mrz_title">The document has the MRZ area</string>
+    <string name="idenfy_instructions_residence_permit_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+
+    <string name="idenfy_instructions_residence_permit_back_fit_frame_title">The back of the Residence permit fits in white frames</string>
+    <string name="idenfy_instructions_residence_permit_back_fit_frame_text">Make sure the back of the Residence permit fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_residence_permit_back_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_residence_permit_back_finger_text">Do not cover the information in the document with your finger.</string>
+
+    <!-- Driver-license front -->
+    <string name="idenfy_instructions_driver_license_front_correct_title">Show your Driving license</string>
+    <string name="idenfy_instructions_driver_license_front_correct_text">Make sure you show the Driver license at the time of identification, not the other document.</string>
+
+    <string name="idenfy_instructions_driver_license_front_fit_frame_title">The Driving license front fits in white frames</string>
+    <string name="idenfy_instructions_driver_license_front_fit_frame_text">Make sure the front of the Driving license fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and clearly legible.</string>
+
+    <string name="idenfy_instructions_driver_license_front_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_driver_license_front_finger_text">Do not cover your face or any other information in the document.</string>
+
+    <string name="idenfy_instructions_driver_license_front_reflection_title">There is no reflection of light</string>
+    <string name="idenfy_instructions_driver_license_front_reflection_text">Make sure the light reflection or document hologram does not cover the face or other important document information.</string>
+
+    <!-- Other documents front -->
+    <string name="idenfy_instructions_other_front_mrz_title">Show your document that does not have MRZ</string>
+    <string name="idenfy_instructions_other_front_mrz_text">Make sure you show the document that does not have MRZ.</string>
+
+    <string name="idenfy_instructions_other_front_fit_frame_title">The front of the document fits in white frames</string>
+    <string name="idenfy_instructions_other_front_fit_frame_text">Make sure the front of the document fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and is clearly legible.</string>
+
+    <string name="idenfy_instructions_other_front_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_other_front_finger_text">Do not cover your face or any other information in the document.</string>
+
+    <string name="idenfy_instructions_other_front_reflection_title">There is no reflection of light</string>
+    <string name="idenfy_instructions_other_front_reflection_text">Make sure the light reflection or document hologram does not cover the face or other important document information.</string>
+
+    <!-- Other documents back -->
+    <string name="idenfy_instructions_other_back_fit_frame_title">The back of the document fits in white frames</string>
+    <string name="idenfy_instructions_other_back_fit_frame_text">Make sure the back of the document fits into the white frame and does not go beyond the edges of the frame, and the document shown is not blurred and is clearly legible.</string>
+
+    <string name="idenfy_instructions_other_back_finger_title">The finger does not cover the document</string>
+    <string name="idenfy_instructions_other_back_finger_text">Do not cover the information in the document with your finger.</string>
+
+    <!-- Face camera -->
+    <string name="idenfy_instructions_face_fit_frame_title">Face fits in white frames</string>
+    <string name="idenfy_instructions_face_fit_frame_text">Make sure your face fits into white frames.</string>
+
+    <string name="idenfy_instructions_face_one_face_title">Only one face is visible</string>
+    <string name="idenfy_instructions_face_one_face_text">Make sure, there is no other faces visible in the picture.</string>
+
+    <string name="idenfy_instructions_face_shadow_title">The face is not covered by a shadow</string>
+    <string name="idenfy_instructions_face_shadow_text">Make sure your face is well lit and there is no shadow on it.</string>
+
+    <string name="idenfy_instructions_face_zoom_title">Face fits in the frame</string>
+    <string name="idenfy_instructions_face_zoom_text">Make sure your face fits into the frame. After taking the selfie move your face closer.</string>
+
+    <!---->
+
+
+</resources>

@@ -1,0 +1,56 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/idenfy_custom_country_recyclerview_item_background"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    app:layout_constraintHeight_min="56dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <ImageView
+        android:id="@+id/idenfy_iv_item_view_documents_issuing_country_selection"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/idenfy_flag_black_border"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+        android:id="@+id/idenfy_tv_item_view_documents_issuing_country_selection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:paddingEnd="50dp"
+        android:paddingRight="50dp"
+        android:text=""
+        android:theme="@style/idenfyCountrySelectionViewCountryRecyclerViewItemTitleStyle"
+        app:customfont="hkgrotesk_regular.ttf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/idenfy_iv_item_view_documents_issuing_country_selection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:underline="false" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/idenfy_guidline_item_view_documents_issuing_country_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="59dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

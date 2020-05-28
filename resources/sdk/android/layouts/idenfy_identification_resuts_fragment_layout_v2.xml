@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/idenfyIdentificationResultsViewBackgroundColor"
+    android:clickable="true"
+    android:focusable="true"
+    android:animateLayoutChanges="false"
+    android:focusableInTouchMode="true">
+
+    <include layout="@layout/idenfy_app_bar_layout_default_v2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/idenfy_title_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/idenfyIdentificationResultsViewBackgroundColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+
+        <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:id="@+id/idenfy_tv_results_view_title"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:theme="@style/idenfyIdentificationResultsViewTitleStyle"
+            app:customfont="hkgrotesk_bold.ttf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:id="@+id/idenfy_tv_results_view_description"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="@string/idenfy_identification_results_identification_status_loading_description_v2"
+            android:textAlignment="center"
+            android:theme="@style/idenfyIdentificationResultsViewDescriptionStyle"
+            app:customfont="hkgrotesk_regular.ttf"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_tv_results_view_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idenfy_rv_result_steps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:fadeScrollbars="false"
+        android:overScrollMode="never"
+        android:scrollbarSize="5dip"
+        android:scrollbarThumbVertical="@color/idenfyIdentificationResultsViewDocumentStepScrollBarThumbColor"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_btn_retake_steps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout" />
+
+    <com.idenfy.idenfySdk.uicomponents.IDenfyButton
+        android:id="@+id/idenfy_btn_retake_steps"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/idenfy_ic_gradient_button_background"
+        android:gravity="center"
+        android:text="@string/idenfy_identification_results_retake_button_title_v2"
+        android:theme="@style/idenfyIdentificationResultsViewRetakeButtonStyle"
+        android:visibility="gone"
+        app:customfont="hkgrotesk_bold.ttf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/idenfy_iv_results_mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/idenfy_results_view_gradient_foreground"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_rv_result_steps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_rv_result_steps">
+
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
