@@ -2,9 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/idenfy_constraintLayout_instructions_top_sheet_root"
+    android:id="@+id/idenfy_constraintlayout_camera_session_instructions_top_sheet_layout_root"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:background="@drawable/idenfy_custom_drawable_instructions_background_without_rounded_corners"
     android:fillViewport="true"
@@ -14,16 +13,16 @@
     tools:ignore="MissingPrefix">
 
     <include
-        layout="@layout/idenfy_view_instructions_top_sheet_layout_v2"
+        layout="@layout/idenfy_partial_layout_camera_session_instructions_topsheet_v2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="150dp"
         android:fitsSystemWindows="true"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_iv_instructions_expand_top_layout" />
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_camera_session_instructions_expand_button" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/idenfy_iv_instructions_expand_top_layout"
+        android:id="@+id/idenfy_imageview_camera_session_instructions_expand_button"
         android:layout_width="wrap_content"
         android:layout_height="16dp"
         android:layout_marginStart="8dp"
@@ -33,14 +32,14 @@
         android:layout_marginBottom="4dp"
         android:adjustViewBounds="true"
         android:padding="2dp"
-        android:tint="@color/idenfyDocumentCameraPreviewSessionExpandButtonTintColor"
+        android:tint="@color/idenfyFaceCameraPreviewSessionExpandButtonTintColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/idenfy_ic_instructions_arrow_expand_more" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_tv_instructions_current_instruction_content"
+        android:id="@+id/idenfy_textview_camera_session_instructions_current_title_root"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -50,16 +49,16 @@
         android:gravity="center"
         android:text=""
         android:textAlignment="center"
-        android:theme="@style/idenfyDocumentCameraPreviewSessionCurrentInstructionContentStyle"
+        android:theme="@style/idenfyFaceCameraPreviewSessionCurrentInstructionContentStyle"
         android:visibility="invisible"
         app:customfont="hkgrotesk_regular.ttf"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_iv_instructions_expand_top_layout"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_imageview_camera_session_instructions_expand_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_instructions_top_sheet_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_camera_session_instructions_top_sheet_layout" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_tv_camera_title"
+        android:id="@+id/idenfy_textview_camera_session_instructions_information_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -67,17 +66,16 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:gravity="center"
-        android:text="Take your face photo"
         android:textAlignment="center"
-        android:theme="@style/idenfyDocumentCameraPreviewTitleStyle"
+        android:theme="@style/idenfyFaceCameraPreviewTitleStyle"
         app:customfont="hkgrotesk_bold.ttf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/top_safe_guidline" />
+        app:layout_constraintTop_toTopOf="@+id/idenfy_guideline_instructions_camera_session_max_collapsed_drawer_height" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/camera_session_information_text_view_with_instructions"
+        android:id="@+id/idenfy_textview_camera_session_instructions_information_description"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center_vertical"
@@ -88,24 +86,31 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="2dp"
         android:gravity="center"
-        android:text="Content"
         android:textAlignment="center"
-        android:theme="@style/idenfyDocumentCameraPreviewDescriptionStyle"
+        android:theme="@style/idenfyFaceCameraPreviewDescriptionStyle"
         android:visibility="visible"
         app:customfont="hkgrotesk_regular.ttf"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_tv_instructions_current_instruction_content"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_imageview_camera_session_instructions_expand_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_tv_camera_title"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_camera_session_instructions_information_title"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/top_safe_guidline"
+        android:id="@+id/idenfy_guideline_instructions_camera_session_max_collapsed_drawer_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/idenfy_dimen_document_and_face_camera_session_view_information_view_bottom_margin_from_guidline"
-        tools:ignore="DuplicateIds" />
+        app:layout_constraintGuide_end="@dimen/idenfy_dimen_document_and_face_camera_session_view_information_view_bottom_margin_from_guideline" />
+
+
+    <View
+        android:id="@+id/idenfy_view_instructions_camera_session_liveness_mask_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/idenfyFaceCameraPreviewSessionInstructionLivenessMaskColor"
+        android:visibility="gone" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

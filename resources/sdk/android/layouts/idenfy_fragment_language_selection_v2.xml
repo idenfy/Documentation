@@ -10,19 +10,19 @@
     android:focusable="true">
 
 
-    <include layout="@layout/idenfy_app_bar_layout_with_close_button_v2" />
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_with_close_button_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_common_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/select_your_document_issuing_country"
+            android:id="@+id/idenfy_textview_common_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -42,7 +42,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idenfy_language_selection_recycler_view"
+        android:id="@+id/idenfy_recyclerview_language_selection"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -57,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_common_information"
         tools:visibility="visible" />
 
 

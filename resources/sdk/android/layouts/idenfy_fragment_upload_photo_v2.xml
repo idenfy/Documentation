@@ -9,7 +9,7 @@
     android:focusableInTouchMode="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_upload_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/idenfy_dimen_document_and_face_photo_results_view_information_view_top_margin"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/upload_document_photo_title"
+            android:id="@+id/idenfy_textview_upload_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -35,7 +35,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/upload_document_photo_description"
+            android:id="@+id/idenfy_textview_upload_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -45,12 +45,12 @@
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/upload_document_photo_title"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_upload_information_title"
             android:gravity="center" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/backImage"
+        android:id="@+id/idenfy_imageview_upload_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -65,7 +65,7 @@
         app:srcCompat="@drawable/ic_idenfy_ic_navigation_back_v2" />
 
     <ImageView
-        android:id="@+id/idenfy_uploaded_photo_imageview"
+        android:id="@+id/idenfy_imageview_uploaded_photo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -77,23 +77,23 @@
         android:adjustViewBounds="true"
         android:background="@drawable/idenfy_ic_document_cropping_imageview_corners"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_guidline_upload_percents_77"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_guideline_upload_percents_77"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_upload_information" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/idenfy_cardview_photo_result"
+        android:id="@+id/idenfy_cardview_upload_photo_result"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:cardBackgroundColor="@color/idenfyUploadPhotoViewCroppingBorderColor"
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
         app:cardPreventCornerOverlap="false"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_uploaded_photo_imageview"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_uploaded_photo_imageview"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_uploaded_photo_imageview"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_uploaded_photo_imageview">
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_uploaded_photo"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_imageview_uploaded_photo"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_imageview_uploaded_photo"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_uploaded_photo">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -109,7 +109,7 @@
             app:cardPreventCornerOverlap="false">
 
             <com.github.ybq.android.spinkit.SpinKitView
-                android:id="@+id/idenfy_photo_loading_spinner"
+                android:id="@+id/idenfy_spinkitview_upload_photo_loading_spinner"
                 style="@style/SpinKitView.Large.Circle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,8 +120,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.idenfy.idenfySdk.instacropper.InstaCropperView
-                android:id="@+id/idenfy_document_photo_cropper"
+            <com.idenfy.idenfySdk.uicomponents.uploadviewcropping.InstaCropperView
+                android:id="@+id/idenfy_instacropperview_upload"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -135,7 +135,7 @@
 
 
     <com.idenfy.idenfysdk.core.ui.customviews.CustomViewHolder
-        android:id="@+id/idenfy_custom_viewholder"
+        android:id="@+id/idenfy_customviewholder_upload"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="2dp"
@@ -145,33 +145,32 @@
         android:layout_marginRight="2dp"
         android:layout_marginBottom="2dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_cardview_photo_result"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_cardview_photo_result"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_cardview_photo_result"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_cardview_photo_result" />
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_cardview_upload_photo_result"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_cardview_upload_photo_result"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_cardview_upload_photo_result"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_cardview_upload_photo_result" />
 
     <ImageView
-        android:id="@+id/idenfy_cropping_rectangle"
+        android:id="@+id/idenfy_imageview_upload_cropping_rectangle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_cardview_photo_result"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_cardview_photo_result"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_cardview_upload_photo_result"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_cardview_upload_photo_result"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/idenfy_ic_camera_rectangle_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/continue_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_cardview_photo_result">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_cardview_upload_photo_result">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/idenfy_choose_another_photo_button"
+            android:id="@+id/idenfy_imageview_upload_choose_another_photo"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="32dp"
@@ -184,7 +183,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_upload_continue_button"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_button_upload_continue"
             app:srcCompat="@drawable/idenfy_ic_retake_photo_button_v2" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
@@ -194,13 +193,13 @@
             android:text="@string/idenfy_upload_results_view_choose_another_photo_button_title_v2"
             android:theme="@style/idenfyUploadPhotoViewChooseAnotherPhotoButtonTitleStyle"
             app:customfont="hkgrotesk_bold.ttf"
-            app:layout_constraintBottom_toBottomOf="@+id/idenfy_choose_another_photo_button"
-            app:layout_constraintEnd_toEndOf="@+id/idenfy_choose_another_photo_button"
-            app:layout_constraintStart_toStartOf="@+id/idenfy_choose_another_photo_button"
-            app:layout_constraintTop_toTopOf="@+id/idenfy_choose_another_photo_button" />
+            app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_upload_choose_another_photo"
+            app:layout_constraintEnd_toEndOf="@+id/idenfy_imageview_upload_choose_another_photo"
+            app:layout_constraintStart_toStartOf="@+id/idenfy_imageview_upload_choose_another_photo"
+            app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_upload_choose_another_photo" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyButton
-            android:id="@+id/idenfy_upload_continue_button"
+            android:id="@+id/idenfy_button_upload_continue"
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="32dp"
@@ -221,7 +220,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/idenfy_guidline_upload_percents_77"
+        android:id="@+id/idenfy_guideline_upload_percents_77"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

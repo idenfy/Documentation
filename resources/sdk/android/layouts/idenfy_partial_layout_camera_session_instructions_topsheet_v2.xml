@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/idenfy_instructions_top_sheet_layout"
+    android:id="@+id/idenfy_constraintlayout_camera_session_instructions_top_sheet_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/idenfy_tabLayout_instructions_viewpager_dots"
+        android:id="@+id/idenfy_tablayout_camera_session_instructions_viewpager_dots"
         android:background="@android:color/transparent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_view_pager_instructions"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_view_pager_instructions"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_view_pager_instructions"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_viewpager_camera_session_instructions"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_viewpager_camera_session_instructions"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_viewpager_camera_session_instructions"
         app:tabBackground="@drawable/idenfy_custom_drawable_instructions_tab_selector_v2"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
         app:tabMaxWidth="15dp" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/idenfy_view_pager_instructions"
+        android:id="@+id/idenfy_viewpager_camera_session_instructions"
         android:layout_width="300dp"
         android:layout_height="300dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_collapseMode="parallax"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_iv_instructions_previous_page_button"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_imageview_camera_session_instructions_previous_page_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -34,47 +34,47 @@
     </androidx.viewpager.widget.ViewPager>
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_tv_instructions_current_instruction_title"
+        android:id="@+id/idenfy_textview_camera_session_instructions_current_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:textAlignment="center"
         android:theme="@style/idenfyInstructionCurrentInstructionContentTitleColor"
         app:customfont="hkgrotesk_bold.ttf"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_view_pager_instructions"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_view_pager_instructions"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_view_pager_instructions"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_viewpager_camera_session_instructions"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_viewpager_camera_session_instructions"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_viewpager_camera_session_instructions"
         android:gravity="center_horizontal" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/idenfy_iv_instructions_next_page_button"
+        android:id="@+id/idenfy_imageview_camera_session_instructions_next_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tint="@color/idenfyInstructionNextInstructionPageButtonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/idenfy_tabLayout_instructions_viewpager_dots"
+        app:layout_constraintStart_toEndOf="@+id/idenfy_tablayout_camera_session_instructions_viewpager_dots"
         app:srcCompat="@drawable/idenfy_ic_instructions_viewpager_next" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/idenfy_iv_instructions_previous_page_button"
+        android:id="@+id/idenfy_imageview_camera_session_instructions_previous_page_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tint="@color/idenfyInstructionPreviousInstructionPageButtonColor"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/idenfy_tabLayout_instructions_viewpager_dots"
+        app:layout_constraintEnd_toStartOf="@+id/idenfy_tablayout_camera_session_instructions_viewpager_dots"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/idenfy_ic_instructions_viewpager_previous" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/idenfy_iv_instructions_done_button"
+        android:id="@+id/idenfy_imageview_camera_session_instructions_done_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tint="@color/idenfyInstructionDoneInstructionPageButtonColor"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/idenfy_tabLayout_instructions_viewpager_dots"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_view_pager_instructions"
+        app:layout_constraintStart_toEndOf="@+id/idenfy_tablayout_camera_session_instructions_viewpager_dots"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_viewpager_camera_session_instructions"
         app:srcCompat="@drawable/idenfy_ic_instructions_viewpager_done" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

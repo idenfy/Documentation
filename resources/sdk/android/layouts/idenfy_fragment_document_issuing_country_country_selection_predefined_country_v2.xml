@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
@@ -10,19 +9,19 @@
     android:focusable="true">
 
 
-    <include layout="@layout/idenfy_app_bar_layout_default_v2_with_language_selection" />
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_with_language_selection_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_common_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_country_predefined_information_title"
+            android:id="@+id/idenfy_textview_common_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,7 +30,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="center"
-            android:text="@string/idenfy_start_identification_predefined_view_information_title_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyCountrySelectionPredefinedViewTitleStyle"
             app:customfont="hkgrotesk_bold.ttf"
@@ -40,25 +38,24 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_country_predefined_information_description"
+            android:id="@+id/idenfy_textview_common_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:gravity="center"
-            android:text="@string/idenfy_start_identification_predefined_view_information_description_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyCountrySelectionPredefinedViewDescriptionStyle"
-            android:visibility="visible"
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_country_predefined_information_title" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_common_information_title"
+            android:gravity="center" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <include
-        android:id="@+id/idenfy_item_view_predefined_country"
-        layout="@layout/idenfy_item_view_documents_issuing_country_selection_v2"
+        android:id="@+id/idenfy_item_view_issuing_country_selection_predefined_country"
+        layout="@layout/idenfy_item_document_issuing_country_selection_predefined_country_v2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -69,10 +66,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_common_information" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyButton
-        android:id="@+id/idenfy_button_start_identity_verification"
+        android:id="@+id/idenfy_button_issuing_country_selection_predefined_country_start_identification"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -88,8 +85,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

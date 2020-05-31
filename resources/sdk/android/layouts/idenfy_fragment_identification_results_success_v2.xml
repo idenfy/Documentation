@@ -8,20 +8,19 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <include layout="@layout/idenfy_app_bar_layout_no_back_button_v2" />
-
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_without_back_button_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_common_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/idenfyIdentificationSuccessResultsViewBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_results_view_success_title"
+            android:id="@+id/idenfy_textview_common_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -30,7 +29,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="center"
-            android:text="@string/idenfy_identification_results_success_fragment_title_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyIdentificationSuccessResultsViewTitleStyle"
             app:customfont="hkgrotesk_bold.ttf"
@@ -39,32 +37,32 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_results_view_success_description"
+            android:id="@+id/idenfy_textview_common_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/idenfy_identification_results_success_fragment_description_v2"
+            android:layout_marginTop="24dp"
             android:textAlignment="center"
             android:theme="@style/idenfyIdentificationSuccessResultsViewDescriptionStyle"
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_results_view_success_title"
-            android:gravity="center_horizontal" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_common_information_title"
+            android:gravity="center" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_results_view_success_center_layout"
+        android:id="@+id/idenfy_constraintlayout_identification_results_view_success"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/idenfyIdentificationSuccessResultsViewBackgroundColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_title_layout">
+        app:layout_constraintTop_toTopOf="@+id/idenfy_constraintlayout_common_information">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/idenfy_results_view_success_image"
+            android:id="@+id/idenfy_imageview_identification_results_view_success"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +71,7 @@
             app:srcCompat="@drawable/idenfy_ic_results_success_layout_image" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+            android:id="@+id/idenfy_textview_identification_results_view_success"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -81,7 +80,7 @@
             app:customfont="hkgrotesk_bold.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_results_view_success_image" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_imageview_identification_results_view_success" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

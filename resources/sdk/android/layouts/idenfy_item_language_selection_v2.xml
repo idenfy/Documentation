@@ -2,52 +2,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="56dp"
-    android:background="@drawable/idenfy_custom_document_recyclerview_item_background"
+    android:background="@drawable/idenfy_language_selection_recyclerview_item_background"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
 
     <ImageView
-        android:id="@+id/idenfy_document_icon"
-        android:layout_width="42dp"
+        android:id="@+id/idenfy_imageview_language_selection_item_tick"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:adjustViewBounds="true"
-        android:maxHeight="40dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/idenfy_ic_documents_type_selection_driver_license_v2" />
+        app:srcCompat="@drawable/ic_idenfy_ic_language_selection_language_selected_tick" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_document_text_view"
+        android:id="@+id/idenfy_textview_language_selection_item_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_weight="1"
         android:padding="5dp"
         android:paddingRight="50dp"
         android:text=""
-        android:theme="@style/idenfyDocumentSelectionViewDocumentRecyclerViewItemTitleStyle"
+        android:theme="@style/idenfyLanguageSelectionViewLanguageRecyclerViewItemTitleStyle"
         app:customfont="hkgrotesk_regular.ttf"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/idenfy_document_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:underline="false" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/idenfy_guidline_item_view_documents_issuing_country_selection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="56dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

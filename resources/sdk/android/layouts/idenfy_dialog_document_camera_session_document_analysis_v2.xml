@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/white"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -16,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/progress_bar"
+            android:id="@+id/idenfy_lottieanimationview_dialog_document_camera_session_document_analyzation_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -26,14 +25,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_dialog_document_camera_session_document_analyzation_loading_description"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/idenfy_loading_indicator_six_digits" />
 
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/title"
+            android:id="@+id/idenfy_textview_dialog_document_camera_session_document_analyzation_loading_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -51,7 +50,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/description"
+            android:id="@+id/idenfy_textview_dialog_document_camera_session_document_analyzation_loading_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -66,7 +65,7 @@
             app:customfont="hkgrotesk_bold.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_dialog_document_camera_session_document_analyzation_loading_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

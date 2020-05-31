@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="false"
-    android:id="@+id/idenfy_layout_activity_main_root"
+    android:id="@+id/idenfy_coordinatorlayout_main_fragments_container"
     android:orientation="vertical">
 
 
-    <include layout="@layout/idenfy_content_main_layout_v2" />
+    <include layout="@layout/idenfy_fragment_documents_type_selection_v2" />
 
     <FrameLayout
-        android:id="@+id/idenfy_fragment_container_activity_main_layout"
+        android:id="@+id/idenfy_framelayout_main_fragments_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

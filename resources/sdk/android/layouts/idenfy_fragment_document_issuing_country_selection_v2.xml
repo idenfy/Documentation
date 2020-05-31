@@ -10,19 +10,19 @@
     android:focusable="true">
 
 
-    <include layout="@layout/idenfy_app_bar_layout_default_v2_with_language_selection" />
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_with_language_selection_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_common_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/select_your_document_issuing_country"
+            android:id="@+id/idenfy_textview_common_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -31,7 +31,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="center"
-            android:text="@string/idenfy_country_selection_view_information_title_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyCountrySelectionViewTitleStyle"
             app:customfont="hkgrotesk_bold.ttf"
@@ -40,21 +39,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/select_your_document_issuing_country_description"
+            android:id="@+id/idenfy_textview_common_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/idenfy_country_selection_view_information_description_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyCountrySelectionViewDescriptionStyle"
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_your_document_issuing_country" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_common_information_title"
+            android:gravity="center" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/select_country_hint"
+        android:id="@+id/idenfy_textview_issuing_country_selection_select_country_hint"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/idenfyCountrySelectionViewCountrySearchBarBackgroundColor"
@@ -64,32 +64,32 @@
         android:text="@string/idenfy_country_selection_view_searchbar_hint_v2"
         android:theme="@style/idenfyCountrySelectionViewCountrySearchBarHintStyle"
         app:customfont="hkgrotesk_regular.ttf"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_search_view_documents_issuing_country"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_search_view_documents_issuing_country"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_searchview_issuing_country_selection_select_country"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_searchview_issuing_country_selection_select_country"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_search_view_documents_issuing_country"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_search_view_documents_issuing_country" />
+        app:layout_constraintStart_toStartOf="@+id/idenfy_searchview_issuing_country_selection_select_country"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_searchview_issuing_country_selection_select_country" />
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/idenfy_search_view_documents_issuing_country"
+        android:id="@+id/idenfy_searchview_issuing_country_selection_select_country"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/idenfy_custom_country_searchview_background"
         android:paddingStart="-5dp"
         android:paddingLeft="-5dp"
-        android:queryBackground="@android:color/transparent"
         android:theme="@style/idenfyCountrySelectionViewCountrySearchBarStyle"
         app:closeIcon="@null"
         app:iconifiedByDefault="false"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_common_information"
         app:queryBackground="@android:color/transparent"
         app:searchIcon="@null" />
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/idenfy_imageview_issuing_country_selection_select_country_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -97,13 +97,13 @@
         android:clickable="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        app:layout_constraintBottom_toBottomOf="@+id/select_country_hint"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
-        app:layout_constraintTop_toTopOf="@+id/select_country_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_textview_issuing_country_selection_select_country_hint"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_textview_issuing_country_selection_select_country_hint"
         app:srcCompat="@drawable/idenfy_ic_country_search" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idenfy_documents_issuing_country_selection_recycler_view"
+        android:id="@+id/idenfy_recyclerview_issuing_country_selection_select"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -119,21 +119,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_search_view_documents_issuing_country"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_searchview_issuing_country_selection_select_country"
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/recycler_view_mask"
+        android:id="@+id/idenfy_constraintlayout_issuing_country_selection_mask"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:clickable="true"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_documents_issuing_country_selection_recycler_view"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_documents_issuing_country_selection_recycler_view" />
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_recyclerview_issuing_country_selection_select"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_recyclerview_issuing_country_selection_select" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

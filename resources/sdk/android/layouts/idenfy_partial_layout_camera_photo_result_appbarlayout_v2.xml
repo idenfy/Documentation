@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/idenfy_app_bar_layout_activity_main_root"
+        android:id="@+id/idenfy_appbarlayout_common"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/idenfyBackgroundColorV2"
@@ -14,13 +14,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/idenfy_toolbar_activity_main_root"
+            android:id="@+id/idenfy_toolbar_common"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentInsetStart="0dp"
-            android:contentInsetLeft="0dp"
-            android:contentInsetEnd="0dp"
-            android:contentInsetRight="0dp"
             app:contentInsetEnd="0dp"
             app:contentInsetLeft="0dp"
             app:contentInsetRight="0dp"
@@ -32,7 +28,7 @@
                 android:layout_height="60dp">
 
                 <ImageView
-                    android:id="@+id/idenfy_logo"
+                    android:id="@+id/idenfy_imageview_common_idenfylogo"
                     android:layout_width="70.5dp"
                     android:layout_height="26dp"
                     android:visibility="gone"
@@ -44,7 +40,7 @@
                     app:srcCompat="@drawable/ic_idenfy_logo_vector_v2" />
 
                 <ImageView
-                    android:id="@+id/backImage"
+                    android:id="@+id/idenfy_imageview_common_back_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="16dp"
@@ -59,7 +55,7 @@
                     app:srcCompat="@drawable/ic_idenfy_ic_navigation_back_v2" />
 
                 <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-                    android:id="@+id/back_text_view"
+                    android:id="@+id/idenfy_textview_camera_session_back_title"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:gravity="center"
@@ -69,9 +65,9 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:visibility="gone"
-                    app:layout_constraintBottom_toBottomOf="@+id/backImage"
-                    app:layout_constraintStart_toEndOf="@+id/backImage"
-                    app:layout_constraintTop_toTopOf="@+id/backImage" />
+                    app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_common_back_button"
+                    app:layout_constraintStart_toEndOf="@+id/idenfy_imageview_common_back_button"
+                    app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_common_back_button" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 

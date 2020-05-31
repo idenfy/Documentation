@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/idenfy_appbarlayout_common"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/idenfyCameraPreviewSessionAppBarBackgroundColor"
+        android:theme="@style/IdenfyTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/idenfy_toolbar_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/idenfy_imageview_common_idenfylogo"
+                    android:layout_width="70.5dp"
+                    android:layout_height="26dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6"
+                    app:srcCompat="@drawable/ic_idenfy_logo_vector_v2" />
+
+                <ImageView
+                    android:id="@+id/idenfy_imageview_common_back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp"
+                    android:tint="@color/idenfyCameraPreviewSessionAppBarBackButtonTintColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_idenfy_ic_navigation_back_v2" />
+
+                <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
+                    android:id="@+id/idenfy_textview_camera_session_back_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="@string/idenfy_common_title_navigation_back"
+                    android:textAlignment="center"
+                    android:textColor="@color/idenfyCameraPreviewSessionAppBarBackButtonTextColor"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_common_back_button"
+                    app:layout_constraintStart_toEndOf="@+id/idenfy_imageview_common_back_button"
+                    app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_common_back_button" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</merge>

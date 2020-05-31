@@ -9,19 +9,19 @@
     android:animateLayoutChanges="false"
     android:focusableInTouchMode="true">
 
-    <include layout="@layout/idenfy_app_bar_layout_default_v2" />
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_identification_results_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/idenfyIdentificationResultsViewBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_tv_results_view_title"
+            android:id="@+id/idenfy_textview_identification_results_information_title"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_tv_results_view_description"
+            android:id="@+id/idenfy_textview_identification_results_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -53,11 +53,11 @@
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_tv_results_view_title" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_identification_results_information_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idenfy_rv_result_steps"
+        android:id="@+id/idenfy_recyclerview_identification_results_steps"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -67,13 +67,13 @@
         android:scrollbarSize="5dip"
         android:scrollbarThumbVertical="@color/idenfyIdentificationResultsViewDocumentStepScrollBarThumbColor"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_btn_retake_steps"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_button_identification_results_retake_identification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_identification_results_information" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyButton
-        android:id="@+id/idenfy_btn_retake_steps"
+        android:id="@+id/idenfy_button_identification_results_retake_identification"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -92,14 +92,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/idenfy_iv_results_mask"
+        android:id="@+id/idenfy_imageview_identification_results_mask"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/idenfy_results_view_gradient_foreground"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_rv_result_steps"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_recyclerview_identification_results_steps"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_rv_result_steps">
+        app:layout_constraintTop_toTopOf="@+id/idenfy_recyclerview_identification_results_steps">
 
     </ImageView>
 

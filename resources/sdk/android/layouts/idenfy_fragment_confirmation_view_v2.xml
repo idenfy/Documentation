@@ -9,19 +9,19 @@
     android:focusable="true"
     android:focusableInTouchMode="true">
 
-    <include layout="@layout/idenfy_app_bar_layout_default_v2" />
+    <include layout="@layout/idenfy_partial_layout_common_appbarlayout_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_common_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/idenfyDocumentConfirmationViewBackgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_app_bar_layout_activity_main_root">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_appbarlayout_common">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/confirm_document_type_title"
+            android:id="@+id/idenfy_textview_common_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -30,7 +30,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:gravity="center"
-            android:text="@string/idenfy_confirmation_view_information_title_v2"
             android:textAlignment="center"
             android:theme="@style/idenfyDocumentConfirmationViewTitleStyle"
             app:customfont="hkgrotesk_bold.ttf"
@@ -39,22 +38,23 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/confirm_document_type_description"
+            android:id="@+id/idenfy_textview_common_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:textAlignment="center"
-            android:gravity="center_horizontal"
             android:theme="@style/idenfyDocumentConfirmationViewDescriptionStyle"
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirm_document_type_title" />
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_common_information_title"
+            android:gravity="center" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyButton
-        android:id="@+id/idenfy_confirmaiton_begin_identification_button"
+        android:id="@+id/idenfy_button_confirmation_view_begin_identification"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -72,7 +72,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ScrollView
-        android:id="@+id/confirmationScrollView"
+        android:id="@+id/idenfy_scrollview_confirmation_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fadeScrollbars="false"
@@ -81,38 +81,38 @@
         android:scrollbarSize="5dip"
         android:scrollbarThumbVertical="@color/idenfyDocumentConfirmationViewContentScrollBarThumbColor"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/idenfy_confirmaiton_begin_identification_button"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_button_confirmation_view_begin_identification"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_common_information">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/idenfy_guidline_confirmation_percents_05"
+                android:id="@+id/idenfy_guideline_confirmation_percents_05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.4" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/idenfy_document_type_circle"
+                android:id="@+id/idenfy_imageview_confirmation_view_selected_document_type_circle"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:minWidth="100dp"
                 android:minHeight="100dp"
-                app:layout_constraintBottom_toTopOf="@+id/idenfy_guidline_confirmation_percents_05"
+                app:layout_constraintBottom_toTopOf="@+id/idenfy_guideline_confirmation_percents_05"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/idenfy_ic_confirmation_document_circle" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/idenfy_document_type_image"
+                android:id="@+id/idenfy_imageview_confirmation_view_selected_document_type_image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="24dp"
@@ -121,14 +121,14 @@
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginBottom="24dp"
-                app:layout_constraintBottom_toBottomOf="@+id/idenfy_document_type_circle"
-                app:layout_constraintEnd_toEndOf="@+id/idenfy_document_type_circle"
-                app:layout_constraintStart_toStartOf="@+id/idenfy_document_type_circle"
-                app:layout_constraintTop_toTopOf="@+id/idenfy_document_type_circle"
+                app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_confirmation_view_selected_document_type_circle"
+                app:layout_constraintEnd_toEndOf="@+id/idenfy_imageview_confirmation_view_selected_document_type_circle"
+                app:layout_constraintStart_toStartOf="@+id/idenfy_imageview_confirmation_view_selected_document_type_circle"
+                app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_confirmation_view_selected_document_type_circle"
                 app:srcCompat="@drawable/idenfy_ic_documents_type_selection_driver_license_v2" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/idenfy_document_step_layout"
+                android:id="@+id/idenfy_constraintlayout_confirmation_view_selected_document_type_steps"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -137,14 +137,14 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/idenfy_confirmation_upload_layout"
+                app:layout_constraintBottom_toTopOf="@+id/idenfy_constraintlayout_confirmation_view_upload"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/idenfy_guidline_confirmation_percents_05">
+                app:layout_constraintTop_toTopOf="@+id/idenfy_guideline_confirmation_percents_05">
 
                 <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-                    android:id="@+id/idenfy_confirmation_step_title"
+                    android:id="@+id/idenfy_textview_confirmation_view_selected_document_type_steps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -156,7 +156,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/idenfy_confirmation_step_recylerview"
+                    android:id="@+id/idenfy_recyclerview_confirmation_view_selected_document_type_steps"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -165,25 +165,25 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/idenfy_confirmation_step_title"
-                    tools:listitem="@layout/idenfy_item_view_confirmation_step_recycleview_v2" />
+                    app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_confirmation_view_selected_document_type_steps"
+                    tools:listitem="@layout/idenfy_item_confirmation_view_step_v2" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/idenfy_confirmation_upload_layout"
+                android:id="@+id/idenfy_constraintlayout_confirmation_view_upload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/idenfy_guidline_confirmation_percents_05"
+                app:layout_constraintTop_toTopOf="@+id/idenfy_guideline_confirmation_percents_05"
                 app:layout_constraintVertical_bias="0.95">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/idenfy_confirmation_upload_photo_image"
+                    android:id="@+id/idenfy_imageview_confirmation_view_upload"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +192,7 @@
                     app:srcCompat="@drawable/idenfy_ic_confirmation_upload_photo" />
 
                 <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-                    android:id="@+id/idenfy_confirmation_upload_photo_title"
+                    android:id="@+id/idenfy_textview_confirmation_view_upload_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -202,7 +202,7 @@
                     app:customfont="hkgrotesk_regular.ttf"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/idenfy_confirmation_upload_photo_image" />
+                    app:layout_constraintTop_toBottomOf="@+id/idenfy_imageview_confirmation_view_upload" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -211,14 +211,14 @@
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/idenfy_confirmation_view_mask"
+        android:id="@+id/idenfy_imageview_confirmation_view_mask"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/idenfy_confirmation_view_gradient_foreground"
-        app:layout_constraintBottom_toBottomOf="@+id/confirmationScrollView"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_scrollview_confirmation_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/confirmationScrollView"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout">
+        app:layout_constraintStart_toStartOf="@+id/idenfy_scrollview_confirmation_view"
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_common_information">
 
     </androidx.appcompat.widget.AppCompatImageView>
 

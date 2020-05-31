@@ -19,38 +19,38 @@
         app:srcCompat="@drawable/idenfy_ic_gradient_splash_screen_background_drawable_v2" />
 
     <ImageView
-        android:id="@+id/idenfy_iv_splash_screen_icon"
+        android:id="@+id/idenfy_imageview_splash_screen_icon"
         android:layout_width="100dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_38"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_guideline_splash_screen_horizontal_38"
         app:srcCompat="@drawable/idenfy_ic_splash_screen_icon_drawable_v2" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/progress_bar"
+        android:id="@+id/idenfy_lottieanimationview_splash_screen"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_iv_splash_screen_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_splash_screen_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_iv_splash_screen_icon"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_splash_screen_icon"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/idenfy_custom_animation_splash_screen_loading_indicator"
         app:lottie_scale="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_38"
+        android:id="@+id/idenfy_guideline_splash_screen_horizontal_38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.38" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_horizontal_65"
+        android:id="@+id/idenfy_guideline_splash_screen_horizontal_65"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -71,5 +71,5 @@
         app:customfont="hkgrotesk_regular.ttf"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_65" />
+        app:layout_constraintTop_toTopOf="@+id/idenfy_guideline_splash_screen_horizontal_65" />
 </androidx.constraintlayout.widget.ConstraintLayout>

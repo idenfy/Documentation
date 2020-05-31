@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/idenfy_confirmation_item_step_circle"
+        android:id="@+id/idenfy_imageview_confirmation_view_item_step_circle"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
@@ -19,22 +19,21 @@
         app:srcCompat="@drawable/idenfy_ic_confirmation_item_step_circle" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_confirmation_item_step_number"
+        android:id="@+id/idenfy_textview_confirmation_view_item_step_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
         android:textAlignment="center"
         android:theme="@style/idenfyDocumentConfirmationViewDocumentStepItemNumberStyle"
         app:customfont="hkgrotesk_bold.ttf"
-        app:layout_constraintBottom_toBottomOf="@+id/idenfy_confirmation_item_step_circle"
-        app:layout_constraintEnd_toEndOf="@+id/idenfy_confirmation_item_step_circle"
-        app:layout_constraintStart_toStartOf="@+id/idenfy_confirmation_item_step_circle"
-        app:layout_constraintTop_toTopOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_confirmation_view_item_step_circle"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_imageview_confirmation_view_item_step_circle"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_imageview_confirmation_view_item_step_circle"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_confirmation_view_item_step_circle"
         android:gravity="center" />
 
-    <!--TODO issue with long text, does not fill the whole height, should expand-->
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_confirmation_item_step_title"
+        android:id="@+id/idenfy_textview_confirmation_view_item_step_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -48,7 +47,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/idenfy_confirmation_item_step_circle"
+        app:layout_constraintStart_toEndOf="@+id/idenfy_imageview_confirmation_view_item_step_circle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.285" />
 

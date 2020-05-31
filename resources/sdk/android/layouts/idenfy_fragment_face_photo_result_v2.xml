@@ -7,10 +7,10 @@
     android:focusable="true"
     android:padding="0dp">
 
-    <include layout="@layout/idenfy_app_bar_layout_photo_result_v2" />
+    <include layout="@layout/idenfy_partial_layout_camera_photo_result_appbarlayout_v2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/idenfy_title_layout"
+        android:id="@+id/idenfy_constraintlayout_photo_result_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/idenfy_dimen_document_and_face_photo_results_view_information_view_top_margin"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_tv_camera_result_title"
+            android:id="@+id/idenfy_textview_photo_result_information_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-            android:id="@+id/idenfy_tv_camera_result_description"
+            android:id="@+id/idenfy_textview_photo_result_information_description"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -47,28 +47,14 @@
             app:customfont="hkgrotesk_regular.ttf"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/idenfy_tv_camera_result_title"
+            app:layout_constraintTop_toBottomOf="@+id/idenfy_textview_photo_result_information_title"
             android:gravity="center" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/button_center_guidline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/navbar_guidline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="48dp" />
-
     <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/idenfy_photo_loading_spinner"
+        android:id="@+id/idenfy_spinkitview_photo_result_loading_photo"
         style="@style/SpinKitView.Large.Circle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,13 +79,13 @@
         app:cardBackgroundColor="@color/idenfyFacePhotoResultViewPhotoBorderColor"
         app:cardCornerRadius="4dp"
         app:cardPreventCornerOverlap="false"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_button_photo_result_next_step"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idenfy_title_layout">
+        app:layout_constraintTop_toBottomOf="@+id/idenfy_constraintlayout_photo_result_information">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/idenfy_cardview_inner_photo_result"
+            android:id="@+id/idenfy_cardview_photo_result_inner_in_cardview"
             app:cardBackgroundColor="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -108,7 +94,7 @@
             app:cardPreventCornerOverlap="false">
 
             <ImageView
-                android:id="@+id/idenfy_iv_face_photo_result"
+                android:id="@+id/idenfy_imageview_face_photo_result_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="false"
@@ -119,7 +105,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/recreateButton"
+        android:id="@+id/idenfy_imageview_photo_result_retake_photo"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -136,7 +122,7 @@
         app:srcCompat="@drawable/idenfy_ic_retake_photo_button_v2" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyTextView
-        android:id="@+id/idenfy_tv_retake_button_title"
+        android:id="@+id/idenfy_textview_photo_result_retake_button_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0"
@@ -144,13 +130,13 @@
         android:text="@string/idenfy_document_and_face_camera_results_button_retake_photo_title_v2"
         android:theme="@style/idenfyFacePhotoResultViewRetakePhotoButtonTitleStyle"
         app:customfont="hkgrotesk_bold.ttf"
-        app:layout_constraintBottom_toBottomOf="@+id/recreateButton"
-        app:layout_constraintEnd_toEndOf="@+id/recreateButton"
-        app:layout_constraintStart_toStartOf="@+id/recreateButton"
-        app:layout_constraintTop_toTopOf="@+id/recreateButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/idenfy_imageview_photo_result_retake_photo"
+        app:layout_constraintEnd_toEndOf="@+id/idenfy_imageview_photo_result_retake_photo"
+        app:layout_constraintStart_toStartOf="@+id/idenfy_imageview_photo_result_retake_photo"
+        app:layout_constraintTop_toTopOf="@+id/idenfy_imageview_photo_result_retake_photo" />
 
     <com.idenfy.idenfySdk.uicomponents.IDenfyButton
-        android:id="@+id/nextButton"
+        android:id="@+id/idenfy_button_photo_result_next_step"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
@@ -165,7 +151,7 @@
         android:theme="@style/idenfyFacePhotoResultViewNextButtonStyle"
         android:visibility="visible"
         app:customfont="hkgrotesk_bold.ttf"
-        app:layout_constraintBottom_toTopOf="@+id/recreateButton"
+        app:layout_constraintBottom_toTopOf="@+id/idenfy_imageview_photo_result_retake_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
