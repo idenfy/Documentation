@@ -49,6 +49,7 @@ Request HTTP body is in JSON format which is described in tables below:
 |`clientId`  |`String`|- Max length 100 |A unique string to trace back a client on your side.                                                          |
 |`startTime` |`Int   `|-                |A timestamp of when a client starts the identification process.|
 |`finishTime`|`Int   `|-                |A timestamp of when the final decision for automatic processing was made.|
+|`clientIp`  |`String`|- Max length 39  |A string of client's system IP address.|
 
 
 ### Identification status table

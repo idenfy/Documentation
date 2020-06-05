@@ -29,11 +29,11 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Liveliness feature has been updated to V8! Please, update your current liveliness implementation as soon as possible. The only changes are related to UI customization. More about this here.
 
 ## [2.0.0] - 2020-05-04
+
 ### Added:
 * Support for French, Italian and German languages. 
 
 ### Changed:
-
 * Removed previously deprecated UIWebView references from Storyboard. If custom storyboard was used for initializing SDK it will cause a **runtime crash**, because of UIWebView presence in the **FaceCameraViewController**. After upgrading the SDK, remove UIWebView reference in the **FaceCameraViewController**. 
 
     No changes are needed if UIWebView is already removed from custom Idenfy.storyboard.

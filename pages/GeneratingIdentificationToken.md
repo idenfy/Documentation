@@ -26,6 +26,7 @@ The request must contain JSON with optional and mandatory parameters:
 |`personalNumber`|No|Personal/national number of a client.|String|- Min length 1|`null`|
 |`documentNumber`|No|Number of a client document.|String|- Min length 1|`null`|
 |`sex`|No|Gender of a client.|String|- Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`M`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`F`|`null`|
+|`generateDigitString`|No|Specify whether to generate an 8-digit string identifying the token that can be used in our mobile application.|Boolean|-If true, contract must allow to generate digit string <br> -If true, `expiryTime` must not exceed maximum expiry time of digit string|False|
 ### Receiving response
 The response JSON contains exact same fields as JSON during token generation. It also returns default values for fields
 that were optional and not specified during token generation. Additionally, the response also provides these fields below.
@@ -36,6 +37,7 @@ that were optional and not specified during token generation. Additionally, the 
 |`authToken`|A unique string for identification process (will be passed as a url parameter when redirecting a client to identification platform).|- Length <= 40|`"3FA5TFPA2ZE3LMPGGS1EGOJNJE"`
 |`scanRef`|A unique string identifying a client identification on iDenfy’s side.|- Length <= 40|`"d2714c8a-ec05-11e8-834f-067891e3383a"`
 |`clientId`|A unique string identifying a client on your companies side. (The same value when requesting to generate a token)|- Not null<br>- Max length 100|`"5F7E4FR14"`
+|`digitString`|A unique string identifying the token that can be used by the client in our mobile application. Will be null if `generateDigitString` is not true|-Length = 8|`"89567412"`
 
 ### Graphical representation of token generation (UML activity)
 
@@ -109,7 +111,8 @@ If supplied data in JSON and ***API key*** with ***API secret*** are valid, you 
    "nationality": "lt",
    "personalNumber": "123456789",
    "documentNumber": "123456",
-   "sex": "M"
+   "sex": "M",
+   "digitString": "4823657"
 }
 ```
 
@@ -142,7 +145,8 @@ If supplied data in JSON and ***API key*** with ***API secret*** are valid, you 
   "nationality": null,
   "personalNumber": null,
   "documentNumber": null,
-  "sex": null
+  "sex": null,
+  "digitString": "4823657"
 }
 ```
 Note that in case of a malformed JSON body or API key/secret mismatch you will receive a standard *iDenfy* API error response. For more on *iDenfy* API responses visit [iDenfy error messages](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md).
