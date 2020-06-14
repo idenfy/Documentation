@@ -104,7 +104,7 @@ Otherwise copy all frameworks from IdenfySDK folder into your app target folder.
 ##### 3. Embed & Sign
 Embed & Sign included frameworks.
 
-<kbd><img src="https://github.com/wellbranding/Documentation/blob/master/resources/sdk/ios/integration/modules_included.png" alt="Embed & Sign " width="700"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/modules_included.png" alt="Embed & Sign " width="700"></kbd>
 
 ##### 4. Include internal dependencies
 iDenfySDK uses several internal dependencies. Your project should also include those dependencies using CocoaPods or in any another preferred way. 
