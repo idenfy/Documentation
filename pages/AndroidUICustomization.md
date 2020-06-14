@@ -130,8 +130,18 @@ If layouts names are changed, then layouts in SDK will not be overridden.
 
 All layouts can be found [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/android/layouts/).
 
+### Adding instructions in camera session.
+iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
+#### 1. Enable instructions in IdenfyUISettingsV2
+ ```java
+   IdenfyUISettingsV2 idenfyUISettingsV2 = new IdenfyUISettingsV2.IdenfyUIBuilderV2()
+                .withInstructions(true)
+                .build();
+```
+
 ### Customization with using your own Fragments:
 Coming soon... Stay tuned!
+
 
 
 ## Liveness customization V1

@@ -18,6 +18,15 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.2.1] - 2020-06-12
+### Added:
+* Added full UI customization documentation.
+* Introduced identification instructions documentation.
+* Added manual integration guide.
+
+## [3.1.0] - 2020-06-08
+### Added:
+* Added Swedish and Spanish localization.
 
 ## [3.0.0] - 2020-05-29
 
@@ -59,7 +68,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 <string>Required for document and facial capture</string>
 ```
 ### 3. Adding the SDK dependency
-
+#### CocoaPods
 ```ruby
 pod 'iDenfySDK'
 ```
@@ -79,7 +88,30 @@ pod 'iDenfySDK', '<1.3'
 pod 'iDenfySDK'
 ```
 
-Run `pod install` to get the SDK or `pod update` to update current iDenfySDK.
+#### Manual
+##### 1. Download iDenfySDK
+[Download](https://s3-eu-west-1.amazonaws.com/sdk.builds/ios-sdk/3.2.1/iDenfySDK.zip) latest iDenfySDK builds.
+##### 2. Include required modules
+##### 2.1 With liveness module
+If you are using [Advanced Liveness detection](#advanced-liveness-detection) copy all frameworks from IdenfyLiveness folder into your app target folder.
+
+*Note: In order to use localized version of liveness feature add Zoom.strings to your app module.
+
+Strings are located in  **../iDenfySDK/IdenfyAssets/IdenfyStrings**
+
+##### 2.2 With regular iDenfySDK
+Otherwise copy all frameworks from IdenfySDK folder into your app target folder.
+##### 3. Embed & Sign
+Embed & Sign included frameworks.
+
+<kbd><img src="https://github.com/wellbranding/Documentation/blob/master/resources/sdk/ios/integration/modules_included.png" alt="Embed & Sign " width="700"></kbd>
+
+##### 4. Include internal dependencies
+iDenfySDK uses several internal dependencies. Your project should also include those dependencies using CocoaPods or in any another preferred way. 
+
+A list of full dependencies can be found in 
+[IdenfySDK.Podspec](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/IdenfySDK.podspec).
+
 
 ### 4. Configuring SDK
 
@@ -174,6 +206,8 @@ By default SDK provides following translations:
 - Italian (it) IT
 - Latvian (lv) LV
 - Romanian (ro) RO
+- Swedish (sv) SV
+- Spanish (es) ES
 
 All keys are located in [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/localization/).  You can supply partial translations, meaning if you don't include a translation to particular key, then our SDK will use default keys. In order to see changes add Idenfy.strings to your app target and changes will take effect.
 
@@ -203,10 +237,17 @@ If default document country was selected during **token generation** the terms o
 
  By default SDK provides following translations:
 
- - English (en) GB
- - Polish (pl) PL
- - Russian (ru) RU
- - Lithuanian (lt) LT
+- English (en) GB
+- Polish (pl) PL
+- Russian (ru) RU
+- Lithuanian (lt) LT
+- German (de) DE
+- French (fr) FR
+- Italian (it) IT
+- Latvian (lv) LV
+- Romanian (ro) RO
+- Swedish (sv) SV
+- Spanish (es) ES
 
 The default language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called:
 ```swift
@@ -392,11 +433,17 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
 
 New major liveness version is released every 6-12 months. After major version release SDK must be updated also.
-
+### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
 pod 'iDenfySDK/iDenfyLiveness'
 ```
+### 2. Update Pods
 Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
- 
+
+### 3. Add Zoom.strings
+In order to use localized version of liveness feature add Zoom.strings to your app module.
+
+Strings are located in  **../Pods/iDenfySDK/iDenfySDK/IdenfyAssets/IdenfyStrings**
+
 *Note: Contact support for enabling liveness feature.

@@ -19,6 +19,20 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [2.2.1] - 2020-06-12
+### Added:
+* Added support for Gradle 4.0.0 plugin.
+* Introduced identification instructions documentation.
+
+## [2.1.0] - 2020-06-08
+### Added:
+* Added Swedish and Spanish localization.
+
+
+### Added:
+* Idenfy V2 SDK flow has been released!
+
+
 ## [2.0.0] - 2020-05-29
 
 ### Added:
@@ -243,7 +257,7 @@ public class TestApplication extends Application {
     }
 }
 ```
-*Note it is required to set callbacks handler in the **application** class to ensure that listener will be set again after application process has stopped.
+*Note: it is required to set callbacks handler in the **application** class to ensure that listener will be set again after application process has stopped.
 
 ## Customizing SDK V2 (optional)
 SDK provides various options for changing identification flow. All requirements can be specified with IdenfyBuilderV2().
@@ -260,6 +274,8 @@ By default SDK provides following translations:
 - Italian (it) IT
 - Latvian (lv) LV
 - Romanian (ro) RO
+- Swedish (sv) SV
+- Spanish (es) ES
 
 All keys are located [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/android/localization/).  You can supply partial translations, meaning if you don't include a translation to particular key, then our SDK will use default keys. In order to see changes add particular xml to your app target or copy only specific keys in your strings.xml and changes will take effect.
 
