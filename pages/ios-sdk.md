@@ -18,6 +18,11 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [3.2.2] - 2020-06-16
+### Changed:
+* Fixed issues with translations in V1 Alert of initial view.
+
 ## [3.2.1] - 2020-06-12
 ### Added:
 * Added full UI customization documentation.
@@ -244,8 +249,6 @@ If default document country was selected during **token generation** the terms o
 - German (de) DE
 - French (fr) FR
 - Italian (it) IT
-- Latvian (lv) LV
-- Romanian (ro) RO
 - Swedish (sv) SV
 - Spanish (es) ES
 

@@ -316,10 +316,15 @@ If results view UI is not suitable for your design we provide customization. We 
 
  By default SDK provides following translations:
 
- - English (en) GB
- - Polish (pl) PL
- - Russian (ru) RU
- - Lithuanian (lt) LT
+- English (en) GB
+- Polish (pl) PL
+- Russian (ru) RU
+- Lithuanian (lt) LT
+- German (de) DE
+- French (fr) FR
+- Italian (it) IT
+- Swedish (sv) SV
+- Spanish (es) ES
 
 The default language of SDK is selected by the language configurations of the **device**. In order to setup custom localization the following method must be called:
 ##### Java
