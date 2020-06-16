@@ -52,3 +52,9 @@ An example redirect url with english locale:<br>https://ui.idenfy.com/?authToken
   </body>
 </html>
 ```
+#### In message you can find data object where you can see these fields:
+
+|Name        |Type    |Explanation|
+|----------------|--------|-----------|
+|`status`        |`String`|Identification status provided by an automated platform. Possible values:<br>- failed<br>- approved<br>                                              |
+|`manualStatus`       |`String`|Identification status provided by manual reviewer. Possible values:<br>- null<br>- waiting<br>- failed<br>- approved<br>           
