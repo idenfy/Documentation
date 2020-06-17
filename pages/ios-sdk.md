@@ -18,6 +18,9 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.2.3] - 2020-06-17
+### Changed:
+* Fixed translations in Polish language.
 
 ## [3.2.2] - 2020-06-16
 ### Changed:
