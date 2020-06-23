@@ -8,7 +8,7 @@
 *   [Customizing results callbacks V2 (optional)](#customizing-results-callbacks-v2-optional)
 *   [Customizing results callbacks V1 (optional)](#customizing-results-callbacks-v1-optional)
 *   [UI customization (optional)](#ui-customization)
-*   [Sample SDK code](#sample-sdk-code)
+*   [Samples](#samples)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 ## Changelog
@@ -401,7 +401,8 @@ Update idenfyBuilder to apply changes:
 Please take a look at UI customization page:
 [UI customization guidelines](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md)
 
-## Sample SDK code
+## Samples
+### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
 
 #### V2
@@ -483,6 +484,9 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
         
     }
 ```
+
+### SDK Integration tutorials
+For more information visit [SDK integration tutorials](pages/tutorials/mobile-sdk-tutorials.md).
 
 
 ## Advanced Liveness detection

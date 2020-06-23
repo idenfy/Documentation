@@ -7,7 +7,7 @@
 *   [Customizing results callbacks V2 (optional)](#customizing-results-callbacks-v2-optional)
 *   [Customizing results callbacks V1 (optional)](#customizing-results-callbacks-v1-optional)
 *   [UI customization](#ui-customization)
-*   [Sample SDK code](#sample-sdk-code)
+*   [Samples](#samples)
 *   [Advanced Liveness detection](#advanced-liveness-detection)
 
 
@@ -349,8 +349,10 @@ Update idenfyBuilder to apply changes:
 Please take a look at UI customization page:
 [UI customization guidelines](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md)
 
-## Sample SDK code
+## Samples
+### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
+
 #### V2
 ##### Swift
 ```swift
@@ -433,9 +435,11 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
         })
     }
 ```
+### SDK Integration tutorials
+For more information visit [SDK integration tutorials](pages/tutorials/mobile-sdk-tutorials.md).
 
 
- ## Advanced Liveness detection
+## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
 
 New major liveness version is released every 6-12 months. After major version release SDK must be updated also.
