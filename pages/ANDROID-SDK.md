@@ -486,7 +486,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 ```
 
 ### SDK Integration tutorials
-For more information visit [SDK integration tutorials](pages/tutorials/mobile-sdk-tutorials.md).
+For more information visit [SDK integration tutorials](https://github.com/idenfy/Documentation/blob/master/pages/tutorials/mobile-sdk-tutorials.md).
 
 
 ## Advanced Liveness detection
