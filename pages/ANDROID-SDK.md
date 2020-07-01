@@ -18,7 +18,7 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [2.5.0] - 2020-07-01
+## [2.5.1] - 2020-07-01
 ### Added:
 * Added support for proof of address.
 ### Changed:
