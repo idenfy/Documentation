@@ -18,6 +18,12 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.3.0] - 2020-07-01
+### Added:
+* Added support for proof of address.
+### Changed:
+* Changed utility bill strings to proof of address. If your app overrides strings, please update [keys](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/localization/).
+
 ## [3.2.3] - 2020-06-17
 ### Changed:
 * Fixed translations in Polish language.

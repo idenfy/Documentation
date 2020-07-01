@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--*Shared strings*-->
     <!--Idenfy Permissions-->
     <string name="idenfy_permission_asks_to_provide_camera_permission_manually">Provide permissions manually</string>
 
@@ -19,7 +19,8 @@
     <string name="idenfy_identification_results_title_additional_info_uploading_face_document_photo">Uploading document\'s face photo…</string>
     <string name="idenfy_identification_results_title_additional_info_uploading_liveness_document_photo">Checking liveliness…</string>
     <string name="idenfy_identification_results_title_additional_info_uploading_passport_cover_photo">Uploading passport cover photo…</string>
-    <string name="idenfy_identification_results_title_additional_info_uploading_utility_bill_photo">Uploading utility bill photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_proof_of_address_photo">Uploading proof of address photo…</string>
+    <string name="idenfy_identification_results_title_additional_info_uploading_second_proof_of_address_photo">Uploading second proof of address photo…</string>
 
     <!--Idenfy Alerts-->
 
@@ -59,7 +60,7 @@
     <string name="idenfy_instructions_passport_correct_text">Make sure you show your passport during identification and not another document.</string>
 
     <string name="idenfy_instructions_passport_mrz_title">Passport has MRZ area</string>
-    <string name="idenfy_instructions_passport_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+    <string name="idenfy_instructions_passport_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select \"OTHER DOCUMENTS\" in the document selection window.</string>
 
     <string name="idenfy_instructions_passport_fits_frame_title">The passport fits in white frames</string>
     <string name="idenfy_instructions_passport_fits_frame_text">Make sure the passport fits into white frames and does not go beyond the borders of the frame, and the document shown is not blurred and clearly legible.</string>
@@ -88,7 +89,7 @@
     <string name="idenfy_instructions_id_back_correct_text">Make sure you are showing the back of the ID card.</string>
 
     <string name="idenfy_instructions_id_back_mrz_title">The document has the MRZ area</string>
-    <string name="idenfy_instructions_id_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+    <string name="idenfy_instructions_id_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select \"OTHER DOCUMENTS\" in the document selection window.</string>
 
     <string name="idenfy_instructions_id_back_fit_frame_title">The back of the ID card fits in white frames</string>
     <string name="idenfy_instructions_id_back_fit_frame_text">Make sure the back of the ID card fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.</string>
@@ -114,7 +115,7 @@
     <string name="idenfy_instructions_residence_permit_back_correct_text">Make sure you are showing the back of the Residence permit.</string>
 
     <string name="idenfy_instructions_residence_permit_back_mrz_title">The document has the MRZ area</string>
-    <string name="idenfy_instructions_residence_permit_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select "OTHER DOCUMENTS" in the document selection window.</string>
+    <string name="idenfy_instructions_residence_permit_back_mrz_text">Make sure your document has the MRZ (2 or 3 character lines). If your document does not have an MRZ zone, select \"OTHER DOCUMENTS\" in the document selection window.</string>
 
     <string name="idenfy_instructions_residence_permit_back_fit_frame_title">The back of the Residence permit fits in white frames</string>
     <string name="idenfy_instructions_residence_permit_back_fit_frame_text">Make sure the back of the Residence permit fits into the white frame and does not go beyond the edges of the frame. Also, make sure the document you are displaying is not blurred and clearly legible.</string>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--*V1*-->
+    <!--Idenfy Initial Agreement View-->
+    <string name="idenfy_initial_agreement_button_issuing_country_selection_title">Country:</string>
+    <string name="idenfy_initial_agreement_title_terms_and_conditions">Terms and conditions</string>
+    <string name="idenfy_initial_agreement_title_issuing_document_country">Select your document issuing country</string>
+    <string name="idenfy_initial_agreement_confirm_button_title">Let\'s begin</string>
+    <string name="idenfy_initial_agreement_toolbar_title">Start identity verification</string>
+    <string name="idenfy_initial_agreement_title_issuing_document_country_predefined">Document country of issue:</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_1_message">I do confirm, that information (identification pictures) that I provide is not fake or forged.</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_1">I do understand that in case of</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_2">fraudulent</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_3">actions or any attempt of</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_4">forgery</string>
+    <string name="idenfy_initial_agreement_terms_and_conditions_checkbox_2_message_part_5">we are obliged to contact authorities and report about the criminal incident.</string>
+
+    <!--Idenfy Documents Selection View-->
+    <string name="idenfy_documents_selection_top_information_title">Select document type</string>
+    <string name="idenfy_documents_selection_toolbar_title">iDenfy</string>
+    <string name="idenfy_documents_selection_list_item_document_type_passport">PASSPORT</string>
+    <string name="idenfy_documents_selection_list_item_document_type_id_card">IDENTITY CARD</string>
+    <string name="idenfy_documents_selection_list_item_document_type_other">OTHER</string>
+    <string name="idenfy_documents_selection_list_item_document_type_driver_licence">DRIVER LICENSE</string>
+    <string name="idenfy_documents_selection_list_item_document_type_residence_permit">RESIDENCE PERMIT</string>
+
+    <!--Idenfy Document Camera Preview Session View-->
+    <string name="idenfy_document_camera_preview_session_message_part_0_document_type_default">Place</string>
+    <string name="idenfy_document_camera_preview_session_message_part_1_front_document_type_default">the front</string>
+    <string name="idenfy_document_camera_preview_session_message_part_1_back_document_type_default">the back</string>
+    <string name="idenfy_document_camera_preview_session_message_part_2_document_type_default">of the document into a white frame and then take a picture. </string>
+    <string name="idenfy_document_camera_preview_session_message_document_type_id_card_front">Fit the front of identification card into the frame and press circle button</string>
+    <string name="idenfy_document_camera_preview_session_message_document_type_id_card_back">Fit the back of identification card into the frame and press circle button</string>
+    <string name="idenfy_document_camera_preview_session_message_document_type_passport">Fit the passport main part into the frame and press circle button</string>
+
+    <!--Idenfy Document Camera Results View-->
+    <string name="idenfy_document_camera_results_message_document_type_passport">Document information must be clearly visible and hologram should not cover your face, otherwise - make photo one more time</string>
+    <string name="idenfy_document_camera_results_message_document_type_id_card_back">Document information must be clearly visible, otherwise - make photo one more time</string>
+    <string name="idenfy_document_camera_results_message_document_type_default">Caution: Make sure the document is fully visible and the text is readable.</string>
+
+    <!--Idenfy Face Camera Preview Session View-->
+    <string name="idenfy_face_camera_preview_session_message">When the face is in frames and is fully captured, take a photo.</string>
+
+    <!--Idenfy Face Camera Results View-->
+    <string name="idenfy_face_camera_results_message">Keep your face in white frame, make sure your shoulders are visible.</string>
+
+    <!--Idenfy Document And Face Results View-->
+    <string name="idenfy_document_and_face_camera_results_button_retake_photo_title">Retake</string>
+    <string name="idenfy_document_and_face_camera_results_button_next_step_title">Right</string>
+
+    <!--Idenfy Document And Face Camera Preview Session-->
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_default_front">FRONT</string>
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_default_back">BACK</string>
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_proof_of_address">PROOF OF ADDRESS</string>
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_second_proof_of_address">SECOND PROOF OF ADDRESS</string>
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_passport_cover">PASSPORT COVER</string>
+    <string name="idenfy_document_and_face_camera_preview_session_information_overlay_title_document_step_passport_front">PASSPORT MAIN PAGE</string>
+
+    <!--Idenfy Identification Results View -->
+    <string name="idenfy_identification_results_title_identification_status_loading">Please wait a moment...</string>
+    <string name="idenfy_identification_results_title_identification_status_success">Identification succeeded!</string>
+    <string name="idenfy_identification_results_title_identification_status_error">Identification failed</string>
+    <string name="idenfy_identification_results_proceed_button_title">Proceed</string>
+    <string name="idenfy_identification_results_title_face_step">Face photo</string>
+    <string name="idenfy_identification_results_title_front_document_step">Document front photo</string>
+    <string name="idenfy_identification_results_title_back_document_step">Document back photo</string>
+
+    <!--Idenfy UI Error messages-->
+    <string name="idenfy_error_message_agree_with_terms_of_service">Agree with terms of service</string>
+    <string name="idenfy_error_message_select_your_document_issuing_country_message">Select your document issuing country</string>
+
+    <!--Initial Agreement agree with Terms of Service Alert--> -->
+    <string name="idenfy_alert_title_error_agree_with_terms_of_service">INFORMATION</string>
+    <string name="idenfy_alert_message_error_agree_with_terms_of_service">Agree with terms of service</string>
+    <string name="idenfy_alert_positive_button_error_agree_with_terms_of_service">Proceed</string>
+
+    <!--Initial Agreement Select your document issuing country Alert--> -->
+    <string name="idenfy_alert_title_error_select_your_document_issuing_country_message">INFORMATION</string>
+    <string name="idenfy_alert_message_error_select_your_document_issuing_country_message">Select your document issuing country</string>
+    <string name="idenfy_alert_positive_button_error_select_your_document_issuing_country_message">Proceed</string>
+
+
+</resources>

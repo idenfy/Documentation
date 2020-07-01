@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--*V2*-->
     <!--Idenfy Splash Screen V2-->
     <string name="idenfy_splash_screen_title_v2">Quick and reliable identity verification</string>
 
@@ -25,6 +25,8 @@
     <string name="idenfy_language_selection_name_de_v2">Deutsch</string>
     <string name="idenfy_language_selection_name_fr_v2">Français</string>
     <string name="idenfy_language_selection_name_it_v2">Italiano</string>
+    <string name="idenfy_language_selection_name_es_v2">Spanish</string>
+    <string name="idenfy_language_selection_name_sv_v2">Swedish</string>
 
     <!--Idenfy Documents Selection View V2-->
     <string name="idenfy_documents_selection_view_information_title_v2">Select a document</string>
@@ -58,7 +60,8 @@
     <string name="idenfy_confirmation_view_document_steps_step_face_title_v2">Face photo</string>
     <string name="idenfy_confirmation_view_document_steps_step_liveliness_title_v2">Liveliness check</string>
     <string name="idenfy_confirmation_view_document_steps_step_passport_cover_title_v2">Passport cover photo</string>
-    <string name="idenfy_confirmation_view_document_steps_step_utility_bill_title_v2">Utility bill photo</string>
+    <string name="idenfy_confirmation_view_document_steps_step_proof_of_address_title_v2">Proof of address document photo</string>
+    <string name="idenfy_confirmation_view_document_steps_step_second_proof_of_address_title_v2">Second proof of address document photo</string>
     <string name="idenfy_confirmation_view_upload_image_title_v2">You can upload photos in every step</string>
     <string name="idenfy_confirmation_view_begin_identification_title_v2">BEGIN IDENTIFICATION</string>
 
@@ -73,7 +76,8 @@
     <string name="idenfy_document_camera_preview_session_view_information_step_back_document_type_driver_license_title_v2">Back of driver\'s license</string>
     <string name="idenfy_document_camera_preview_session_view_information_step_front_document_type_passport_cover_title_v2">Front of passport cover</string>
     <string name="idenfy_document_camera_preview_session_view_information_step_front_document_type_passport_title_v2">Passport face page</string>
-    <string name="idenfy_document_camera_preview_session_view_information_step_front_document_type_utility_bill_title_v2">Utility bill capturing</string>
+    <string name="idenfy_document_camera_preview_session_view_information_step_front_document_type_proof_of_address_title_v2">Proof of address</string>
+    <string name="idenfy_document_camera_preview_session_view_information_step_front_document_type_second_proof_of_address_title_v2">Second proof of address</string>
     <string name="idenfy_document_camera_preview_session_view_information_description_v2">Place your document into the frame and take a clear photo</string>
 
     <!--Idenfy Document Camera Results View V2-->
@@ -87,7 +91,8 @@
     <string name="idenfy_document_camera_results_view_information_step_back_document_type_driver_license_title_v2">Back of driver\'s license</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_title_v2">Front of passport cover</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_title_v2">Passport face page</string>
-    <string name="idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_title_v2">Utility bill</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_proof_of_address_title_v2">Proof of address</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_second_proof_of_address_title_v2">Second proof of address</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_id_card_description_placeholder_v2">Is your **front of identity card** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_back_document_type_id_card_description_placeholder_v2">Is your **back of identity card** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_other_description_placeholder_v2">Is your **front of document** clearly visible and in the frame?</string>
@@ -97,7 +102,8 @@
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_driver_license_description_placeholder_v2">Is your **front of driver\'s license** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_back_document_type_driver_license_description_placeholder_v2">Is your **back of driver\'s license** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_description_placeholder_v2">Is your **front of passport cover** clearly visible and in the frame?</string>
-    <string name="idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_description_placeholder_v2">Is your **utility bill** clearly visible and in the frame?</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_proof_of_address_description_placeholder_v2">Is your **proof of address** clearly visible and in the frame?</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_second_proof_of_address_description_placeholder_v2">Is your **second proof of address** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_description_placeholder_v2">Is your **passport face page** clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_description_part_1_v2">Is your</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_id_card_description_part_2_v2">front of identity card</string>
@@ -109,7 +115,8 @@
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_driver_license_description_part_2_v2">front of driver\'s license</string>
     <string name="idenfy_document_camera_results_view_information_step_back_document_type_driver_license_description_part_2_v2">back of driver\'s license</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_cover_description_part_2_v2">front of passport cover</string>
-    <string name="idenfy_document_camera_results_view_information_step_front_document_type_utility_bill_description_part_2_v2">utility bill</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_proof_of_address_description_part_2_v2">proof of address</string>
+    <string name="idenfy_document_camera_results_view_information_step_front_document_type_second_proof_of_address_description_part_2_v2">second proof of address</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_description_part_2_v2">passport face page</string>
     <string name="idenfy_document_camera_results_view_information_description_part_3_v2">clearly visible and in the frame?</string>
 
@@ -137,7 +144,8 @@
     <string name="idenfy_upload_results_view_information_step_back_document_type_driver_license_title_v2">Back of driver\'s license</string>
     <string name="idenfy_upload_results_view_information_step_front_document_type_passport_cover_title_v2">Front of passport cover</string>
     <string name="idenfy_upload_results_view_information_step_front_document_type_passport_title_v2">Passport face page</string>
-    <string name="idenfy_upload_results_view_information_step_front_document_type_utility_bill_title_v2">Utility bill</string>
+    <string name="idenfy_upload_results_view_information_step_front_document_type_proof_of_address_title_v2">Proof of address</string>
+    <string name="idenfy_upload_results_view_information_step_front_document_type_second_proof_of_address_title_v2">Second proof of address</string>
     <string name="idenfy_upload_results_view_information_step_face_title_v2">Confirm face photo</string>
     <string name="idenfy_upload_results_view_cropping_description_v2">Align uploaded photo into the marked area</string>
     <string name="idenfy_upload_results_view_choose_another_photo_button_title_v2">CHOOSE ANOTHER ONE</string>
@@ -150,7 +158,8 @@
     <string name="idenfy_identification_results_step_front_document_type_id_card_title_v2">Front of identity card</string>
     <string name="idenfy_identification_results_step_back_document_type_id_card_title_v2">Back of identity card</string>
     <string name="idenfy_identification_results_step_passport_cover_title_v2">Front of passport cover</string>
-    <string name="idenfy_identification_results_step_utility_bill_title_v2">Utility Bill</string>
+    <string name="idenfy_identification_results_step_proof_of_address_title_v2">Proof of address</string>
+    <string name="idenfy_identification_results_step_second_proof_of_address_title_v2">Second proof of address</string>
     <string name="idenfy_identification_results_step_front_document_type_passport_title_v2">Passport face page</string>
     <string name="idenfy_identification_results_step_front_document_type_other_title_v2">Front of document</string>
     <string name="idenfy_identification_results_step_back_document_type_other_title_v2">Back of document</string>
@@ -164,7 +173,7 @@
 
     <!--Idenfy Identification Results Success View V2-->
     <string name="idenfy_identification_results_success_fragment_title_v2">Identification succeeded</string>
-    <string name="idenfy_identification_results_success_fragment_description_v2" />
+    <string name="idenfy_identification_results_success_fragment_description_v2"> </string>
     <string name="idenfy_identifiaction_results_success_fragment_identified_v2">Identified</string>
 
 </resources>
