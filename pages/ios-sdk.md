@@ -448,7 +448,8 @@ For more information visit [SDK integration tutorials](https://github.com/idenfy
 ## Advanced Liveness detection
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
 
-New major liveness version is released every 6-12 months. After major version release SDK must be updated also.
+The new major liveness version is released every 6-12 months. Your app must update the liveness module after every major release. If SDK is not updated, it can lead to the **runtime crashes**.
+
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
