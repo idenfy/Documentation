@@ -18,6 +18,12 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+
+## [2.1.0] - 2020-08-03
+### Changed:
+* Migrated to updated liveness version in SDK versions lower than 3.00. A brand new flow with better UX for performing 3D liveness verification. Read more about liveness versioning and [updates frequency](https://github.com/idenfy/Documentation/blob/master/pages/ios-sdk.md#advanced-liveness-detection).
+*Note: this update was already present in the SDK, starting with version 3.0.0.
+
 ## [3.3.0] - 2020-07-01
 ### Added:
 * Added support for proof of address.
