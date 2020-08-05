@@ -132,7 +132,13 @@ All layouts can be found [here](https://github.com/idenfy/Documentation/blob/mas
 
 ### Adding instructions in camera session.
 iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
-#### 1. Enable instructions in IdenfyUISettingsV2
+
+By default, instructions are either visible or hidden, depending on your **client configuration**. For more information contact:
+- sales@idenfy.com
+
+If you wish to override your configuration, you can always do it directly with IdenfyUISettingsV2.
+
+#### 1. Override instructions in IdenfyUISettingsV2
  ```java
    IdenfyUISettingsV2 idenfyUISettingsV2 = new IdenfyUISettingsV2.IdenfyUIBuilderV2()
                 .withInstructions(true)

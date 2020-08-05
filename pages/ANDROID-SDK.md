@@ -18,6 +18,10 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.7.0] - 2020-08-05
+### Changed:
+* Removed instructions configuration from client customization in the V1 version. Read more about instructions [here](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md#adding-instructions-in-camera-session).
+
 ## [2.6.0] - 2020-07-23
 ### Added:
 * Network stability improved on poor network connections. Added better retry policy.
@@ -503,6 +507,8 @@ For more information visit [SDK integration tutorials](https://github.com/idenfy
 
 SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
 
+The liveness feature is not optimized for tablets. As a result, identification performed via tablet will be automatically classified as **denied**.
+
 The new major liveness version is released every 6-12 months. Your app must update the liveness module after every major release. If SDK is not updated, it can lead to the **runtime crashes**.
 
 Attached liveness SDK will sync with **core** Idenfy SDK.
@@ -517,6 +523,7 @@ repositories {
 ```
  
 *Note: Contact support for enabling liveness feature.
+
 
 
 
