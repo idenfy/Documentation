@@ -94,7 +94,7 @@ Some elements in SDK could be configured with code to enable easier integration 
 
 ## Customization V2
 ### Customization by changing views from idenfyviews module.
-All ui elements are located in separate module - idenfyviews. Classes are marked as public, so you can override them.
+All UI elements are located in the separate module - idenfyviews. Classes are marked as public, so you can override them.
 #### 1. Including idenfyviews
 ```swift
 import idenfyviews
@@ -106,22 +106,24 @@ Take for example IdenfyConfirmationViewUISettingsV2 settings.
 ```swift
 @objc open class IdenfyConfirmationViewUISettingsV2:NSObject {
     
-    //Idenfy Confirmation View Colors
-    
-    public static var idenfyDocumentConfirmationViewBackgroundColor = ConstsIdenfyColors.idenfyBackgroundColorV2
-    public static var idenfyDocumentConfirmationViewTitleTextColor = ConstsIdenfyColors.idenfySecondColorV2
-    public static var idenfyDocumentConfirmationViewDescriptionTextColor = ConstsIdenfyColors.idenfySecondColorV2
-    public static var idenfyDocumentConfirmationViewDescriptionHighlightedTextColor = ConstsIdenfyColors.idenfyMainColorV2
-    public static var idenfyDocumentConfirmationViewBeginIdentificationButtonTextColor = ConstsIdenfyColors.idenfyWhite
-    public static var idenfyDocumentConfirmationViewDocumentStepTitleTextColor = ConstsIdenfyColors.idenfySecondColorV2
-    public static var idenfyDocumentConfirmationViewDocumentStepTitleHighlightedTextColor = ConstsIdenfyColors.idenfyMainColorV2
-    public static var idenfyDocumentConfirmationViewUploadDocumentPhotoTitleTextColor = ConstsIdenfyColors.idenfySecondColorV2
-    public static var idenfyDocumentConfirmationViewDocumentStepCellNumberTextColor = ConstsIdenfyColors.idenfyWhite
-    public static var idenfyDocumentConfirmationViewDocumentStepCellTitleTextColor = ConstsIdenfyColors.idenfySecondColorV2
-    public static var idenfyDocumentConfirmationViewContentMaskForegroundColor = ConstsIdenfyColors.idenfyBackgroundColorV2.withAlphaComponent(0.9)
-    
-    //Idenfy Confirmation View Fonts
-    
+    // Idenfy Confirmation View Colors
+
+    public static var idenfyDocumentConfirmationViewBackgroundColor = IdenfyCommonColors.idenfyBackgroundColorV2
+    public static var idenfyDocumentConfirmationViewTitleTextColor = IdenfyCommonColors.idenfySecondColorV2
+    public static var idenfyDocumentConfirmationViewDescriptionTextColor = IdenfyCommonColors.idenfySecondColorV2
+    public static var idenfyDocumentConfirmationViewDescriptionHighlightedTextColor = IdenfyCommonColors.idenfyMainColorV2
+    public static var idenfyDocumentConfirmationViewBeginIdentificationButtonTextColor = IdenfyCommonColors.idenfyWhite
+    public static var idenfyDocumentConfirmationViewDocumentStepTitleTextColor = IdenfyCommonColors.idenfySecondColorV2
+    public static var idenfyDocumentConfirmationViewDocumentStepTitleHighlightedTextColor = IdenfyCommonColors.idenfyMainColorV2
+    public static var idenfyDocumentConfirmationViewUploadDocumentPhotoTitleTextColor = IdenfyCommonColors.idenfySecondColorV2
+    public static var idenfyDocumentConfirmationViewDocumentStepCellNumberTextColor = IdenfyCommonColors.idenfyWhite
+    public static var idenfyDocumentConfirmationViewDocumentStepCellTitleTextColor = IdenfyCommonColors.idenfySecondColorV2
+    public static var idenfyDocumentConfirmationViewContentMaskForegroundColor = IdenfyCommonColors.idenfyBackgroundColorV2.withAlphaComponent(0.9)
+    public static var idenfyDocumentConfirmationViewUploadIconTintColor:UIColor? = IdenfyCommonColors.idenfyMainColorV2
+    public static var idenfyDocumentConfirmationViewDocumentStepCircleTintColor:UIColor? = IdenfyCommonColors.idenfyMainColorV2
+
+    // Idenfy Confirmation View Fonts
+
     public static var idenfyDocumentConfirmationViewTitleFont = UIFont(name: ConstsIdenfyFonts.idenfyFontBoldV2, size: 22)
     public static var idenfyDocumentConfirmationViewDescriptionFont = UIFont(name: ConstsIdenfyFonts.idenfyFontRegularV2, size: 13)
     public static var idenfyDocumentConfirmationViewDescriptionHighlightedFont = UIFont(name: ConstsIdenfyFonts.idenfyFontBoldV2, size: 13)
@@ -129,9 +131,9 @@ Take for example IdenfyConfirmationViewUISettingsV2 settings.
     public static var idenfyDocumentConfirmationViewUploadTitleFont = UIFont(name: ConstsIdenfyFonts.idenfyFontRegularV2, size: 13)
     public static var idenfyDocumentConfirmationViewDocumentStepNumberFont = UIFont(name: ConstsIdenfyFonts.idenfyFontBoldV2, size: 11)
     public static var idenfyDocumentConfirmationViewDocumentStepFont = UIFont(name: ConstsIdenfyFonts.idenfyFontRegularV2, size: 13)
-    
-    //Idenfy Confirmation View Style
-    
+
+    // Idenfy Confirmation View Style
+
     public static var idenfyDocumentConfirmationViewDocumentStepCellHeight = CGFloat(30)
     
 }
@@ -143,6 +145,40 @@ Example:
     IdenfyConfirmationViewUISettingsV2.idenfyDocumentConfirmationViewBackgroundColor = UIColor.red
     IdenfyConfirmationViewUISettingsV2.idenfyDocumentConfirmationViewTitleTextColor = UIColor.red
 ```
+
+#### 3. Applying SDK wide color changes
+If **color and assets changes** are the only requirement, then it can be easily customized by changing main colors.
+
+Information about colors:
+
+|Color name              |Description                     |Default color value
+|-------------------|-------------------------------|------------------------------------
+|`idenfyMainColorV2`   |Defines the color of most single colored assets and focused parts in SDK                 |UIColor(hexString: "#536DFE")
+|`idenfyMainDarkerColorV2`|Defines the color of some focused parts in SDK, similar to idenfyMainColorV2  |UIColor(hexString: "#5D7CE4")
+
+You can customize it in a following manner:
+
+Example:
+```swift
+    IdenfyCommonColors.idenfyMainColorV2 = UIColor.green
+    IdenfyCommonColors.idenfyMainDarkerColorV2 = UIColor.green
+```
+
+Colors also are applied on images, which use a single color from *IdenfyImagesV2.xcassets* .If perhaps you decided to override our provided images with more sophisticated icons, which use more than 1 color, then you can easily disable tint on images. You need set color values as *nil*.
+
+Example:
+```swift
+    IdenfyConfirmationViewUISettingsV2.idenfyDocumentConfirmationViewDocumentStepCircleTintColor = nil
+    IdenfyConfirmationViewUISettingsV2.idenfyDocumentConfirmationViewUploadIconTintColor = nil
+    IdenfyToolbarUISettingsV2.idenfyDefaultToolbarLogoIconTintColor = nil
+    IdenfyToolbarUISettingsV2.idenfyDefaultToolbarBackIconTintColor = nil
+    IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarLanguageSelectionIconTintColor = UIColor.yellow
+    IdenfyToolbarUISettingsV2.idenfyLanguageSelectionToolbarCloseIconTintColor = nil
+    IdenfyToolbarUISettingsV2.idenfyCameraPreviewSessionToolbarBackIconTintColor = nil
+    IdenfyIdentificationResultsViewUISettingsV2.idenfyIdentificationResultsDividerIconStatusErrorTintColor = nil
+    IdenfyIdentificationResultsViewUISettingsV2.idenfyIdentificationResultsDividerIconStatusLoadingTintColor = nil
+```
+
 
 ### Customization by overriding idenfyviews module
 For more advanced customization (fonts, constraints, layout structure and etc.) it is better to override our layouts. All layouts used in IdenfySDK are located in idenfyviews module. All code is not compiled and can easily be edited. 
@@ -166,8 +202,6 @@ After finishing customizing views you should generate an universal framework. Si
 In order to see changes you should replace default idenfyviews framework with a new, customized version. Simply open **../Pods/iDenfySDK/iDenfySDK/IdenfySDK** and replace current idenfyviews with a new version.
 
 *Note: Every time you run pod update or pod install your customized idenfyviews.framework will be overwritten by default idenfyviews. This is why it is necessary to make sure that your customized version is used instead of default. For automating this process you should add iDenfySDK [manually](https://github.com/idenfy/Documentation/blob/master/pages/ios-sdk.md#3-adding-the-sdk-dependency).
-
-
 
 ### Adding instructions in camera session.
 iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.

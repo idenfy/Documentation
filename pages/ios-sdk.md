@@ -18,6 +18,13 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.4.0] - 2020-08-18
+### Added:
+* Better network requests handling on poor network conditions.
+* Customization option to skip country selection.
+* Colors customization option to set SDK wide color scheme with only a handful of changes.
+* Renamed identification results assets names to better match the SDK statuses.
+
 
 ## [2.1.0] - 2020-08-03
 ### Changed:
@@ -239,6 +246,20 @@ The default language of SDK is selected by the language configurations of the **
     .withSelectedLocale(IdenfyLocaleEnum.EN)
     ...
 ```
+
+### 3. User flow customization
+#### * Language selection skipping
+The SDK provides an option to skip **document's issuing country** selection. If the document's issuing country is set in the [identification token generation process](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md) it might be more UX friendlier to skip issuing country selection and navigate the user to document selection screen. 
+##### Swift
+```swift
+    let idenfySettingsV2 = IdenfyBuilderV2()
+        .withAuthToken(authToken)
+        .withDocumentIssuingCountrySkipped()
+        ...
+        .build()
+    ...
+```
+*NOTE, make sure that issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
 
 ## Customizing SDK V1 (optional)
 
