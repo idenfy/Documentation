@@ -115,6 +115,64 @@ SDK currently supports three ways of customization:
     withLanguageSelection(Boolean isLanguageSelectionNeeded)
     ...
 ```
+#### * Adding instructions in camera session.
+iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
+
+Instructions are disabled by default on Android.
+
+If you wish to override your configuration, you can always do it directly with IdenfyUISettingsV2.
+
+Override instructions in IdenfyUISettingsV2:
+ ```java
+   IdenfyUISettingsV2 idenfyUISettingsV2 = new IdenfyUISettingsV2.IdenfyUIBuilderV2()
+                .withInstructions(true)
+                .build();
+```
+
+### Applying SDK wide color changes
+If **color and assets changes** are the only requirement, then it can be easily customized by changing main colors.
+
+Information about mostly used colors:
+
+|Color name              |Description                     |Default color value
+|-------------------|-------------------------------|------------------------------------
+|`idenfyMainColorV2`   |Defines the color of most single colored assets and focused parts in SDK.                 |#536DFE
+|`idenfyMainDarkerColorV2`|Defines the color of some focused parts in SDK, similar to idenfyMainColorV2.  |#5D7CE4
+|`idenfyBackgroundColorV2`   |Defines the background color.            |#FBFBFB
+|`idenfySecondColorV2`|Defines the text color.    |#F2353B4E
+|`idenfyGradientAccentV2`   |Defines the second color of gradient. Currently used in confirmation buttons.                |#8D6CFB
+
+You can customize it in a following manner:
+
+#### 1. Override color names in your app module.
+Create either a new idenfy_colors.xml or add our defined colors in your project.
+
+#### 2. Make color changes
+Example:
+```xml
+<resources>
+    <color name="idenfyMainColorV2">#7CFC00</color>
+    <color name="idenfyMainDarkerColorV2">#7CFC00</color>
+</resources>
+```
+
+Colors also are applied on images, which use a single color from *idenfy drawable resources* .If perhaps you decided to override our provided images with more sophisticated icons, which use more than 1 color, then you can easily disable tint on images. You need to override our defined layouts styles with removed tint attribute.
+
+Example:
+### Before:
+```xml
+<style name="idenfyAppBarLayoutBackButtonStyle">
+    <item name="android:tint">
+        @color/idenfyMainColorV2
+    </item>
+</style>
+``` 
+
+### After:
+```xml
+<style name="idenfyAppBarLayoutBackButtonStyle" />
+```
+
 ### Customization with styles.xml or colors.xml:
 Every screen in SDK uses different styles.xml, which covers all UI elements visible in that screen. 
 
@@ -130,20 +188,6 @@ If layouts names are changed, then layouts in SDK will not be overridden.
 
 All layouts can be found [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/android/layouts/).
 
-### Adding instructions in camera session.
-iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
-
-By default, instructions are either visible or hidden, depending on your **client configuration**. For more information contact:
-- sales@idenfy.com
-
-If you wish to override your configuration, you can always do it directly with IdenfyUISettingsV2.
-
-#### 1. Override instructions in IdenfyUISettingsV2
- ```java
-   IdenfyUISettingsV2 idenfyUISettingsV2 = new IdenfyUISettingsV2.IdenfyUIBuilderV2()
-                .withInstructions(true)
-                .build();
-```
 
 ### Customization with using your own Fragments:
 Coming soon... Stay tuned!

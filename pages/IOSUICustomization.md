@@ -153,8 +153,11 @@ Information about colors:
 
 |Color name              |Description                     |Default color value
 |-------------------|-------------------------------|------------------------------------
-|`idenfyMainColorV2`   |Defines the color of most single colored assets and focused parts in SDK                 |UIColor(hexString: "#536DFE")
-|`idenfyMainDarkerColorV2`|Defines the color of some focused parts in SDK, similar to idenfyMainColorV2  |UIColor(hexString: "#5D7CE4")
+|`idenfyMainColorV2`   |Defines the color of most single colored assets and focused parts in SDK.                 |#536DFE
+|`idenfyMainDarkerColorV2`|Defines the color of some focused parts in SDK, similar to idenfyMainColorV2.  |#5D7CE4
+|`idenfyBackgroundColorV2`   |Defines the background color.            |#FBFBFB
+|`idenfySecondColorV2`|Defines the text color.    |#F2353B4E
+|`idenfyGradientAccentV2`   |Defines the second color of gradient. Currently used in confirmation buttons.               |#8D6CFB
 
 You can customize it in a following manner:
 
