@@ -198,14 +198,6 @@ It is required to override onActivityResult for receiving responses.
             if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
                 IdenfyIdentificationResult idenfyIdentificationResult = data.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT);
                 if (idenfyIdentificationResult != null) {
-                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
-                        case APPROVED:
-                            break;
-                        case FAILED:
-                            break;
-                        case INACTIVE:
-                            break;
-                    }
                     switch (idenfyIdentificationResult.getAutoIdentificationStatus()) {
 
                         case APPROVED:
@@ -213,6 +205,15 @@ It is required to override onActivityResult for receiving responses.
                         case FAILED:
                             break;
                         case UNVERIFIED:
+                            break;
+                    }
+
+                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case INACTIVE:
                             break;
                     }
                 }
@@ -273,6 +274,40 @@ Information about the IdenfyIdentificationResult **manualIdentificationStatus** 
         }
     }
 ```
+##### Kotlin
+```kotlin
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
+            if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
+                val idenfyIdentificationResult: IdenfyIdentificationResult =
+                    data!!.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT)
+
+                when (idenfyIdentificationResult.autoIdentificationStatus) {
+                    AutoIdentificationStatus.APPROVED -> {
+                    }
+                    AutoIdentificationStatus.FAILED -> {
+                    }
+                    AutoIdentificationStatus.UNVERIFIED -> {
+                    }
+                }
+                
+                when (idenfyIdentificationResult.manualIdentificationStatus) {
+                    ManualIdentificationStatus.APPROVED -> {
+                    }
+                    ManualIdentificationStatus.FAILED -> {
+                    }
+                    ManualIdentificationStatus.INACTIVE -> {
+                    }
+                }
+
+                Toast.makeText(this, idenfyIdentificationResult.toString(), Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
+    }
+```
+
 [Additional information about error responses](https://github.com/idenfy/Documentation/blob/master/pages/StandardErrorMessages.md)
 
 ## User events callbacks (optional)
@@ -530,14 +565,6 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
             if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
                 IdenfyIdentificationResult idenfyIdentificationResult = data.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT);
                 if (idenfyIdentificationResult != null) {
-                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
-                        case APPROVED:
-                            break;
-                        case FAILED:
-                            break;
-                        case INACTIVE:
-                            break;
-                    }
                     switch (idenfyIdentificationResult.getAutoIdentificationStatus()) {
 
                         case APPROVED:
@@ -547,8 +574,66 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
                         case UNVERIFIED:
                             break;
                     }
+                    
+                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case INACTIVE:
+                            break;
+                    }
                 }
                 Toast.makeText(this, idenfyIdentificationResult.toString(), Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+```
+
+##### Kotlin
+```Kotlin
+    private void initializeIDenfySDK(String authToken) 
+    {
+        val idenfyUISettingsV2 = IdenfyUIBuilderV2()
+            .withInstructions(true)
+            .build()
+        val idenfySettingsV2 = IdenfyBuilderV2()
+            .withAuthToken(authToken)
+            .withIdenfyUISettingsV2(idenfyUISettingsV2)
+            .build()
+        IdenfyController.getInstance().startWithManualResults(
+            this,
+            IdenfyController.IDENFY_REQUEST_CODE,
+            idenfySettingsV2
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
+            if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
+                val idenfyIdentificationResult: IdenfyIdentificationResult =
+                    data!!.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT)
+
+                when (idenfyIdentificationResult.autoIdentificationStatus) {
+                    AutoIdentificationStatus.APPROVED -> {
+                    }
+                    AutoIdentificationStatus.FAILED -> {
+                    }
+                    AutoIdentificationStatus.UNVERIFIED -> {
+                    }
+                }
+                
+                when (idenfyIdentificationResult.manualIdentificationStatus) {
+                    ManualIdentificationStatus.APPROVED -> {
+                    }
+                    ManualIdentificationStatus.FAILED -> {
+                    }
+                    ManualIdentificationStatus.INACTIVE -> {
+                    }
+                }
+
+                Toast.makeText(this, idenfyIdentificationResult.toString(), Toast.LENGTH_LONG)
+                    .show()
             }
         }
     }
