@@ -592,7 +592,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
 
 ##### Kotlin
 ```Kotlin
-    private void initializeIDenfySDK(String authToken) 
+    private fun initializeIDenfySDK(authToken: String) 
     {
         val idenfyUISettingsV2 = IdenfyUIBuilderV2()
             .withInstructions(true)
