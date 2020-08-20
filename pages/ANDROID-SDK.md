@@ -157,7 +157,7 @@ IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
                 .build();
 ```
 
-***Note**: We recommend to implement initialization with the manual identification results. Regular V2 initialization will be removed in the future, while initialization with manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our iFrame integration. 
+***Note**: We recommend to implement the initialization with the manual identification results. The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
 
 ### 5. Presenting Activity
 
