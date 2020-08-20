@@ -18,6 +18,11 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.0.0] - 2020-08-20
+### Added:
+* Introduced manual identification flow!
+
+
 ## [2.8.0] - 2020-08-19
 ### Changed:
 * Customization option to skip country selection.
@@ -128,6 +133,14 @@ It is required to enable Java 8 support, if it was already not provided:
 ### 4. Configuring SDK
 
 It is required to provide following configuration:
+#### WithManualResults
+##### Java
+```java
+IdenfySettingsV2 idenfySettingsV2 = new IdenfySettingsV2.IdenfyBuilderV2()
+                .withAuthToken("AUTH_TOKEN")
+                .build();
+```
+
 #### V2
 ##### Java
 ```java
@@ -143,9 +156,22 @@ IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
                 .withAuthToken("AUTH_TOKEN")
                 .build();
 ```
+
+***Note**: We recommend to implement initialization with the manual identification results. Regular V2 initialization will be removed in the future, while initialization with manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our iFrame integration. 
+
 ### 5. Presenting Activity
 
 Instance of IdenfyController is required for starting a flow.
+
+#### WithManualResults
+##### Java
+```java
+IdenfyController.getInstance().startWithManualResults(context,
+                IdenfyController.IDENFY_REQUEST_CODE,
+                idenfySettingsV2);
+    //context must be of an activity type.
+```
+
 #### V2
 ##### Java
 ```java
@@ -160,9 +186,57 @@ Instance of IdenfyController is required for starting a flow.
 ```
 ## Callbacks
 
-SDK provides following callbacks: onSuccess, onError and onUserExit.
-
 It is required to override onActivityResult for receiving responses.
+
+#### WithManualResults
+### Swift
+```java
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
+            if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
+                IdenfyIdentificationResult idenfyIdentificationResult = data.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT);
+                if (idenfyIdentificationResult != null) {
+                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case INACTIVE:
+                            break;
+                    }
+                    switch (idenfyIdentificationResult.getAutoIdentificationStatus()) {
+
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case UNVERIFIED:
+                            break;
+                    }
+                }
+                Toast.makeText(this, idenfyIdentificationResult.toString(), Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+```
+
+Information about the IdenfyIdentificationResult **autoIdentificationStatus** statuses:
+
+|Name            |Description
+|-------------------|------------------------------------
+|`APPROVED`   |The user completed an identification flow and the identification status, provided by an automated platform, is APPROVED.
+|`FAILED`|The user completed an identification flow and the identification status, provided by an automated platform, is FAILED.
+|`UNVERIFIED`   |The user did not complete an identification flow and the identification status, provided by an automated platform, is UNVERIFIED. 
+
+Information about the IdenfyIdentificationResult **manualIdentificationStatus** statuses:
+
+|Name            |Description
+|-------------------|------------------------------------
+|`APPROVED`   |The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is APPROVED.
+|`FAILED`|The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is FAILED.
+|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer.
 
 #### V1, V2
 ##### Java
@@ -209,7 +283,7 @@ Results will be delivered while identification process is occurring and applicat
  ### 1. Declare a class for receiving events
 
 Declare a class that implements IdenfyUserFlowHandler to call your backend service, log events or apply changes.
-#### V1, V2
+#### V1, V2, WithManualResults
 ##### Java
 ```java
 public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
@@ -436,6 +510,50 @@ Please take a look at UI customization page:
 ## Samples
 ### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
+
+#### WithManualResults
+##### Java
+```java
+    private void initializeIDenfySDK(String authToken) 
+    {
+        IdenfySettingsV2 idenfySettingsV2 = new IdenfySettingsV2.IdenfyBuilderV2()
+                .withAuthToken(authToken)
+                .build();
+
+        IdenfyController.getInstance().startWithManualResults(this, IdenfyController.IDENFY_REQUEST_CODE, idenfySettingsV2);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IdenfyController.IDENFY_REQUEST_CODE) {
+            if (resultCode == IdenfyController.IDENFY_IDENTIFICATION_RESULT_CODE) {
+                IdenfyIdentificationResult idenfyIdentificationResult = data.getParcelableExtra(IdenfyController.IDENFY_IDENTIFICATION_RESULT);
+                if (idenfyIdentificationResult != null) {
+                    switch (idenfyIdentificationResult.getManualIdentificationStatus()) {
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case INACTIVE:
+                            break;
+                    }
+                    switch (idenfyIdentificationResult.getAutoIdentificationStatus()) {
+
+                        case APPROVED:
+                            break;
+                        case FAILED:
+                            break;
+                        case UNVERIFIED:
+                            break;
+                    }
+                }
+                Toast.makeText(this, idenfyIdentificationResult.toString(), Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+```
+
 
 #### V2
 ##### Java

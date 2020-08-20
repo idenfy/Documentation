@@ -18,6 +18,10 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [4.0.0] - 2020-08-20
+### Added:
+* Introduced manual identification flow!
+
 ## [3.4.0] - 2020-08-18
 ### Added:
 * Better network requests handling on poor network conditions.
@@ -143,6 +147,18 @@ A list of full dependencies can be found in
 ### 4. Configuring SDK
 
 It is required to provide following configuration:
+
+#### WithManualResults
+##### Swift
+```swift
+let idenfySettingsV2 = IdenfyBuilderV2()
+    .withAuthToken("AUTH_TOKEN")
+    .build()
+
+let idenfyController = IdenfyController.shared
+idenfyController.initializeIdenfySDKWithManualResults(idenfySettingsV2: idenfySettingsV2)
+```
+
 #### V2
 ##### Swift
 ```swift
@@ -164,11 +180,14 @@ let idenfySettings = IdenfyBuilder()
 let idenfyController = IdenfyController(idenfySettings: idenfySettings)
 ```
 
+
+***Note**: We recommend to implement initialization with the manual identification results. Regular V2 initialization will be removed in the future, while initialization with manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our iFrame integration. 
+
 ### 5. Presenting ViewController
 
 Instance of IdenfyController is required for managing iDenfy ViewController.
 Following code will present initial ViewController:
-#### V2, V1
+#### V2, V1, WithManualResults
 ##### Swift
 ```swift
 let idenfyVC = idenfyController.instantiateNavigationController()         
@@ -177,11 +196,54 @@ self.present(idenfyVC, animated: true, completion: nil)
 
 ## Callbacks
 
-SDK provides following callbacks: onSuccess, onError and onUserExit.
 
-Following method will provide callbacks from the SDK:
+#### WithManualResults
+The SDK provides following callback: idenfyIdentificationResult
+### Swift
+```swift
+    idenfyController.handleIdenfyCallbacksWithManualResults(idenfyIdentificationResult: {
+            idenfyIdentificationResult
+            in
+            switch(idenfyIdentificationResult.autoIdentificationStatus){
+                
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .UNVERIFIED:
+                break;
+            }
+            
+            switch(idenfyIdentificationResult.manualIdentificationStatus){
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .INACTIVE:
+                break;
+            }
+            
+        })
+```
+
+Information about the IdenfyIdentificationResult **autoIdentificationStatus** statuses:
+
+|Name            |Description
+|-------------------|------------------------------------
+|`APPROVED`   |The user completed an identification flow and the identification status, provided by an automated platform, is APPROVED.
+|`FAILED`|The user completed an identification flow and the identification status, provided by an automated platform, is FAILED.
+|`UNVERIFIED`   |The user did not complete an identification flow and the identification status, provided by an automated platform, is UNVERIFIED. 
+
+Information about the IdenfyIdentificationResult **manualIdentificationStatus** statuses:
+
+|Name            |Description
+|-------------------|------------------------------------
+|`APPROVED`   |The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is APPROVED.
+|`FAILED`|The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is FAILED.
+|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer.
 
 #### V1, V2
+The SDK provides following callbacks: onSuccess, onError and onUserExit.
 ### Swift
 ```swift
     idenfyController.handleIDenfyCallbacks(
@@ -385,6 +447,50 @@ Please take a look at UI customization page:
 ## Samples
 ### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
+
+#### WithManualResults
+##### Swift
+```swift
+    private func initializeIDenfySDK(authToken:String)
+    {
+        let idenfyUISettingsV2 = IdenfyUIBuilderV2()
+            .withLanguageSelection(true)
+            .build()
+        
+        let idenfySettingsV2 = IdenfyBuilderV2()
+            .withAuthToken(authToken)
+            .build()
+        
+        let idenfyController = IdenfyController.shared
+        idenfyController.initializeIdenfySDKWithManualResults(idenfySettingsV2: idenfySettingsV2)
+        
+        self.present(idenfyVC, animated: true, completion: nil)
+        idenfyController.handleIdenfyCallbacksWithManualResults(idenfyIdentificationResult: {
+            idenfyIdentificationResult
+            in
+            switch(idenfyIdentificationResult.autoIdentificationStatus){
+                
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .UNVERIFIED:
+                break;
+            }
+            
+            switch(idenfyIdentificationResult.manualIdentificationStatus){
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .INACTIVE:
+                break;
+            }
+            
+        })
+    }
+```
+
 
 #### V2
 ##### Swift
