@@ -84,6 +84,7 @@ Note, that any of the specified fields below can be `null`.
 |`birthPlace`           |`String`|- Max length 60  |Clients birth place parsed from the document.|
 |`authority`            |`String`|- Max length 60  |The authority of the document parsed from the document.|
 |`address`              |`String`|- Max length 80  |Clients address parsed from the document.|
+|`mothersMaidenName`              |`String`|- Max length 80  |Clients mothers maiden name parsed from the document.|
 |`driverLicenseCategory`|`String`|- Max length 30  |Clients driving license categories (classes) parsed from the document.|
 |`manuallyDataChanged`  |`Bool`  |-                |Indicates whether a manual reviewer has changed any parsed data from the document. Applicable only when a human reviews an identification. In automated verification response this value is `false`.|
 |`selectedCountry`      |`String`|- Any country in alpha-2 code |Country which was selected in identification process.|
