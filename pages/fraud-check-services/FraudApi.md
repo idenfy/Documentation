@@ -7,6 +7,7 @@ Fraud checking API is an additional service used to further identify a person an
 - (*AML*) Peps & Sanctions name check
 - (*AML*) Negative articles check
 - (*LID*) Lost and Invalid documents registry check
+- (*COMPANY*) Check information about a company, as well as any hits identified on the company.
 
 ### Calling the API:
 
@@ -18,7 +19,7 @@ The request must contain JSON with parameters:
 |Key       |Required|Type          |Constraints|Explanation|
 |----------|--------|--------------|-----------|-----------|
 |`mode`    |Yes     |`String`      |Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`DATA`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`IDENTIFICATION`|Specifies how fraud check will be performed. If `IDENTIFICATION` is given, you will have to provide a scanRef in the data field. If `DATA` is given, you will have to provide all necessary data about client for required services.|
-|`services`|Yes     |`List[String]`|Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`AML`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`LID`|Types of services to apply. `AML` - Anti money laundering service, `LID` - Lost and invalid documents registry.|
+|`services`|Yes     |`List[String]`|Values:<br>&nbsp;&nbsp;&nbsp;&nbsp;-`AML`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`LID`<br>&nbsp;&nbsp;&nbsp;&nbsp;-`COMPANY`|Types of services to apply. `AML` - Anti money laundering service, `LID` - Lost and invalid documents registry, `COMPANY` - Company check.|
 |`data`    |Yes     |`List[Dict]`  |-          |Supplied data for fraud check services.|
 
 ##### Specifying AML services
@@ -45,6 +46,7 @@ is associated to a single country.
 |----------|-------------|-----------|
 |`AML`     |`List[Dict]` |Fraud check results from AML services. If `AML` service was not specified in the request this key is not present in the response. For a complete response documentation please refer to [AML documentation](https://github.com/idenfy/Documentation/blob/master/pages/fraud-check-services/aml.md).|
 |`LID`     |`List[Dict]` |Fraud check results from LID services. If `LID` service was not specified in the request this key is not present in the response. For a complete response documentation please refer to [LID documentation](https://github.com/idenfy/Documentation/blob/master/pages/fraud-check-services/lid.md).|
+|`COMPANY` |`List[Dict]` |Fraud check results from COMPANY services. If `COMPANY` service was not specified in the request this key is not present in the response. For a complete response documentation please refer to [COMPANY documentation](https://github.com/idenfy/Documentation/blob/master/pages/fraud-check-services/company.md).|
 
 ### Examples
 
@@ -240,3 +242,89 @@ is associated to a single country.
   ]
 }
 ```
+
+#### Example COMPANY check
+
+##### Example request
+
+```json
+{
+  "mode": "DATA",
+  "services": [
+    "COMPANY"
+  ],
+  "data": [
+    {
+    	"companyName": "My Company",
+        "country": "LT"
+    }
+  ]
+}
+```
+
+##### Example response
+
+```json
+{
+    "COMPANY": [
+        {
+            "status": {
+                "serviceSuspected": true,
+                "serviceUsed": true,
+                "serviceFound": true,
+                "checkSuccessful": true,
+                "overallStatus": "SUSPECTED"
+            },
+            "serviceName": "CompanyCheck",
+            "serviceGroupType": "COMPANY",
+            "uid": "KNR6IJ7G3EYNXSVVQNN6ZV3VV",
+            "errorMessage": null,
+            "data": [
+                {
+                    "result": {
+                        "Name": "My Company",
+                        "Residence": "LT",
+                        "CompanyHasHits": "true",
+                        "ScoreAml": "2",
+                        "RiskAml": "M",
+                        "RiskElements": [
+                            {
+                                "RiskName": "ScoreAml",
+                                "Explanation": "The company is located in a medium risk country"
+                            },
+                            {
+                                "RiskName": "RiskAml",
+                                "Explanation": "The AML risk for this company is MEDIUM"
+                            },
+                            {
+                                "RiskName": "CompanyHasHits",
+                                "Explanation": "The company's name is similar to names on sanctions' lists. Please check if the hits apply to the company."
+                            }
+                        ],
+                        "HitsOnLists": [
+                            {
+                                "Name": "MY AVIATION COMPANY LIMITED",
+                                "Forename": "UNKNOWN",
+                                "Reason": "IFSR Program",
+                                "Nationality": "Unknown",
+                                "BirthDate": "UNKNOWN",
+                                "HitType": "Sanction",
+                                "ListNumber": "24877",
+                                "ListName": "OFAC",
+                                "Score": "100",
+                                "LastUpdateDate": "2018-09-18T00:00:00",
+                                "IsPerson": "false",
+                                "IsActive": "true"
+                            }
+                        ],
+                        "CompaniesFound": []
+                    },
+                    "companyName": "My Company",
+                    "country": "LT"
+                }
+            ]
+        }
+    ]
+}
+```
+
