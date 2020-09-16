@@ -15,7 +15,7 @@ Our platform has many features - it is best for you to know them all and cherry-
 <br><br>*Secondly*, visit our FAQs list and read most common questions to better understand how various features play together and what are the most common issues for other businesses:<br>
 [FAQs](https://github.com/idenfy/Documentation/blob/master/pages/FAQ.md).
 <br><br>Before going to integration part we recommend You to read about differences between environments:<br>
-[Environments](https://github.com/idenfy/Documentation/blob/master/pages/FeaturesList.md).
+[Environments](https://github.com/idenfy/Documentation/blob/master/pages/Environments.md).
 
 ## Integration steps
 *Firstly*, generate an identification token. A token is used to identify your client with our services.
