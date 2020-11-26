@@ -68,6 +68,7 @@ Request HTTP body is in JSON format which is described in tables below:
 ### Data table
 
 Note, that any of the specified fields below can be `null`.
+Also, some fields in original language could have symbols encoded in UTF-16.
 
 |JSON key             |Type    |Constraints      |Explanation|
 |---------------------|--------|-----------------|-----------|
