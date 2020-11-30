@@ -33,7 +33,7 @@ Our platform has many features - it is best for you to know them all and cherry-
 *Thirdly (optional)*, register a webhook endpoint where your API will receive identification results.
 - [Webhook callback](https://github.com/idenfy/Documentation/blob/master/pages/ResultCallback.md)
 
-* Your API can request data if data was not received or was not saved.
+*(Additional)* Your API can request data if data was not received or was not saved.
 - [Additional identification data retrieval](https://github.com/idenfy/Documentation/blob/master/pages/IdentificationDataRetrieval.md)
 - [Download identification report](https://github.com/idenfy/Documentation/blob/master/pages/IdentificationPDF.md)
 
