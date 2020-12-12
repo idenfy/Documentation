@@ -18,6 +18,20 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [4.0.0] - 2020-12-11
+### Changed:
+* Renamed startWithManualResults to initializeIdenfySDKV2WithManual to match IOS SDK.
+* Introduced additional WAITING status in the manualIdentificationStatus enum.
+* Renamed layout idenfy_fragment_document_photo_result_v2.xml into the idenfy_fragment_document_photo_result_with_questions_v2.xml
+* Renamed layout idenfy_fragment_face_photo_result_v2.xml into the idenfy_fragment_face_photo_result_with_questions_v2.xml
+* Renamed layout idenfy_fragment_manual_reviewing_status_waiting_v2.xml into the idenfy_fragment_manual_reviewing_status_waiting_with_auto_results_steps_v2.xml
+
+### Added:
+* Added new UI elements in the document & selfie photo result screens. [Visual changes](https://github.com/idenfy/Documentation/blob/master/resources/sdk/android/changes/Android_SDK_4.0.0_PhotoResultsScreen.png).
+* Removed terminate identification button and added new UI elements in the ManualResultsWaiting screen. [Visual changes](https://github.com/idenfy/Documentation/blob/master/resources/sdk/android/changes/Android_SDK_4.0.0_ManualWaitingResultsScreen.png).
+* Added highly requested state restoration change. Previously the SDK would force a user to restart the identification flow as soon as the user went to the background. This behavior created inconveniences for the identification process. As a result, we redesigned state restoration.
+The SDK no longer causes the identification restart as soon as the user goes to the background. The restart will only occur if the user spends **at least 5 minutes** while being in the background.
+
 ## [3.2.1] - 2020-11-17
 ### Added:
 * Added support for the Bulgarian language.
@@ -99,23 +113,11 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Liveliness feature has been updated to V8! Please, update your current liveliness implementation as soon as possible. The only changes are related to UI customization. More about this here.
 ## Getting started
 
-#### SDK version >=2.0.0:
 The SDK supports API Level 16 and above.
 
 Our current gradle configuration only supports AndroidX.
 
 We suggest using Idenfy V2 SDK. It offers cleaner UI/UX and more customization options. All future improvements will be added only to V2 version.
-
-#### SDK version <2.0.0:
-The SDK supports API Level 15 and above.
-
-Our current gradle configuration supports 
-
-`targetSdkVersion = 28`
-
-`compileSdkVersion = 28`
-
-`buildToolsVersion '28.1.1'`
 
 ### 1. Obtaining token
 
@@ -154,7 +156,7 @@ It is required to enable Java 8 support, if it was already not provided:
 ### 4. Configuring SDK
 
 It is required to provide following configuration:
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 ##### Java
 ```java
 IdenfySettingsV2 idenfySettingsV2 = new IdenfySettingsV2.IdenfyBuilderV2()
@@ -178,16 +180,18 @@ IdenfySettings idenfySettings = new IdenfySettings.IdenfyBuilder()
                 .build();
 ```
 
-***Note**: We recommend to implement the initialization with the manual identification results. The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
+***Note**: We recommend implementing the initialization of the SDK with the initializeIdenfySDKV2WithManual(). 
+The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
 
 ### 5. Presenting Activity
 
 Instance of IdenfyController is required for starting a flow.
 
-#### WithManualResults
+**Recommended approach**
+#### initializeIdenfySDKV2WithManual
 ##### Java
 ```java
-IdenfyController.getInstance().startWithManualResults(context,
+IdenfyController.getInstance().initializeIdenfySDKV2WithManual(context,
                 IdenfyController.IDENFY_REQUEST_CODE,
                 idenfySettingsV2);
     //context must be of an activity type.
@@ -209,7 +213,7 @@ IdenfyController.getInstance().startWithManualResults(context,
 
 It is required to override onActivityResult for receiving responses.
 
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 ### Java
 ```java
     @Override
@@ -256,9 +260,14 @@ Information about the IdenfyIdentificationResult **manualIdentificationStatus** 
 
 |Name            |Description
 |-------------------|------------------------------------
-|`APPROVED`   |The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is APPROVED.
-|`FAILED`|The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is FAILED.
-|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer.
+|`APPROVED`   |The user completed an identification flow and was verified manually while waiting for the manual verification results in the iDenfy SDK. The identification status, provided by a manual review, is APPROVED.
+|`FAILED`|The user completed an identification flow and was verified manually while waiting for the manual verification results in the iDenfy SDK. The identification status, provided by a manual review, is FAILED.
+|`WAITING`|The user completed an identification flow and started waiting for the manual verification results in the iDenfy SDK. Then he/she decided to stop waiting and pressed a "BACK TO ACCOUNT" button. The manual identification review is **still ongoing**.
+|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer. The identification performed by the user can still be verified by the manual review if your system uses the manual verification service.
+
+*Note
+The manualIdentificationStatus status always returns INACTIVE status, unless your system implements manual identification callback, but does not create **a separate waiting screen** for indicating about the ongoing manual identity verification process.
+For better customization we suggest using the [immediate redirect feature ](#customizing-results-callbacks-v2-optional). As a result, the user will not see an automatic identification status, provided by iDenfy service. The SDK will be closed while showing loading indicators.
 
 #### V1, V2
 ##### Java
@@ -318,6 +327,8 @@ Information about the IdenfyIdentificationResult **manualIdentificationStatus** 
                     }
                     ManualIdentificationStatus.FAILED -> {
                     }
+                    ManualIdentificationStatus.WAITING -> {
+                    }
                     ManualIdentificationStatus.INACTIVE -> {
                     }
                 }
@@ -339,7 +350,7 @@ Results will be delivered while identification process is occurring and applicat
  ### 1. Declare a class for receiving events
 
 Declare a class that implements IdenfyUserFlowHandler to call your backend service, log events or apply changes.
-#### V1, V2, WithManualResults
+#### V1, V2, initializeIdenfySDKV2WithManual
 ##### Java
 ```java
 public class IdenfyUserFlowCallbacksHandler implements IdenfyUserFlowHandler {
@@ -567,7 +578,7 @@ Please take a look at UI customization page:
 ### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
 
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 ##### Java
 ```java
     private void initializeIDenfySDK(String authToken) 
@@ -576,7 +587,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
                 .withAuthToken(authToken)
                 .build();
 
-        IdenfyController.getInstance().startWithManualResults(this, IdenfyController.IDENFY_REQUEST_CODE, idenfySettingsV2);
+        IdenfyController.getInstance().initializeIdenfySDKV2WithManual(this, IdenfyController.IDENFY_REQUEST_CODE, idenfySettingsV2);
     }
 
     @Override
@@ -601,6 +612,8 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
                             break;
                         case FAILED:
                             break;
+                        case WAITING:
+                            break;
                         case INACTIVE:
                             break;
                     }
@@ -622,7 +635,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
             .withAuthToken(authToken)
             .withIdenfyUISettingsV2(idenfyUISettingsV2)
             .build()
-        IdenfyController.getInstance().startWithManualResults(
+        IdenfyController.getInstance().initializeIdenfySDKV2WithManual(
             this,
             IdenfyController.IDENFY_REQUEST_CODE,
             idenfySettingsV2
@@ -648,6 +661,8 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
                     ManualIdentificationStatus.APPROVED -> {
                     }
                     ManualIdentificationStatus.FAILED -> {
+                    }
+                    ManualIdentificationStatus.WAITING -> {
                     }
                     ManualIdentificationStatus.INACTIVE -> {
                     }

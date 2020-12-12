@@ -18,6 +18,19 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.0.0] - 2020-12-11
+### Changed:
+* Renamed initializeIdenfySDKV2WithManualWithIdenfySettingsV2 to initializeIdenfySDKV2WithManual to match Android SDK.
+* Introduced additional WAITING status in the manualIdentificationStatus enum.
+
+
+### Added:
+* Added new UI elements in the document & selfie photo result screens. [Visual changes](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/IOS_SDK_5.0.0_PhotoResultsScreen.png).
+* Removed terminate identification button and added new UI elements in the ManualResultsWaiting screen. [Visual changes](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/IOS_SDK_5.0.0_ManualWaitingResultsScreen.png).
+* Added highly requested state restoration change. Previously the SDK would force a user to restart the identification flow as soon as the user went to the background. This behavior created inconveniences for the identification process. As a result, we redesigned state restoration.
+The SDK no longer causes the identification restart as soon as the user goes to the background. The restart will only occur if the user spends **at least 5 minutes** while being in the background.
+* Added new V2 customization option. This customization is an significant improvement from previous solution.
+
 ## [4.3.1] - 2020-11-17
 ### Added:
 * Added support for the Bulgarian language.
@@ -112,9 +125,7 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 
 ## Getting started
 
-* SDK supports iOS 9.0.
-* SDK supports all versions previous to Swift 5.0 starting from version 1.0* until 1.2*.
-* SDK supports Swift 5.0 and Xcode 11 starting from version 1.2*.
+* The minimum version of IOS, supported by the SDK is 9.0.
 
 ### 1. Obtaining token
 
@@ -130,21 +141,6 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ```
 ### 3. Adding the SDK dependency
 #### CocoaPods
-```ruby
-pod 'iDenfySDK'
-```
-Support for Swift versions:
-
-*Swift <= 4.2:
-```ruby
-pod 'iDenfySDK', '<1.2'
-```
-
-*Swift 5.0:
-```ruby
-pod 'iDenfySDK', '<1.3'
-```
-*Swift >= 5.1 (module stability):
 ```ruby
 pod 'iDenfySDK'
 ```
@@ -178,7 +174,7 @@ A list of full dependencies can be found in
 
 It is required to provide following configuration:
 
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 ##### Swift
 ```swift
 let idenfySettingsV2 = IdenfyBuilderV2()
@@ -186,7 +182,7 @@ let idenfySettingsV2 = IdenfyBuilderV2()
     .build()
 
 let idenfyController = IdenfyController.shared
-idenfyController.initializeIdenfySDKWithManualResults(idenfySettingsV2: idenfySettingsV2)
+idenfyController.initializeIdenfySDKV2WithManual(idenfySettingsV2: idenfySettingsV2)
 ```
 
 ##### Objective-C
@@ -197,7 +193,7 @@ idenfyBuilderV2 = [idenfyBuilderV2 withAuthToken:authToken];
 IdenfySettingsV2 *idenfySettingsV2 = [idenfyBuilderV2 build];
 
 IdenfyController *idenfyController = [IdenfyController shared];
-[idenfyController initializeIdenfySDKWithManualResultsWithIdenfySettingsV2:idenfySettingsV2];
+[idenfyController initializeIdenfySDKV2WithManualWithIdenfySettingsV2:idenfySettingsV2];
 ```
 
 
@@ -223,13 +219,14 @@ let idenfyController = IdenfyController(idenfySettings: idenfySettings)
 ```
 
 
-***Note**: We recommend to implement the initialization with the manual identification results. The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
+***Note**: We recommend implementing the initialization of the SDK with the initializeIdenfySDKV2WithManual(). 
+The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
 
 ### 5. Presenting ViewController
 
 Instance of IdenfyController is required for managing iDenfy ViewController.
 Following code will present initial ViewController:
-#### V2, V1, WithManualResults
+#### V2, V1, initializeIdenfySDKV2WithManual
 ##### Swift
 ```swift
 let idenfyVC = idenfyController.instantiateNavigationController()         
@@ -245,7 +242,7 @@ UINavigationController *idenfyVC = [idenfyController instantiateNavigationContro
 ## Callbacks
 
 
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 The SDK provides following callback: idenfyIdentificationResult
 ### Swift
 ```swift
@@ -266,6 +263,8 @@ The SDK provides following callback: idenfyIdentificationResult
             case .APPROVED:
                 break;
             case .FAILED:
+                break;
+            case .WAITING:
                 break;
             case .INACTIVE:
                 break;
@@ -293,6 +292,8 @@ The SDK provides following callback: idenfyIdentificationResult
                 break;
             case ManualIdentificationStatusFAILED:
                 break;
+            case ManualIdentificationStatusWAITING:
+                break;
             case ManualIdentificationStatusINACTIVE:
                 break;
             default:
@@ -314,9 +315,14 @@ Information about the IdenfyIdentificationResult **manualIdentificationStatus** 
 
 |Name            |Description
 |-------------------|------------------------------------
-|`APPROVED`   |The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is APPROVED.
-|`FAILED`|The user completed an identification flow, was verified manually and the identification status, provided by a manual reviewer, is FAILED.
-|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer.
+|`APPROVED`   |The user completed an identification flow and was verified manually while waiting for the manual verification results in the iDenfy SDK. The identification status, provided by a manual review, is APPROVED.
+|`FAILED`|The user completed an identification flow and was verified manually while waiting for the manual verification results in the iDenfy SDK. The identification status, provided by a manual review, is FAILED.
+|`WAITING`|The user completed an identification flow and started waiting for the manual verification results in the iDenfy SDK. Then he/she decided to stop waiting and pressed a "BACK TO ACCOUNT" button. The manual identification review is **still ongoing**.
+|`INACTIVE`   |The user was only verified by an automated platform, not by a manual reviewer. The identification performed by the user can still be verified by the manual review if your system uses the manual verification service.
+
+*Note
+The manualIdentificationStatus status always returns INACTIVE status, unless your system implements manual identification callback, but does not create **a separate waiting screen** for indicating about the ongoing manual identity verification process.
+For better customization we suggest using the [immediate redirect feature ](#customizing-results-callbacks-v2-optional). As a result, the user will not see an automatic identification status, provided by iDenfy service. The SDK will be closed while showing loading indicators.
 
 #### V1, V2
 The SDK provides following callbacks: onSuccess, onError and onUserExit.
@@ -397,7 +403,7 @@ The SDK provides an option to skip **document's issuing country** selection. If 
         .build()
     ...
 ```
-*NOTE, make sure that issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
+*NOTE, make sure that the issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
 
 ## Customizing SDK V1 (optional)
 
@@ -524,7 +530,7 @@ Please take a look at UI customization page:
 ### Sample SDK code
 A following code demonstrates possible iDenfySDK configuration with applied settings:
 
-#### WithManualResults
+#### initializeIdenfySDKV2WithManual
 ##### Swift
 ```swift
     private func initializeIDenfySDK(authToken:String)
@@ -538,7 +544,7 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
             .build()
         
         let idenfyController = IdenfyController.shared
-        idenfyController.initializeIdenfySDKWithManualResults(idenfySettingsV2: idenfySettingsV2)
+        idenfyController.initializeIdenfySDKV2WithManual(idenfySettingsV2: idenfySettingsV2)
         
         self.present(idenfyVC, animated: true, completion: nil)
         idenfyController.handleIdenfyCallbacksWithManualResults(idenfyIdentificationResult: {
@@ -558,6 +564,8 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
             case .APPROVED:
                 break;
             case .FAILED:
+                break;
+            case .WAITING:
                 break;
             case .INACTIVE:
                 break;
