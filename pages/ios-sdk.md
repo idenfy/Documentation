@@ -29,7 +29,7 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Removed terminate identification button and added new UI elements in the ManualResultsWaiting screen. [Visual changes](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/IOS_SDK_5.0.0_ManualWaitingResultsScreen.png).
 * Added highly requested state restoration change. Previously the SDK would force a user to restart the identification flow as soon as the user went to the background. This behavior created inconveniences for the identification process. As a result, we redesigned state restoration.
 The SDK no longer causes the identification restart as soon as the user goes to the background. The restart will only occur if the user spends **at least 5 minutes** while being in the background.
-* Added new V2 customization option. This customization is an significant improvement from previous solution.
+* Added a new [V2 customization option](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-custom-idenfyviewsv2-class). This customization is a significant improvement from the previous solution.
 
 ## [4.3.1] - 2020-11-17
 ### Added:
