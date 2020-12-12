@@ -93,7 +93,7 @@ Some elements in SDK could be configured with code to enable easier integration 
 ```
 
 ## Customization V2
-### Customization by changing views from idenfyviews module.
+### Customization by changing views from idenfyviews module:
 All UI elements are located in the separate module - idenfyviews. Classes are marked as public, so you can override them.
 #### 1. Including idenfyviews
 ```swift
@@ -183,31 +183,29 @@ Example:
 ```
 
 
-### Customization by overriding idenfyviews module
-For more advanced customization (fonts, constraints, layout structure and etc.) it is better to override our layouts. All layouts used in IdenfySDK are located in idenfyviews module. All code is not compiled and can easily be edited. 
-
-#### 1. Download sample
-[Download](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/idenfysdk-ui-editor.zip) sample, which will help generate an idenfyviews framework. 
-
-#### 2. Customize idenfyviews
-Now you can edit any files in idenfyviews. Things to keep in mind:
-- Don't change names of resources
-- Strings can be overwritten. For changing strings you should edit Idenfy.strings file
+### Customization by providing custom IdenfyViewsV2 class:
+For more advanced customization (fonts, constraints, layout structure, etc.) it is better to override our layouts. All layouts used in IdenfySDK are located in idenfyviews module.
 
 
-#### 3. Build an universal idenfyviews framework
-After finishing customizing views you should generate an universal framework. Simply select **idenfyviewsUniversal** target and run the framework in Xcode. Output will be generated in Output folder.
-*Note: You should run framework on both Simulator and actual device in order to generate all architectures.
+#### 1. Create an instance of IdenfyViewsV2 
+Use IdenfyViewsBuilderV2 to create an instance of IdenfyViewsV2 with your custom views, which conform to protocols provided by the iDenfySDK. Take a look at the methods of the IdenfyViewsBuilderV2 class.
+```swift
+let idenfyViewsV2:IdenfyViewsV2 = IdenfyViewsBuilderV2()
+            .withSplashScreenV2View(SplashScreenV2View())
+            ...
+            .build()
+```
+#### 2. Initiliaze iDenfySDK with an instance of IdenfyViewsV2
+Pass created instance of the IdenfyViewsV2 class to the initializeIdenfySDKV2WithManual() method.
+```swift
+ idenfyController.initializeIdenfySDKV2WithManual(idenfySettingsV2: idenfySettingsV2, idenfyViewsV2: idenfyViewsV2)
+```
+### Customization with IdenfyUISettingsV2:
 
-<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/idenfyviews_compiled.png" alt="Compiled idenfyviews" width="700"></kbd>
-
-#### 4. Replace idenfyviews framework
-In order to see changes you should replace default idenfyviews framework with a new, customized version. Simply open **../Pods/iDenfySDK/iDenfySDK/IdenfySDK** and replace current idenfyviews with a new version.
-
-*Note: Every time you run pod update or pod install your customized idenfyviews.framework will be overwritten by default idenfyviews. This is why it is necessary to make sure that your customized version is used instead of default. For automating this process you should add iDenfySDK [manually](https://github.com/idenfy/Documentation/blob/master/pages/ios-sdk.md#3-adding-the-sdk-dependency).
-
-### Adding instructions in camera session.
+#### * Adding instructions in camera session.
 iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
+Instructions are configured by your backend settings and can be overriden with the SDK settings.
+
 #### 1. Enable instructions in IdenfyUISettingsV2
  ```swift
   let idenfyUISettingsV2 = IdenfyUIBuilderV2()
