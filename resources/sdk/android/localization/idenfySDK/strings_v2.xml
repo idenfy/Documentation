@@ -119,6 +119,11 @@
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_second_proof_of_address_description_part_2_v2">second proof of address</string>
     <string name="idenfy_document_camera_results_view_information_step_front_document_type_passport_description_part_2_v2">passport face page</string>
     <string name="idenfy_document_camera_results_view_information_description_part_3_v2">clearly visible and in the frame?</string>
+    <string name="idenfy_document_camera_results_view_details_first_title_v2_front">Is the picture of your face clearly visible?</string>
+    <string name="idenfy_document_camera_results_view_details_second_title_v2_front">Can you clearly read the details of the document?</string>
+    <string name="idenfy_document_camera_results_view_details_first_title_v2_back">Is it the back of the document?</string>
+    <string name="idenfy_document_camera_results_view_details_second_title_v2_back">Can you clearly read the details of the document?</string>
+    <string name="idenfy_document_camera_results_view_details_title_v2_default">Can you clearly read the details of the document?</string>
 
     <!--Idenfy Face Camera Preview Session View V2-->
     <string name="idenfy_face_camera_preview_session_description_v2">Place your face into the marked area and take a clear photo</string>
@@ -128,8 +133,11 @@
     <string name="idenfy_face_camera_results_title_v2">Confirm face photo</string>
     <string name="idenfy_face_camera_results_description_v2">Is your face photo clearly visible and in the frame?</string>
     <string name="idenfy_document_camera_results_view_information_step_face_description_placeholder_v2">Is your **face photo** clearly visible and in the frame?</string>
+    <string name="idenfy_face_camera_results_view_details_first_title_v2">Is your face clearly visible and close enough for inspection?</string>
 
     <!--Idenfy Document And Face Results View V2-->
+    <string name="idenfy_document_and_face_camera_results_title_v2">Inspect photo</string>
+    <string name="idenfy_document_and_face_camera_results_powered_by_idenfy_card_title_v2">Powered by iDenfy</string>
     <string name="idenfy_document_and_face_camera_results_button_retake_photo_title_v2">TAKE A NEW PHOTO</string>
     <string name="idenfy_document_and_face_camera_results_button_next_step_title_v2">YES, CONTINUE</string>
 
@@ -175,5 +183,34 @@
     <string name="idenfy_identification_results_success_fragment_title_v2">Identification succeeded</string>
     <string name="idenfy_identification_results_success_fragment_description_v2"> </string>
     <string name="idenfy_identifiaction_results_success_fragment_identified_v2">Identified</string>
+
+    <!--Idenfy Manual Reviewing Identification Results Status Waiting View V2-->
+    <string name="idenfy_manual_reviewing_status_waiting_view_information_title_v2">Waiting for human supervision confirmation</string>
+    <string name="idenfy_manual_reviewing_status_waiting_view_information_description_v2">It usually takes up to 20 minutes to verify an identification manually</string>
+    <string name="idenfy_manual_reviewing_status_waiting_view_stop_waiting_button_v2">BACK TO ACCOUNT</string>
+    <string name="idenfy_manual_reviewing_status_waiting_view_identification_submitted_title_v2">Identification submitted</string>
+    <string name="idenfy_manual_reviewing_status_waiting_view_identification_auto_completed_title_v2">Automated AI check completed</string>
+
+    <!--Idenfy Manual Reviewing Identification Results Status Waiting Stop Waiting Identification Alert V2-->
+    <string name="idenfy_alert_title_manual_reviewing_status_waiting_terminate_information">Abort identification</string>
+    <string name="idenfy_alert_message_manual_reviewing_status_waiting_terminate_information">Are you sure you want to abort identification?</string>
+    <string name="idenfy_alert_positive_button_manual_reviewing_status_waiting_terminate_information">YES</string>
+    <string name="idenfy_alert_negative_button_manual_reviewing_status_waiting_terminate_information">NO</string>
+
+    <!--Idenfy Manual Reviewing Identification Results Status Approved View V2-->
+    <string name="idenfy_manual_reviewing_status_approved_view_information_title_v2">Your Identification Was Successful!</string>
+    <string name="idenfy_manual_reviewing_status_approved_view_information_description_v2">Thank You</string>
+    <string name="idenfy_manual_reviewing_status_approved_view_continue_button_v2">CONTINUE</string>
+
+    <!--Idenfy Manual Reviewing Identification Results Status Failed View V2-->
+    <string name="idenfy_manual_reviewing_status_failed_view_information_title_v2">Identification Failed</string>
+    <string name="idenfy_manual_reviewing_status_failed_view_information_description_v2">We could not confirm your identity</string>
+    <string name="idenfy_manual_reviewing_status_failed_view_continue_button_v2">CONTINUE</string>
+
+    <!--Idenfy Camera Permissions View V2-->
+    <string name="idenfy_camera_permissions_view_information_title_v2">May we use your camera?</string>
+    <string name="idenfy_camera_permissions_view_information_description_v2">We need to use your camera to take the photo of your document and face photo</string>
+    <string name="idenfy_camera_permissions_view_guidance_information_description_v2">Go to settings, tap on “Permissions” to grant access to the camera</string>
+    <string name="idenfy_camera_permissions_view_goto_settings_button_title_v2">GO TO SETTINGS</string>
 
 </resources>

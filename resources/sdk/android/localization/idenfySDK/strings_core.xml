@@ -51,6 +51,12 @@
     <string name="idenfy_document_and_face_camera_results_document_analysis_title">Analysing…</string>
     <string name="idenfy_document_and_face_camera_results_document_analysis_description">Please wait a moment.</string>
 
+    <!--Idenfy Liveness Failed Alert-->
+    <string name="idenfy_alert_positive_button_liveness_default_error">Proceed</string>
+    <string name="idenfy_alert_title_liveness_default_error">INFORMATION</string>
+    <string name="idenfy_alert_message_liveness_default_error">Liveliness check failed, please try again.</string>
+    <string name="idenfy_alert_message_liveness_face_timeout_error">Face liveliness check time is up. Please try again.</string>
+
     <!---->
 
     <!--Idenfy Instruction strings -->

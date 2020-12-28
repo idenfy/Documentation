@@ -196,6 +196,11 @@
 "idenfy_document_camera_results_view_information_step_front_document_type_second_proof_of_address_description_part_2_v2" = "second proof of address";
 "idenfy_document_camera_results_view_information_step_front_document_type_passport_description_part_2_v2" = "passport face page";
 "idenfy_document_camera_results_view_information_description_part_3_v2" = "clearly visible and in the frame?";
+"idenfy_document_camera_results_view_details_first_title_v2_front" = "Is the picture of your face clearly visible?";
+"idenfy_document_camera_results_view_details_second_title_v2_front" = "Can you clearly read the details of the document?";
+"idenfy_document_camera_results_view_details_first_title_v2_back" = "Is it the back of the document?";
+"idenfy_document_camera_results_view_details_second_title_v2_back" = "Can you clearly read the details of the document?";
+"idenfy_document_camera_results_view_details_second_title_v2_default" = "Can you clearly read the details of the document?";
 
 /*Idenfy Face Camera Preview Session View V2*/
 "idenfy_face_camera_preview_session_description_v2" = "Place your face into the marked area and take a clear photo";
@@ -205,8 +210,11 @@
 "idenfy_face_camera_results_title_v2" = "Confirm face photo";
 "idenfy_face_camera_results_description_v2" = "Is your face photo clearly visible and in the frame?";
 "idenfy_document_camera_results_view_information_step_face_description_placeholder_v2" = "Is your **face photo** clearly visible and in the frame?";
+"idenfy_face_camera_results_view_details_first_title_v2" = "Is your face clearly visible and close enough for inspection?";
 
 /*Idenfy Document And Face Results View V2*/
+"idenfy_document_and_face_camera_results_title_v2" = "Inspect photo";
+"idenfy_document_and_face_camera_results_powered_by_idenfy_card_title_v2" = "Powered by iDenfy";
 "idenfy_document_and_face_camera_results_button_retake_photo_title_v2" = "TAKE A NEW PHOTO";
 "idenfy_document_and_face_camera_results_button_next_step_title_v2" = "YES, CONTINUE";
 
@@ -254,15 +262,17 @@
 "idenfy_identifiaction_results_success_fragment_identified_v2" = "Identified";
 
 /*Idenfy Manual Reviewing Identification Results Status Waiting View V2*/
-"idenfy_manual_reviewing_status_waiting_view_information_title_v2" = "Your Identification Will Be Reviewed";
+"idenfy_manual_reviewing_status_waiting_view_information_title_v2" = "Waiting for human supervision confirmation";
 "idenfy_manual_reviewing_status_waiting_view_information_description_v2" = "It usually takes up to 20 minutes to verify an identification manually";
-"idenfy_manual_reviewing_status_waiting_view_terminate_button_v2" = "TERMINATE IDENTIFICATION";
+"idenfy_manual_reviewing_status_waiting_view_stop_waiting_button_v2" = "BACK TO ACCOUNT";
+"idenfy_manual_reviewing_status_waiting_view_identification_submitted_title_v2" = "Identification submitted";
+"idenfy_manual_reviewing_status_waiting_view_identification_auto_completed_title_v2" = "Automated AI check completed";
 
-/*Idenfy Manual Reviewing Identification Results Status Waiting Terminate Identification Alert V2*/
-"idenfy_alert_title_manual_reviewing_status_waiting_terminate_information" = "Abort identification";
-"idenfy_alert_message_manual_reviewing_status_waiting_terminate_information" = "Are you sure you want to abort identification?";
-"idenfy_alert_positive_button_manual_reviewing_status_waiting_terminate_information" = "YES";
-"idenfy_alert_negative_button_manual_reviewing_status_waiting_terminate_information" = "NO";
+/*Idenfy Manual Reviewing Identification Results Status Waiting Stop Waiting Identification Alert V2*/
+"idenfy_alert_title_manual_reviewing_status_waiting_stop_waiting_information" = "Abort identification";
+"idenfy_alert_message_manual_reviewing_status_waiting_stop_waiting_information" = "Are you sure you want to abort identification?";
+"idenfy_alert_positive_button_manual_reviewing_status_waiting_stop_waiting_information" = "YES";
+"idenfy_alert_negative_button_manual_reviewing_status_waiting_stop_waiting_information" = "NO";
 
 /*Idenfy Manual Reviewing Identification Results Status Approved View V2*/
 "idenfy_manual_reviewing_status_approved_view_information_title_v2" = "Your Identification Was Successful!";
@@ -309,6 +319,12 @@
 "idenfy_alert_title_manual_reviewing_information" = "INFORMATION";
 "idenfy_alert_message_manual_reviewing_information" = "Because you chose a document other than an id card or passport, we are required to review your case one more time.";
 
+/*Idenfy Liveness Failed Alert*/
+"idenfy_alert_positive_button_liveness_default_error" = "Proceed";
+"idenfy_alert_title_liveness_default_error" = "INFORMATION";
+"idenfy_alert_message_liveness_default_error" = "Liveliness check failed, please try again.";
+"idenfy_alert_message_liveness_face_timeout_error" = "Face liveliness check time is up. Please try again.";
+
 /*Document Analysis Alert*/
 "idenfy_alert_positive_button_document_analysis_information" = "Continue";
 "idenfy_alert_title_document_analysis_information" = "OH NO!";
@@ -330,6 +346,8 @@
 /*Unknown Document Analysis Alert*/
 "idenfy_document_and_face_camera_results_document_analysis_title" = "Analysing…";
 "idenfy_document_and_face_camera_results_document_analysis_description" = "Please wait a moment.";
+
+
 
 /**/
 
