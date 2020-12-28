@@ -65,6 +65,10 @@ Therefore you should ensure on your side that a client is not allowed to do
 an additional identification after a successful one. Also, iDenfy recommends 
 restricting token generation for user if a previous one is not yet expired. 
 
+- ##### When identification process is complete?
+Identification process by default has 2 attempts. If You tried to identify yourself, and all 2 attempts in a row were unsuccessful, your identification process is complete (unsuccessfully). If You get successful identification per 2 attempts, your identification process is complete (successfully). If your session time exceeds, your identification process is complete (unsuccessfully). Sometimes users can interrupt the identification process by closing the browser window, in this case the identification process is still not complete. It completes when session time expires. So, our manual reviewer team can’t review identification immediately because session time hasn't expired and identification hasn't appeared in our system.
+ 
+
 ## Generating token FAQ's
 
 - ##### What is the difference between expiryTime and sessionLength parameters? And what do they do?
