@@ -18,6 +18,16 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [4.1.0] - 2021-01-05
+### Changed:
+* Moved camera permission request to the fragments, which require camera permission. This change provides better support for Android 11 permission changes.
+* Deprecated startActivityForResultV2() in favour of initializeIdenfySDKV2WithManual(). The method startActivityForResultV2() will be removed in the next version.
+
+### Added:
+* Added new customization option - document's issuing country selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md#customization-with-skipping-views).
+* Added new customization option - document's selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md#customization-with-skipping-views).
+* Added new customization option - document's selection onboarding skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/AndroidUICustomization.md#customization-with-skipping-views).
+
 ## [4.0.0] - 2020-12-11
 ### Changed:
 * Renamed startWithManualResults to initializeIdenfySDKV2WithManual to match IOS SDK.
@@ -138,11 +148,21 @@ In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
+      implementation 'idenfySdk:com.idenfy.idenfySdk:4.1.0' 
+    }
+}
+```
+*Note.
+We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
+
+If you understand the disadvantages and still want to use the latest version integrate the SDK in the following way:
+```gradle
+repositories {
+    dependencies {  
       implementation 'idenfySdk:com.idenfy.idenfySdk:+' 
     }
 }
 ```
-*Note: All new versions will support backwards compatibility.
 ### 3. Enabling Java 8 support
 
 It is required to enable Java 8 support, if it was already not provided:
@@ -774,7 +794,7 @@ In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:+' 
+      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:4.1.0' 
     }
 }
 ```

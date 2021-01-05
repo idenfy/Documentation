@@ -213,7 +213,44 @@ Instructions are configured by your backend settings and can be overriden with t
             .build()
 ```
 
+### Customization with skipping views
+The SDK provides a set of tools to omit some views, which could be created in your application yourself offering a fine-grained approach. 
+For example, you would like to implement document selection and the document's issuing country selection in the same view instead of having 2 separate.
 
+*Note. 
+All customization options listed below can be combined, e.g. you can skip both document selection, confirmation screen, and document issuing country selection.
+
+#### * Skip document's issuing country selection screen.
+##### 1. Generate an identification token with the provided document issuing country.
+Take a look at [identification token generation documentation](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md#we-recommend).
+
+Example of a JSON request body:
+```json
+{
+   "clientId":"TEST_CLIENT_ID",
+   "country": "lt"
+}
+```
+##### 2. Contact support for enabling this feature.
+Contact our tech support for enabling this feature to your account settings. Contact at techsupport@idenfy.com.
+
+#### * Skip documents selection screen.
+##### 1. Generate an identification token with the provided document type.
+Take a look at [identification token generation documentation](https://github.com/idenfy/Documentation/blob/master/pages/GeneratingIdentificationToken.md#we-recommend).
+
+Example of a JSON request body:
+```json
+{
+   "clientId":"TEST_CLIENT_ID",
+   "documents": ["PASSPORT"]
+}
+```
+##### 2. Contact support for enabling this feature.
+Contact our tech support for enabling this feature to your account settings. Contact at techsupport@idenfy.com.
+
+#### * Skip document onboarding screen.
+##### 1. Contact support for enabling this feature.
+Contact our tech support for enabling this feature to your account settings. Contact at techsupport@idenfy.com.
 
 
 ## Liveness Customization

@@ -18,10 +18,17 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.1.0] - 2020-01-05
+### Added:
+* Added new customization option - document's issuing country selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
+* Added new customization option - document's selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
+* Added new customization option - document's selection onboarding skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
+
 ## [5.0.0] - 2020-12-11
 ### Changed:
 * Renamed initializeIdenfySDKV2WithManualWithIdenfySettingsV2 to initializeIdenfySDKV2WithManual to match Android SDK.
 * Introduced additional WAITING status in the manualIdentificationStatus enum.
+* Removed initializeIdenfySDKV2(), because initializeIdenfySDKV2WithManual provides same functionality.
 
 
 ### Added:
@@ -142,6 +149,13 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
+pod 'iDenfySDK', '5.1.0'
+```
+*Note.
+We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
+
+If you understand the disadvantages and still want to use the latest version integrate the SDK in the following way:
+```ruby
 pod 'iDenfySDK'
 ```
 
@@ -196,18 +210,6 @@ IdenfyController *idenfyController = [IdenfyController shared];
 [idenfyController initializeIdenfySDKV2WithManualWithIdenfySettingsV2:idenfySettingsV2];
 ```
 
-
-#### V2
-##### Swift
-```swift
-let idenfySettingsV2 = IdenfyBuilderV2()
-    .withAuthToken("AUTH_TOKEN")
-    .build()
-
-let idenfyController = IdenfyController.shared
-idenfyController.initializeIdenfySDKV2(idenfySettingsV2: idenfySettingsV2)
-```
-
 #### V1
 ##### Swift
 ```swift
@@ -219,14 +221,13 @@ let idenfyController = IdenfyController(idenfySettings: idenfySettings)
 ```
 
 
-***Note**: We recommend implementing the initialization of the SDK with the initializeIdenfySDKV2WithManual(). 
-The regular V2 initialization will be removed in the future, while initialization with the manual identification results provides easier integration, existing **V2 version** customization options and similar callbacks handling to our [iFrame solution](https://github.com/idenfy/Documentation/blob/master/pages/ClientRedirectToWebUiIframe.md). 
+***Note**: We recommend implementing the initialization of the SDK with the initializeIdenfySDKV2WithManual(). It uses the newest UI/UX and offers more customization options.
 
 ### 5. Presenting ViewController
 
 Instance of IdenfyController is required for managing iDenfy ViewController.
 Following code will present initial ViewController:
-#### V2, V1, initializeIdenfySDKV2WithManual
+#### V1, initializeIdenfySDKV2WithManual
 ##### Swift
 ```swift
 let idenfyVC = idenfyController.instantiateNavigationController()         
@@ -324,7 +325,7 @@ Information about the IdenfyIdentificationResult **manualIdentificationStatus** 
 The manualIdentificationStatus status always returns INACTIVE status, unless your system implements manual identification callback, but does not create **a separate waiting screen** for indicating about the ongoing manual identity verification process.
 For better customization we suggest using the [immediate redirect feature ](#customizing-results-callbacks-v2-optional). As a result, the user will not see an automatic identification status, provided by iDenfy service. The SDK will be closed while showing loading indicators.
 
-#### V1, V2
+#### V1
 The SDK provides following callbacks: onSuccess, onError and onUserExit.
 ### Swift
 ```swift
@@ -575,38 +576,6 @@ A following code demonstrates possible iDenfySDK configuration with applied sett
     }
 ```
 
-
-#### V2
-##### Swift
-```swift
-    private func initializeIDenfySDK(authToken:String)
-    {
-        let idenfyUISettingsV2 = IdenfyUIBuilderV2()
-            .withLanguageSelection(true)
-            .build()
-        
-        let idenfySettingsV2 = IdenfyBuilderV2()
-            .withAuthToken(authToken)
-            .build()
-        
-        let idenfyController = IdenfyController.shared
-        idenfyController.initializeIdenfySDKV2(idenfySettingsV2: idenfySettingsV2)
-        
-        self.present(idenfyVC, animated: true, completion: nil)
-        idenfyController.handleIDenfyCallbacks(
-            onSuccess: { (AuthenticationResultResponse
-                ) in
-                print(AuthenticationResultResponse)
-        },
-            onError: { (IdenfyErrorResponse) in
-                print(IdenfyErrorResponse.message)
-                
-        },  onUserExit: {
-                print("user exits")
-        })
-    }
-```
-
 #### V1
 ##### Swift
 ```swift
@@ -670,8 +639,9 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness'
+pod 'iDenfySDK/iDenfyLiveness', '5.1.0'
 ```
+
 ### 2. Update Pods
 Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
 
