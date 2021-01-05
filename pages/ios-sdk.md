@@ -24,6 +24,9 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Added new customization option - document's selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
 * Added new customization option - document's selection onboarding skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
 
+### Changed:
+* Miscellaneous bug fixes (UI).
+
 ## [5.0.0] - 2020-12-11
 ### Changed:
 * Renamed initializeIdenfySDKV2WithManualWithIdenfySettingsV2 to initializeIdenfySDKV2WithManual to match Android SDK.
