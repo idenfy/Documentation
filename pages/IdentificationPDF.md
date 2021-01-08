@@ -12,7 +12,7 @@ This endpoint lets you get report in pdf about identification.
 - Document photos
 
 ### Sending request
-Send a *HTTP Post* request to: `https://ivs.idenfy.com/api/v2/generate-pdf/`
+Send a *HTTP Post* request to: `https://ivs.idenfy.com/api/v2/generate-pdf`
 
 The request must contain *basic auth* headers where *username* is *api key* and *password* is *api secret*.<br>
 The request must contain JSON with parameter:
