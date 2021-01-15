@@ -4,9 +4,12 @@
 In order for you to start using our API you will need two things – ***API key*** and ***API secret***. Both can be retrieved by contacting *iDenfy support* or *iDenfy sales team*. Emails are given below:
 - sales@idenfy.com
 - support@idenfy.com
-- info@idenfy.com
 
-Also, you can visit [https://www.idenfy.com/registration/](https://www.idenfy.com/registration/) and fill up the form. Our team will contact you.
+Technical question can be asked by contacting *iDenfy technical support*
+Email are given below:
+- techsupport@idenfy.com
+
+Also, you can visit [https://www.idenfy.com/get-started/](https://www.idenfy.com/get-started/) and fill up the form. Our team will contact you.
 
 ## Understanding the platform
 Our platform has many features - it is best for you to know them all and cherry-pick what is most suitable for you.
