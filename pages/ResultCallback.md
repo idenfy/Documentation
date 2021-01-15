@@ -156,7 +156,8 @@ This is an example JSON body in the callback HTTP request.
     "BACK": "https://s3.eu-west-1.amazonaws.com/production.users.storage/users_storage/users/<HASH>/BACK.png?AWSAccessKeyId=<KEY>&Signature=<SIG>&Expires=<STAMP>",
     "FACE": "https://s3.eu-west-1.amazonaws.com/production.users.storage/users_storage/users/<HASH>/FACE.png?AWSAccessKeyId=<KEY>&Signature=<SIG>&Expires=<STAMP>"
   },
-  "aml": {
+"AML": [
+{
     "status": {
       "serviceSuspected": false,
       "checkSuccessful": true,
@@ -169,8 +170,10 @@ This is an example JSON body in the callback HTTP request.
     "serviceGroupType": "AML",
     "uid": "OHT8GR5ESRF5XROWE5ZGCC123",
     "errorMessage": null
-  },
-  "lid": {
+  }
+],
+"LID": [
+{
     "status": {
       "serviceSuspected": false,
       "checkSuccessful": true,
@@ -184,6 +187,7 @@ This is an example JSON body in the callback HTTP request.
     "uid": "OHT8GR5ESRF5XROWE5ZGCC123",
     "errorMessage": null
   }
+]
 }
 ```
 
