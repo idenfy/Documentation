@@ -18,6 +18,13 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.2.0] - 2020-01-22
+### Added:
+* Added an option to set a custom additional step with the backend settings.
+
+### Changed:
+* Identification results loading screen for additional steps.
+
 ## [5.1.0] - 2020-01-05
 ### Added:
 * Added new customization option - document's issuing country selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
