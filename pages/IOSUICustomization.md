@@ -200,6 +200,65 @@ Pass created instance of the IdenfyViewsV2 class to the initializeIdenfySDKV2Wit
 ```swift
  idenfyController.initializeIdenfySDKV2WithManual(idenfySettingsV2: idenfySettingsV2, idenfyViewsV2: idenfyViewsV2)
 ```
+### Customization by providing a CustomWaitingViewController:
+To fully customize your identification results waiting view, we provide a solution to pass your own view controller.
+
+
+#### 1. Create a class, that implements IdenfyInProcessIdentificationResultsDelegate
+Pass an instance of your created class to the initializeWithCustomWaitingViewController() method of IdenfyController.
+```swift
+idenfyController.initializeWithCustomWaitingViewController(idenfySettingsV2: idenfySettingsV2, idenfyInProcessIdentificationResultsDelegate: idenfyInProcessIdentificationResultsDelegateImpl())
+```
+
+#### 2. Create an instance of your CustomWaitingViewController
+Return created instance in the onIdenfyFlowFinished() method of your IdenfyInProcessIdentificationResultsDelegate implementation.
+```swift
+    func onIdenfyFlowFinished(bool _: Bool) -> CustomWaitingViewController {
+        return CustomWaitingViewController.ViewControllerProvided(vc: PartnersCustomWaitingViewController())
+    }
+```
+
+#### 3. Having received identification results, call a static method of IdenfyController to continue flow
+Your created IdenfyInProcessIdentificationResultsDelegate implementation has onIdentificationStatusReceived() method, which returns an IdenfyIdentificationResultStatus. When IdenfyIdentificationStatus is **FINISHED**, call a static continueFlow() method of IdenfyController.
+```swift
+    func onIdentificationStatusReceived(idenfyIdentificationResultStatus: IdenfyIdentificationResultStatus) {
+        switch idenfyIdentificationResultStatus.idenfyProcessingResultState {
+        case .FINISHED(canRetry: _, retakeSteps: _):
+            IdenfyController.continueFlow()
+            break
+        case .PROCESSING:
+            break
+        }
+    }
+```
+
+IdenfyIdentificationResultStatus class contains all information about current state of identification results, using this you can fully customize your views.
+
+```swift
+public class IdenfyIdentificationResultStatus {
+    public let idenfyIdentificationStatus: IdenfyIdentificationStatus
+    public let idenfyProcessingResultState: IdenfyProcessingResultState
+    
+    public init(idenfyIdentificationStatus: IdenfyIdentificationStatus, idenfyProcessingResultState: IdenfyProcessingResultState) {
+        self.idenfyIdentificationStatus = idenfyIdentificationStatus
+        self.idenfyProcessingResultState = idenfyProcessingResultState
+    }
+}
+
+public enum IdenfyProcessingResultState {
+    case PROCESSING
+    case FINISHED(canRetry: Bool, retakeSteps: RetakeSteps?)
+}
+
+public enum IdenfyIdentificationStatus: String, Codable {
+    case APPROVED
+    case DENIED
+    case SUSPECTED
+    case REVIEWING
+    case UNKNOWN
+}
+```
+
 ### Customization with IdenfyUISettingsV2:
 
 #### * Adding instructions in camera session.
