@@ -62,7 +62,7 @@ is associated to a single country.
   ],
   "data": [
     {
-    	"name": "Barack",
+    	"name": "Barack Hussein",
         "surname": "Obama"
     }
   ]
