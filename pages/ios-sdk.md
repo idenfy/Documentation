@@ -24,9 +24,9 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. 
 
 ### Changed:
-* Changed 3D liveness localization strings names from Zoom.strings to the **FaceTec.strings**. In order to support multilanguages in the 3D liveness you have to override those strings.
+* Changed 3D liveness localization strings names from Zoom.strings to the **FaceTec.strings**. In order to support multi-languages in the 3D liveness you have to override those strings.
 * Made changes for [custom identification results ViewController customizations](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-a-CustomWaitingViewController).
-* Improved identifications recording. Videos will be longer. 
+* Improved identification recording. Videos will be longer. 
 
 
 ## [5.3.0] - 2020-01-29
