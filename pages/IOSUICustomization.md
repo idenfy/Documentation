@@ -212,15 +212,34 @@ idenfyController.initializeWithCustomWaitingViewController(idenfySettingsV2: ide
 
 #### 2. Create an instance of your CustomWaitingViewController
 Return created instance in the onIdenfyFlowFinished() method of your IdenfyInProcessIdentificationResultsDelegate implementation.
+
 ```swift
-    func onIdenfyFlowFinished(bool _: Bool) -> CustomWaitingViewController {
-        return CustomWaitingViewController.ViewControllerProvided(vc: PartnersCustomWaitingViewController())
+    /**
+     - Parameter idenfyIdentificationResultStatus: returns a current identification status. This status is updated until FINISHED is returned.
+     */
+    func onIdenfyFlowFinished(idenfyFlowSettings _: IdenfyFlowSettings) -> CustomWaitingViewController {
+            return CustomWaitingViewController.ViewControllerProvided(vc: PartnersCustomWaitingViewController())
     }
 ```
+For details regarding identification process you can look at IdenfyFlowSettings.
+```swift
+/**
+ Has set of properties for providing information about user identification flow.
+ */
+public struct IdenfyFlowSettings {
+    /**
+    Provides an array of steps used during the identification process.
+     */
+    public let identificationSteps: [Step]
+}
+```  
 
 #### 3. Having received identification results, call a static method of IdenfyController to continue flow
 Your created IdenfyInProcessIdentificationResultsDelegate implementation has onIdentificationStatusReceived() method, which returns an IdenfyIdentificationResultStatus. When IdenfyIdentificationStatus is **FINISHED**, call a static continueFlow() method of IdenfyController.
 ```swift
+    /**
+     - Parameter idenfyIdentificationResultStatus: returns a current identification status. This status is updated until FINISHED is returned.
+     */
     func onIdentificationStatusReceived(idenfyIdentificationResultStatus: IdenfyIdentificationResultStatus) {
         switch idenfyIdentificationResultStatus.idenfyProcessingResultState {
         case .FINISHED(canRetry: _, retakeSteps: _):
@@ -384,7 +403,7 @@ If you only need color, text, or width customization, you can use properties fro
     public var livenessResultScreenResultAnimationSuccessBackgroundImage = UIImage(named: "idenfy_ic_liveliness_results_success_icon_background", in: Bundle(identifier: "com.idenfy.idenfysdk"), compatibleWith: nil)
 
 
-    public var livenessCustomUISettings: ZoomCustomization?
+    public var livenessCustomUISettings: FaceTecCustomization?
 
     // ID check customization
     public var livenessIdCheckCustomization = LivenessIdCheckCustomization()
@@ -404,7 +423,10 @@ If you only need color, text, or width customization, you can use properties fro
 ```
 
 ### 2.2 Applying full customization
-If you require more changes, you can directly set **livenessCustomUISettings** property in the *IdenfyLivenessUISettings* with your own ZoomCustomization. 
+If you require more changes, you can directly set **livenessCustomUISettings** property in the *IdenfyLivenessUISettings* with your own FaceTecCustomization settings. 
+
+For this to work, you will need to import **FaceTecSDK**.
+
 *Note 
 It will override all other set properties of the IdenfyLivenessUISettings class.
 

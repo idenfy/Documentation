@@ -18,6 +18,17 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.0.0] - 2020-02-11
+### Added:
+* [SSL pinning support](#customizing-sdk-v2-optional).
+* Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. 
+
+### Changed:
+* Changed 3D liveness localization strings names from Zoom.strings to the **FaceTec.strings**. In order to support multilanguages in the 3D liveness you have to override those strings.
+* Made changes for [custom identification results ViewController customizations](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-a-CustomWaitingViewController).
+* Improved identifications recording. Videos will be longer. 
+
+
 ## [5.3.0] - 2020-01-29
 ### Added:
 * Added an option to set [a custom identification results ViewController](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-a-CustomWaitingViewController).
@@ -164,7 +175,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK', '5.1.0'
+pod 'iDenfySDK', '5.4.0'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
@@ -421,6 +432,26 @@ The SDK provides an option to skip **document's issuing country** selection. If 
 ```
 *NOTE, make sure that the issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
 
+### 4. SSL pinning enabling
+By default, the SDK does not utilize SSL pinning as suggested by the **AWS services**.
+If you however need this option, you can enable SSL pinning.
+Our SSL pinning implementation does follow the [AWS recommendations](https://aws.amazon.com/premiumsupport/knowledge-center/pin-application-acm-certificate/) and we utilize pinning for the Root certificates. They are valid for more than 5+ years. 
+
+However, during this timeframe, major changes can occur and we might be forced to change SSL pinning. Such changes will be notified at least 1 month prior. 
+
+This is why we strongly encourage you to enable this feature only if you are planning to **actively update the SDK**.
+
+##### Swift
+```swift
+    let idenfySettingsV2 = IdenfyBuilderV2()
+        .withAuthToken(authToken)
+        .withSSLPinning(true)
+        ...
+        .build()
+    ...
+```
+
+
 ## Customizing SDK V1 (optional)
 
  SDK provides various options for changing identification flow. All requirements can be specified inside of IdenfyBuilder().
@@ -654,14 +685,15 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '5.1.0'
+pod 'iDenfySDK/iDenfyLiveness', '5.4.0'
 ```
 
 ### 2. Update Pods
 Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
 
 ### 3. Add Zoom.strings
-In order to use localized version of liveness feature add Zoom.strings to your app module.
+In order to use localized version of liveness feature add FaceTec.strings to your app module.
+In order to use localized version of liveness feature add FaceTec.strings to your app module.
 
 Strings are located in  **../Pods/iDenfySDK/iDenfySDK/IdenfyAssets/IdenfyStrings**
 
