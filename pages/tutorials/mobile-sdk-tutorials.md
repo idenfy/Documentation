@@ -13,3 +13,6 @@ This page contains various tutorials that help you to integrate iDenfy mobile SD
 
 ## React Native
 - [The repository for the iDenfySDK React Native plugin](https://github.com/idenfy/ReactNativeSDK)
+
+## Cordova plugin
+- [The repository for the iDenfySDK Cordova plugin](https://github.com/idenfy/CordovaSDK)
