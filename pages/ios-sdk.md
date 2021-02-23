@@ -18,6 +18,11 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.2.0] - 2020-02-23
+### Changed:
+* Fixed the Xcode setting issue in one of the modules, which forbidden archived app upload to the App store. The error code was ITMS-90562: Invalid Bundle. 
+* Fixed 3D liveness customization using full customization settings - livenessCustomUISettings. Previously setting this value did not affect 3D liveness customization starting version 6.
+
 ## [6.1.0] - 2020-02-19
 ### Changed:
 * Previous 3D liveness update took longer upload times and did not utilize the latest performance improvements in comparison with v8. Also, the error message was not elaborate enough and created confusion. We updated upload, processing time, and error messages.
@@ -181,7 +186,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK', '6.1.0'
+pod 'iDenfySDK', '6.2.0'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
@@ -691,7 +696,7 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.1.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.2.0'
 ```
 
 ### 2. Update Pods
