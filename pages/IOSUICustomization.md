@@ -427,6 +427,8 @@ If you require more changes, you can directly set **livenessCustomUISettings** p
 
 For this to work, you will need to import **FaceTecSDK**.
 
+Full customization options are available [here](https://dev.facetec.com/ui-customization).
+
 *Note 
 It will override all other set properties of the IdenfyLivenessUISettings class.
 

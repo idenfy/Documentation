@@ -31,7 +31,7 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 
 ## [6.0.0] - 2020-02-11
 ### Added:
-* [SSL pinning support](#customizing-sdk-v2-optional).
+* [SSL pinning support](#4-ssl-pinning-support).
 * Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. 
 
 ### Changed:
@@ -443,7 +443,7 @@ The SDK provides an option to skip **document's issuing country** selection. If 
 ```
 *NOTE, make sure that the issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
 
-### 4. SSL pinning enabling
+### 4. SSL pinning support
 By default, the SDK does not utilize SSL pinning as suggested by the **AWS services**.
 If you however need this option, you can enable SSL pinning.
 Our SSL pinning implementation does follow the [AWS recommendations](https://aws.amazon.com/premiumsupport/knowledge-center/pin-application-acm-certificate/) and we utilize pinning for the Root certificates. They are valid for more than 5+ years. 

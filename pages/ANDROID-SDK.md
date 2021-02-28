@@ -18,6 +18,17 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.0.0] - 2020-02-26
+### Added:
+* Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. Starting with the 5.0.0 version liveness module is directly integrated into the SDK. More about this decision read [here](#advanced-liveness-detection).
+* Fixed occurring runtime crashes on some devices when using 3D liveness with ID check.
+* [SSL pinning support](#4-ssl-pinning-support).
+
+### Changed:
+* Core camera improvements.
+* Identification recording duration increase.
+
+
 ## [4.2.0] - 2020-01-22
 ### Added:
 * Added an option to set a custom additional step with the backend settings.
@@ -155,7 +166,7 @@ In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk:4.1.0' 
+      implementation 'idenfySdk:com.idenfy.idenfySdk:5.0.0' 
     }
 }
 ```
@@ -496,6 +507,25 @@ The SDK provides an option to skip **document's issuing country** selection. If 
 ```
 *NOTE, make sure that issuing country is indeed set, when generating an identification token. If issuing country is not set, SDK will behave in a default way - it will navigate user into document issuing country selection screen.
 
+### 4. SSL pinning support
+By default, the SDK does not utilize SSL pinning as suggested by the **AWS services**.
+If you however need this option, you can enable SSL pinning.
+Our SSL pinning implementation does follow the [AWS recommendations](https://aws.amazon.com/premiumsupport/knowledge-center/pin-application-acm-certificate/) and we utilize pinning for the Root certificates. They are valid for more than 5+ years. 
+
+However, during this timeframe, major changes can occur and we might be forced to change SSL pinning. Such changes will be notified at least 1 month prior. 
+
+This is why we strongly encourage you to enable this feature only if you are planning to **actively update the SDK**.
+
+##### Kotlin
+```kotlin
+    val idenfySettingsV2 = IdenfyBuilderV2()
+        .withAuthToken(authToken)
+        .withSSLPinning(true)
+        ...
+        .build()
+    ...
+```
+
 ## Customizing SDK V1 (optional)
 
  SDK provides various options for changing identification flow. All requirements can be specified with IdenfyBuilder().
@@ -789,24 +819,34 @@ For more information visit [SDK integration tutorials](https://github.com/idenfy
 
 ## Advanced Liveness detection
 
-SDK provides advanced liveness recognition. Liveness recognition is attached as separate, optional module inside of the SDK. 
+SDK provides advanced liveness recognition.
 
 The liveness feature is not optimized for tablets. As a result, identification performed via tablet will be automatically classified as **denied**.
 
 The new major liveness version is released every 6-12 months. Your app must update the liveness module after every major release. If SDK is not updated, it can lead to the **runtime crashes**.
 
-Attached liveness SDK will sync with **core** Idenfy SDK.
+Starting version 5.0.0 3D module is directly integrated inside of the main SDK. We suggest including **additional liveness module**, because it will make migration easier in the future. 
 
-In the app level gradle add following implementation:
+The main condition is to use **same version** as the core liveness. Using different versions can lead to crashes, additional unnecessary application size increases. 
+
+Include the 3D liveness module:
+
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:4.1.0' 
+      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:5.0.0' 
     }
 }
 ```
- 
-*Note: Contact support for enabling liveness feature.
+We performed such decision, because of the size reduction of the native code (from 8 Mb to ~3.5 Mb). 
+
+Also, the previous liveness version was included with **compileOnly** Gradle annotation. This annotation could cause potential issues if migration would be done incorrectly on your side e.g. updating core SDK to 5.0.0, but keeping the liveness module to 4.2.0.
+
+Furthermore, it was difficult to add 3D liveness, if your previous SDK used regular SDK because 3D liveness configurations are received via API, so your application would require **force updates** to make sure that all users have an additional 3D liveness module.
+
+Currently, our team is looking closely at [gradle feature variants](https://docs.gradle.org/current/userguide/feature_variants.html). It did not cover all of our cases, but we think that after upcoming updates it will be a viable solution for modularizing our SDK's modules distribution.
+
+*Note: Contact support for enabling the 3D liveness feature.
 
 
 

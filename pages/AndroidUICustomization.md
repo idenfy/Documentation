@@ -294,7 +294,7 @@ If you only need color, text, or width customization, you can use properties fro
     var livenessIdCheckCustomization = LivenessIdCheckCustomization()
 
     //Full custom settings
-    var livenessCustomUISettings: com.facetec.zoom.sdk.ZoomCustomization? = null
+    var livenessCustomUISettings: com.facetec.sdk.FaceTecCustomization? = null
    }
 ```
 
@@ -311,9 +311,12 @@ class LivenessIdCheckCustomization() {
 ```
 
 ### 2.2 Applying full customization
-If you require more changes, you can directly set **livenessCustomUISettings** property in the *IdenfyLivenessUISettings* with your own ZoomCustomization. 
+If you require more changes, you can directly set **livenessCustomUISettings** property in the *IdenfyLivenessUISettings* with your own FaceTecCustomization. 
+
+Full customization options are available [here](https://dev.facetec.com/ui-customization).
 *Note 
 It will override all other set properties of the IdenfyLivenessUISettings class.
+
 
 ### 3. Updating IdenfyUISettings
 #### V1
