@@ -1,5 +1,7 @@
 # Welcome to iDenfy Documentation
 
+# This documentation is not updated anymore. iDenfy new documentation is here [https://documentation.idenfy.com/](https://documentation.idenfy.com/)
+
 ## Getting started
 In order for you to start using our API you will need two things – ***API key*** and ***API secret***. Both can be retrieved by contacting *iDenfy support* or *iDenfy sales team*. Emails are given below:
 - sales@idenfy.com
