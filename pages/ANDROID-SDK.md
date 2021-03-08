@@ -18,6 +18,12 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.0.1] - 2020-03-08
+### Changed:
+* Upgraded CameraX versions and Gradle other dependencies.
+* Fixed a state restoration/fragment's lifecycle issues in the documents selection view.
+* Fixed permission alert dialog appearance issues.
+
 ## [5.0.0] - 2020-02-26
 ### Added:
 * Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. Starting with the 5.0.0 version liveness module is directly integrated into the SDK. More about this decision read [here](#advanced-liveness-detection).
