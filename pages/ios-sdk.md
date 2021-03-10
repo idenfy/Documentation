@@ -18,6 +18,13 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.2.1] - 2020-03-10
+### Added:
+* Added new customization option for [hiding error messages](#customizing-results-callbacks-v2-optional) in the iDenfySDK.
+* Added new method to get the [SDK version](#5-getting-the-sdk-version).
+### Changed:
+* Fixed issue with identification recording - sometimes videos were missing.
+
 ## [6.2.0] - 2020-02-23
 ### Changed:
 * Fixed the Xcode setting issue in one of the modules, which forbidden archived app upload to the App store. The error code was ITMS-90562: Invalid Bundle. 
@@ -186,7 +193,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK', '6.2.0'
+pod 'iDenfySDK', '6.2.1'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
@@ -462,6 +469,17 @@ This is why we strongly encourage you to enable this feature only if you are pla
     ...
 ```
 
+### 5. Getting the SDK version
+Sometimes, it might be useful to get the current SDK version to add additional logging for your application.
+You can get the SDK version by calling the following method in the IdenfyController:
+```swift
+    let sdkVersion = idenfyController.getIdenfySDKVersion()
+    print("version:\(sdkVersion)")
+    ...
+```
+
+*Note This method can be called, before or after SDK initialization, depending on your needs.
+
 
 ## Customizing SDK V1 (optional)
 
@@ -505,6 +523,36 @@ For handling identification status yourself, **immediate redirect feature** can 
 If identification was approved, user will not see successful screen. SDK will be closed while displaying a loading screen. That way you can show a success screen yourself at particular time.
 ### DENIED screen will not be visible
 Denied screen will not be visible. SDK will be closed while displaying a loading screen. That way you can display a error screen yourself at particular time.
+
+
+Also, immediate redirect can be enabled via IdenfyUIBuilderV2, by setting the following method:
+```swift
+let idenfyUISettingsV2 = IdenfyUIBuilderV2()
+    .withImmediateRedirect(ImmediateRedirectEnum.full)
+    .build()
+```
+ImmediateRedirectEnum has the following values and provides following customization options:
+```swift
+@objc public enum ImmediateRedirectEnum: Int {
+    /**
+        Immediate redirect won't happen in any case.
+     */
+    case none
+    /**
+        Immediate redirect will happen for error with identifiers:
+     - TOO_MANY_REATTEMPTS_IDENTIFIER
+     - ASSERTION_ERROR_IDENTIFIER
+     - TOKEN_NOT_VALID_IDENTIFIER
+     */
+    case partial
+    /**
+        Immediate redirect will always happen.
+     */
+    case full
+}
+```
+
+For removing **all error states/success** results views, set ImmediateRedirectEnum to the .full. By setting ImmediateRedirectEnum.full, it will override backend settings, so it is not necessary to enable it with the backend settings. 
 
 *Note: For enabling immediate redirect contact support@idenfy.com.
 
@@ -696,7 +744,7 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.2.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.2.1'
 ```
 
 ### 2. Update Pods
