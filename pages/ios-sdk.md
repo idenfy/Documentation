@@ -18,6 +18,10 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.2.2] - 2020-03-11
+### Changed:
+* Fixed crash, which occurred if SDK was initialized with SSL pinning enabled during the image upload process.
+
 ## [6.2.1] - 2020-03-10
 ### Added:
 * Added new customization option for [hiding error messages](#customizing-results-callbacks-v2-optional) in the iDenfySDK.
