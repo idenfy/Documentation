@@ -211,6 +211,6 @@
     <string name="idenfy_camera_permissions_view_information_title_v2">May we use your camera?</string>
     <string name="idenfy_camera_permissions_view_information_description_v2">We need to use your camera to take the photo of your document and face photo</string>
     <string name="idenfy_camera_permissions_view_guidance_information_description_v2">Go to settings, tap on “Permissions” to grant access to the camera</string>
-    <string name="idenfy_camera_permissions_view_goto_settings_button_title_v2">GO TO SETTINGS</string>
+    <string name="idenfy_camera_permissions_view_goto_settings_button_title_v2">ENABLE CAMERA</string>
 
 </resources>
