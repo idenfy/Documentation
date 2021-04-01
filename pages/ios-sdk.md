@@ -224,7 +224,7 @@ pod 'iDenfySDK'
 ##### 2.1 With liveness module
 If you are using [Advanced Liveness detection](#advanced-liveness-detection) copy all frameworks from IdenfyLiveness folder into your app target folder.
 
-*Note: In order to use localized version of liveness feature add Zoom.strings to your app module.
+*Note: In order to use localized version of liveness feature add **FaceTec.strings** to your app module.
 
 Strings are located in  **../iDenfySDK/IdenfyAssets/IdenfyStrings**
 
@@ -764,7 +764,7 @@ pod 'iDenfySDK/iDenfyLiveness', '6.2.1'
 ### 2. Update Pods
 Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
 
-### 3. Add Zoom.strings
+### 3. Add FaceTec.strings
 In order to use localized version of liveness feature add FaceTec.strings to your app module.
 In order to use localized version of liveness feature add FaceTec.strings to your app module.
 
