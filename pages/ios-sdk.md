@@ -18,6 +18,17 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.3.0] - 2020-04-05
+### Added:
+* Added a loading indicator after the user selected a document issuing country. This is due to recent updates, which now show available documents depending on issuing country selection. If your application passes a set of custom idenfyViewV2 while initializing the SDK, please update your custom views implementation code for the **CountrySelectionViewableV2** and **CountryCellViewable** protocols. If you set issuing country during identification token generation via API or skip the document's issuing country step selection altogether, then **no UI changes** will be noticeable.
+* Added option to **skip selfie capture** during 3D liveness identification. This feature was recently made the default choice for 3D liveness identification flow. So, updating the SDK you will see that the selfie step is **no longer present**. This functionality can be disabled if you like to keep the current flow or need more time updating your custom views contact techsupport@idenfy.com for disabling this feature.
+### Changed:
+* Fixed high memory allocation, which resulted in EXC_BAD_ACCESS on some rare occasions.
+* Improved camera initialization code specifically for IOS 11+.
+* 3D Liveness version update.
+* Background recordings upload is much faster, you should see noticeable processing updates.
+* Removed the document capturing rectangle for the additional identification steps during the document photo capture step. The rectangle was confusing because some documents take a much larger size in comparison with the present capture frame size.
+
 ## [6.2.4] - 2020-03-19
 ### Changed:
 * Fixed issue with custom photo results UIViews visibility after confirmation click.
@@ -207,7 +218,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK', '6.2.1'
+pod 'iDenfySDK', '6.3.0'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
@@ -758,7 +769,7 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.2.1'
+pod 'iDenfySDK/iDenfyLiveness', '6.3.0'
 ```
 
 ### 2. Update Pods
