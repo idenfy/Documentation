@@ -18,7 +18,14 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [5.1.0] - 2020-04-08
+## [5.1.1] - 2020-04-08
+### Changed:
+* Deprecated startActivityForResultV2 in favour of initializeIdenfySDKV2WithManual. The startActivityForResultV2 will be removed in the 6.0.0 version
+* Min API set to 19. Starting version 6.0.0 min API will be set to 21.
+* Lifecycle updates related to 3D liveness.
+
+
+## [5.1.0] - 2020-04-07
 ### Added:
 * Added a loading indicator after the user selected a document issuing country. This is due to recent updates, which now show available documents depending on issuing country selection. If your application overrides xml layouts of our SDK you should consider updating your **idenfy_item_document_issuing_country_selection_v2.xml** with Lottie animation of your preferred choice, so that the user would see a loading indicator, instead of occurring action delay. If you set issuing country during identification token generation via API or skip the document's issuing country step selection altogether, then **no UI changes** will be noticeable.
 * Added option to **skip selfie capture** during 3D liveness identification. This feature was recently made the default choice for 3D liveness identification flow. So, updating the SDK you will see that the selfie step is **no longer present**. This functionality can be disabled if you like to keep the current flow or need more time updating your custom views contact techsupport@idenfy.com for disabling this feature.
