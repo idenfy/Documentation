@@ -18,6 +18,9 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.1.1] - 2020-05-03
+## Due to bintray sunsetting, we have migrated to the jitpack. If you face Gradle compile issues, switch to [jitpack integration](#adding-the-SDK-dependency)
+
 ## [5.1.1] - 2020-04-08
 ### Changed:
 * Deprecated startActivityForResultV2 in favour of initializeIdenfySDKV2WithManual. The startActivityForResultV2 will be removed in the 6.0.0 version
@@ -180,16 +183,14 @@ In the root level (project module) gradle add following implementation:
 
 ```gradle
 repositories {
-    maven {
-        url  "https://dl.bintray.com/idenfy/idenfy"
-  }
+    maven { url 'https://jitpack.io' }
 }
 ```
 In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk:5.1.0' 
+      implementation 'com.github.idenfy:sdk-api:5.1.1'
     }
 }
 ```
@@ -200,7 +201,7 @@ If you understand the disadvantages and still want to use the latest version int
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk:+' 
+      implementation 'com.github.idenfy:sdk-api:+'
     }
 }
 ```
@@ -857,7 +858,7 @@ Include the 3D liveness module:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'idenfySdk:com.idenfy.idenfySdk.idenfyliveness:5.1.0' 
+      implementation 'com.github.idenfy:sdk-liveness:5.2.0'
     }
 }
 ```
