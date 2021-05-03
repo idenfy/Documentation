@@ -19,7 +19,7 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [5.1.1] - 2020-05-03
-## Due to bintray sunsetting, we have migrated to the jitpack. If you face Gradle compile issues, switch to [jitpack integration](#adding-the-SDK-dependency)
+## Due to bintray sunsetting, we have migrated to the jitpack. If you face Gradle compile issues, switch to [jitpack integration](#2-adding-the-sdk-dependency)
 
 ## [5.1.1] - 2020-04-08
 ### Changed:
