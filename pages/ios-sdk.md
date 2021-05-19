@@ -18,14 +18,14 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [6.4.0] - 2020-05-19
+## [6.4.0] - 2021-05-19
 ### Added:
 * NFC enhanced identity verification. More about it [here](#6-nfc-support).
 ### Changed:
 * Migrated from 'Fat framework' to Apple introduced **xcframework**. The integration should be easier. Read [here](#3-adding-the-sdk-dependency).
 * Improved background recording feature. EXC_BAD_ACCESS should disappear completely even after long background sessions.
 
-## [6.3.0] - 2020-04-05
+## [6.3.0] - 2021-04-05
 ### Added:
 * Added a loading indicator after the user selected a document issuing country. This is due to recent updates, which now show available documents depending on issuing country selection. If your application passes a set of custom idenfyViewV2 while initializing the SDK, please update your custom views implementation code for the **CountrySelectionViewableV2** and **CountryCellViewable** protocols. If you set issuing country during identification token generation via API or skip the document's issuing country step selection altogether, then **no UI changes** will be noticeable.
 * Added option to **skip selfie capture** during 3D liveness identification. This feature was recently made the default choice for 3D liveness identification flow. So, updating the SDK you will see that the selfie step is **no longer present**. This functionality can be disabled if you like to keep the current flow or need more time updating your custom views contact techsupport@idenfy.com for disabling this feature.
@@ -36,7 +36,7 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Background recordings upload is much faster, you should see noticeable processing updates.
 * Removed the document capturing rectangle for the additional identification steps during the document photo capture step. The rectangle was confusing because some documents take a much larger size in comparison with the present capture frame size.
 
-## [6.2.4] - 2020-03-19
+## [6.2.4] - 2021-03-19
 ### Changed:
 * Fixed issue with custom photo results UIViews visibility after confirmation click.
 * Custom UIView implementing a FaceCameraViewableV2, should override required convenience init.
@@ -46,29 +46,29 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Fixed issue with identification retake steps if [custom identification results ViewController](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-a-CustomWaitingViewController) was used.
 * Improved upload of background videos in bad network conditions.
 
-## [6.2.2] - 2020-03-11
+## [6.2.2] - 2021-03-11
 ### Changed:
 * Fixed crash, which occurred if SDK was initialized with SSL pinning enabled during the image upload process.
 
-## [6.2.1] - 2020-03-10
+## [6.2.1] - 2021-03-10
 ### Added:
 * Added new customization option for [hiding error messages](#customizing-results-callbacks-v2-optional) in the iDenfySDK.
 * Added new method to get the [SDK version](#5-getting-the-sdk-version).
 ### Changed:
 * Fixed issue with identification recording - sometimes videos were missing.
 
-## [6.2.0] - 2020-02-23
+## [6.2.0] - 2021-02-23
 ### Changed:
 * Fixed the Xcode setting issue in one of the modules, which forbidden archived app upload to the App store. The error code was ITMS-90562: Invalid Bundle. 
 * Fixed 3D liveness customization using full customization settings - livenessCustomUISettings. Previously setting this value did not affect 3D liveness customization starting version 6.
 
-## [6.1.0] - 2020-02-19
+## [6.1.0] - 2021-02-19
 ### Changed:
 * Previous 3D liveness update took longer upload times and did not utilize the latest performance improvements in comparison with v8. Also, the error message was not elaborate enough and created confusion. We updated upload, processing time, and error messages.
 * CustomWaitingViewController.ViewControllerProvided renamed to the CustomWaitingViewController.viewControllerProvided to match Swift lint suggestions.
 
 
-## [6.0.0] - 2020-02-11
+## [6.0.0] - 2021-02-11
 ### Added:
 * [SSL pinning support](#4-ssl-pinning-support).
 * Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. 
@@ -79,19 +79,19 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Improved identification recording. Videos will be longer. 
 
 
-## [5.3.0] - 2020-01-29
+## [5.3.0] - 2021-01-29
 ### Added:
 * Added an option to set [a custom identification results ViewController](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-by-providing-a-CustomWaitingViewController).
 * More document selection customization improvements.
 
-## [5.2.0] - 2020-01-22
+## [5.2.0] - 2021-01-22
 ### Added:
 * Added an option to set a custom additional step with the backend settings.
 
 ### Changed:
 * Identification results loading screen for additional steps.
 
-## [5.1.0] - 2020-01-05
+## [5.1.0] - 2021-01-05
 ### Added:
 * Added new customization option - document's issuing country selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).
 * Added new customization option - document's selection skipping with backend. More information [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#customization-with-skipping-views).

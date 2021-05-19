@@ -18,21 +18,21 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [5.2.0] - 2020-05-18
+## [5.2.0] - 2021-05-18
 ### Added:
 * NFC enhanced identity verification. More about it [here](#5-nfc-support)
 
-## [5.1.1] - 2020-05-03
+## [5.1.1] - 2021-05-03
 ## Due to bintray sunsetting, we have migrated to the jitpack. If you face Gradle compile issues, switch to [jitpack integration](#2-adding-the-sdk-dependency)
 
-## [5.1.1] - 2020-04-08
+## [5.1.1] - 2021-04-08
 ### Changed:
 * Deprecated startActivityForResultV2 in favour of initializeIdenfySDKV2WithManual. The startActivityForResultV2 will be removed in the 6.0.0 version
 * Min API set to 19. Starting version 6.0.0 min API will be set to 21.
 * Lifecycle updates related to 3D liveness.
 
 
-## [5.1.0] - 2020-04-07
+## [5.1.0] - 2021-04-07
 ### Added:
 * Added a loading indicator after the user selected a document issuing country. This is due to recent updates, which now show available documents depending on issuing country selection. If your application overrides xml layouts of our SDK you should consider updating your **idenfy_item_document_issuing_country_selection_v2.xml** with Lottie animation of your preferred choice, so that the user would see a loading indicator, instead of occurring action delay. If you set issuing country during identification token generation via API or skip the document's issuing country step selection altogether, then **no UI changes** will be noticeable.
 * Added option to **skip selfie capture** during 3D liveness identification. This feature was recently made the default choice for 3D liveness identification flow. So, updating the SDK you will see that the selfie step is **no longer present**. This functionality can be disabled if you like to keep the current flow or need more time updating your custom views contact techsupport@idenfy.com for disabling this feature.
@@ -42,13 +42,13 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Dependencies updated.
 
 
-## [5.0.1] - 2020-03-08
+## [5.0.1] - 2021-03-08
 ### Changed:
 * Upgraded CameraX versions and Gradle other dependencies.
 * Fixed a state restoration/fragment's lifecycle issues in the documents selection view.
 * Fixed permission alert dialog appearance issues.
 
-## [5.0.0] - 2020-02-26
+## [5.0.0] - 2021-02-26
 ### Added:
 * Major 3D liveness version upgrade from v8 to v9. Faster and more accurate 3D liveness. Starting with the 5.0.0 version liveness module is directly integrated into the SDK. More about this decision read [here](#advanced-liveness-detection).
 * Fixed occurring runtime crashes on some devices when using 3D liveness with ID check.
@@ -59,7 +59,7 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 * Identification recording duration increase.
 
 
-## [4.2.0] - 2020-01-22
+## [4.2.0] - 2021-01-22
 ### Added:
 * Added an option to set a custom additional step with the backend settings.
 
