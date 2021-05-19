@@ -18,6 +18,10 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [5.2.0] - 2020-05-18
+### Added:
+* NFC enhanced identity verification. More about it [here](#5-nfc-support)
+
 ## [5.1.1] - 2020-05-03
 ## Due to bintray sunsetting, we have migrated to the jitpack. If you face Gradle compile issues, switch to [jitpack integration](#2-adding-the-sdk-dependency)
 
@@ -190,7 +194,7 @@ In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'com.github.idenfy:sdk-api:5.1.1'
+      implementation 'com.github.idenfy:sdk-api:5.2.0'
     }
 }
 ```
@@ -549,6 +553,9 @@ This is why we strongly encourage you to enable this feature only if you are pla
         .build()
     ...
 ```
+### 5. NFC support
+The SDK provides NFC enhanced identity verification. For more integration details and potential advantages contact techsupport@idenfy.com. 
+After NFC is enabled for your client settings, **no additions** integrations are required on the SDK side.
 
 ## Customizing SDK V1 (optional)
 

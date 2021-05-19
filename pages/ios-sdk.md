@@ -18,6 +18,13 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.4.0] - 2020-05-19
+### Added:
+* NFC enhanced identity verification. More about it [here](#6-nfc-support).
+### Changed:
+* Migrated from 'Fat framework' to Apple introduced **xcframework**. The integration should be easier. Read [here](#3-adding-the-sdk-dependency).
+* Improved background recording feature. EXC_BAD_ACCESS should disappear completely even after long background sessions.
+
 ## [6.3.0] - 2020-04-05
 ### Added:
 * Added a loading indicator after the user selected a document issuing country. This is due to recent updates, which now show available documents depending on issuing country selection. If your application passes a set of custom idenfyViewV2 while initializing the SDK, please update your custom views implementation code for the **CountrySelectionViewableV2** and **CountryCellViewable** protocols. If you set issuing country during identification token generation via API or skip the document's issuing country step selection altogether, then **no UI changes** will be noticeable.
@@ -218,19 +225,36 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK', '6.3.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.4.0'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
-
-If you understand the disadvantages and still want to use the latest version integrate the SDK in the following way:
+```ruby
+pod 'iDenfySDK/iDenfyLiveness'
+```
+*Note
+If you specifically don't need [3D liveness verification](#advanced-liveness-detection), use the following subspec:
 ```ruby
 pod 'iDenfySDK'
+```
+### 4. Update Pods
+Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
+
+After installing the SDK you may face some issues related to cocoapods. To solve them add the following lines to the bottom of the **Podfile**.
+```ruby
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+            config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+        end
+    end
+end
 ```
 
 #### Manual
 ##### 1. Download iDenfySDK
-[Download](https://s3-eu-west-1.amazonaws.com/sdk.builds/ios-sdk/4.1.0/iDenfySDK.zip) latest iDenfySDK builds.
+[Download](https://s3-eu-west-1.amazonaws.com/sdk.builds/ios-sdk/6.4.0/iDenfySDK.zip) latest iDenfySDK builds.
 ##### 2. Include required modules
 ##### 2.1 With liveness module
 If you are using [Advanced Liveness detection](#advanced-liveness-detection) copy all frameworks from IdenfyLiveness folder into your app target folder.
@@ -503,8 +527,27 @@ You can get the SDK version by calling the following method in the IdenfyControl
     ...
 ```
 
-*Note This method can be called, before or after SDK initialization, depending on your needs.
-
+### 6. NFC support
+The SDK provides NFC enhanced identity verification. For more integration details and potential advantages contact techsupport@idenfy.com.
+After NFC is enabled for your client settings, follow these integration details:
+#### 1. Add Near Field Communication Tag Reading capability:
+Add the Near Field Communication Tag Reading capability to your app target.
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/nfc_capability.png" alt="NFC capability" width="700"></kbd>
+#### 2. Update Info.plist file:
+Add the following lines to the **Info.plist** file:
+```xml
+<dict>
+  ...
+  <key>NFCReaderUsageDescription</key>
+  <string>This app uses NFC to scan passports</string>
+  <key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+  <array>
+    <string>A0000002471001</string>
+    <string>A0000002472001</string>
+    <string>00000000000000</string>
+  </array>
+</dict>
+```
 
 ## Customizing SDK V1 (optional)
 
@@ -769,11 +812,12 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.3.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.4.0'
 ```
 
 ### 2. Update Pods
 Run `pod install` to install iDenfySDK or `pod update` to update current iDenfySDK.
+
 
 ### 3. Add FaceTec.strings
 In order to use localized version of liveness feature add FaceTec.strings to your app module.
@@ -782,3 +826,4 @@ In order to use localized version of liveness feature add FaceTec.strings to you
 Strings are located in  **../Pods/iDenfySDK/iDenfySDK/IdenfyAssets/IdenfyStrings**
 
 *Note: Contact support for enabling liveness feature.
+
