@@ -64,6 +64,9 @@ Create video call token and retrieve photos and video captured during video call
 - [API integration](https://github.com/idenfy/Documentation/blob/master/pages/tutorials/api-integration-tutorials.md)
 - [Mobile SDKs](https://github.com/idenfy/Documentation/blob/master/pages/tutorials/mobile-sdk-tutorials.md)
 
+## Demo
+- [Demo API](https://github.com/idenfy/Documentation/blob/master/pages/Demo.md)
+
 ## Extra
 - [Resources](https://github.com/idenfy/Documentation/blob/master/pages/DocumentResources.md)
 - [Vocabulary](https://github.com/idenfy/Documentation/blob/master/pages/Vocabulary.md)
