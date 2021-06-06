@@ -17,6 +17,13 @@ All updates will be written in this section.
 Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
+## [5.3.0] - 2021-06-06
+### Added:
+* New alerts in the identification results view. They prompt the user to re-check the selected document type and navigate to the beginning of a verification flow. Visual changes [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/Android_SDK_5.3.0_IOS_SDK_6.5.0_IdentificationResultsScreen.png).
+* Updated 3D liveness SDK. The SDK has a different flow and better user guidances. The user sees an error screen immediately, if he fails 3D liveness check.
+* PDF file upload option for the custom identification steps.
+### Changed:
+* Translation fixes for Polish language.
 
 ## [5.2.0] - 2021-05-18
 ### Added:
@@ -194,7 +201,7 @@ In the app level gradle add following implementation:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'com.github.idenfy:sdk-api:5.2.0'
+      implementation 'com.github.idenfy:sdk-api:5.3.0'
     }
 }
 ```
@@ -865,7 +872,7 @@ Include the 3D liveness module:
 ```gradle
 repositories {
     dependencies {  
-      implementation 'com.github.idenfy:sdk-liveness:5.2.0'
+      implementation 'com.github.idenfy:sdk-liveness:5.3.0'
     }
 }
 ```
