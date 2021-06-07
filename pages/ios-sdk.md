@@ -21,11 +21,11 @@ The structure of our changes follow practices from [keep a changelog](https://ke
 ## [6.5.0] - 2021-06-06
 ### Added:
 * New alerts in the identification results view. They prompt the user to re-check the selected document type and navigate to the beginning of a verification flow. Visual changes [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/Android_SDK_5.3.0_IOS_SDK_6.5.0_IdentificationResultsScreen.png).
-* Updated 3D liveness SDK. The SDK has a different flow and better user guidances. The user sees an error screen immediately, if he fails 3D liveness check.
+* Updated 3D liveness SDK. The SDK has a different flow and better user guidances. The user sees an error screen immediately if he fails the 3D liveness check.
 * PDF file upload option for the custom identification steps.
 ### Changed:
 * Updated identification results custom view protocol.
-* Translation fixes for Polish language.
+* Translation fixes for the Polish language.
 
 ## [6.4.0] - 2021-05-19
 ### Added:
