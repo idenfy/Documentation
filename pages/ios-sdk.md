@@ -18,6 +18,10 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.5.1] - 2021-06-24
+### Changed:
+* Fixed 3D liveness issue in the V1 SDK version, where result callbacks were not triggered at all. It is recommended to switch to V2, because the V1 will be deprecated in the next major version and removed in version after that.
+
 ## [6.5.0] - 2021-06-06
 ### Added:
 * New alerts in the identification results view. They prompt the user to re-check the selected document type and navigate to the beginning of a verification flow. Visual changes [here](https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/changes/Android_SDK_5.3.0_IOS_SDK_6.5.0_IdentificationResultsScreen.png).
@@ -234,7 +238,7 @@ SDK requires token for starting initialization. [Token generation guide](https:/
 ### 3. Adding the SDK dependency
 #### CocoaPods
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.5.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.5.1'
 ```
 *Note.
 We suggest using a specific latest version unless you are not overriding any custom views or apply customization. This ensures that no **runtime crashes** will occur after automatic version upgrades. 
@@ -263,7 +267,7 @@ end
 
 #### Manual
 ##### 1. Download iDenfySDK
-[Download](https://s3-eu-west-1.amazonaws.com/sdk.builds/ios-sdk/6.5.0/iDenfySDK.zip) latest iDenfySDK builds.
+[Download](https://s3-eu-west-1.amazonaws.com/sdk.builds/ios-sdk/6.5.1/iDenfySDK.zip) latest iDenfySDK builds.
 ##### 2. Include required modules
 ##### 2.1 With liveness module
 If you are using [Advanced Liveness detection](#advanced-liveness-detection) copy all frameworks from IdenfyLiveness folder into your app target folder.
@@ -821,7 +825,7 @@ The new major liveness version is released every 6-12 months. Your app must upda
 ### 1. Update Podfile
 In the Podfile **replace** 'iDenfySDK' with following Pod:
 ```ruby
-pod 'iDenfySDK/iDenfyLiveness', '6.5.0'
+pod 'iDenfySDK/iDenfyLiveness', '6.5.1'
 ```
 
 ### 2. Update Pods
