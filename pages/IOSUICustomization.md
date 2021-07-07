@@ -281,15 +281,30 @@ public enum IdenfyIdentificationStatus: String, Codable {
 ### Customization with IdenfyUISettingsV2:
 
 #### * Adding instructions in camera session.
-iDenfySDK provides informative instructions during identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side and etc. Instructions can be customized, by changing all UI elements or even using your own MP4 video files.
-Instructions are configured by your backend settings and can be overriden with the SDK settings.
+iDenfySDK provides informative instructions during the identification session. They can provide valuable information for the user and help to tackle common issues: bad lightning, wrong document side, etc. Instructions can be customized, by changing all UI elements or even using your MP4 video files.
+Instructions are configured by your backend settings and can be overridden with the SDK settings.
+
+Since SDK **6.6.0** version instructions are configured with enum. The IdenfyInstructionsEnum has three states: *drawer*, *dialog*, and *none*. Default is the drawer.
+
+The dialog instructions should be treated as an experimental feature because it can undergo some modifications. They will include changes to the content of the videos, but not the layout structure. You can test it for yourself, and perhaps the instructions suit your application flow.
+
+#### Using IdenfyInstructionsEnum drawer
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_drawer_1.PNG" alt="Instructions drawer 1" width="300"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_drawer_2.PNG" alt="Instructions drawer 2" width="300"></kbd>
+#### Using IdenfyInstructionsEnum dialog
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_dialog.PNG" alt="Instructions dialog" width="300"></kbd>
+#### Using IdenfyInstructionsEnum none
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_none.PNG" alt="Instructions none" width="300"></kbd>
+
 
 #### 1. Enable instructions in IdenfyUISettingsV2
  ```swift
   let idenfyUISettingsV2 = IdenfyUIBuilderV2()
-            .withInstructions(true)
+            .withInstructions(IdenfyInstructionsEnum.drawer)
             .build()
 ```
+
+
 
 ### Customization with skipping views
 The SDK provides a set of tools to omit some views, which could be created in your application yourself offering a fine-grained approach. 
