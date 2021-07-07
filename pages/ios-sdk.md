@@ -18,6 +18,16 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [6.6.0] - 2021-07-06
+### Added:
+### Added:
+* Added torch capability to the camera flow.
+* Added live user's action recording during 3D liveness flow and document scanning.
+* Deprecated the V1 version. It will be removed in future releases. Please migrate to the V2, because maintaining two different flows becomes cumbersome and V1 already has existed for more than a year. If there are some technical challenges for the migration, you can contact - techsupport@idenfy.com. We will be happy to assist.
+* Added new results callback method getIdenfyResultWithDismiss. More about it can be found [here](https://github.com/idenfy/Documentation/blob/master/pages/ios-sdk.md#initializeidenfysdkv2withmanual-1).
+### Changed:
+* Instructions customization method withInstructions now accepts IdenfyInstructionsEnum instead of boolean. The enum has three states: *drawer*, *dialog*, and *none*. More about it [here](https://github.com/idenfy/Documentation/blob/master/pages/IOSUICustomization.md#-adding-instructions-in-camera-session).
+
 ## [6.5.1] - 2021-06-24
 ### Changed:
 * Fixed 3D liveness issue in the V1 SDK version, where result callbacks were not triggered at all. It is recommended to switch to V2, because the V1 will be deprecated in the next major version and removed in version after that.
@@ -351,6 +361,8 @@ UINavigationController *idenfyVC = [idenfyController instantiateNavigationContro
 
 #### initializeIdenfySDKV2WithManual
 The SDK provides following callback: idenfyIdentificationResult
+##### With handleIdenfyCallbacksWithManualResults method
+The handleIdenfyCallbacksWithManualResults is the previous version. Returns user's identification result, but the UIViewController dismisses later.
 ### Swift
 ```swift
     idenfyController.handleIdenfyCallbacksWithManualResults(idenfyIdentificationResult: {
@@ -409,6 +421,48 @@ The SDK provides following callback: idenfyIdentificationResult
     }];
 ```
 
+##### With getIdenfyResultWithDismiss method
+Since SDK **6.6.0** version, UIViewController dismisses first, and then the results are delivered synchronously.
+```swift
+/**
+       Dismisses SDK's  UIViewController. Returns user's identification result in the UIViewController dismiss completion callback.
+     - Parameter idenfyIdentificationResult: A callback for receiving result.
+     - Parameter idenfyOnSdkClose: A callback for receiving when the SDK closes.
+     */
+    @objc public func getIdenfyResultWithDismiss(idenfyIdentificationResult: @escaping (IdenfyIdentificationResult) -> Void) {
+    }
+
+```
+
+```swift
+/**
+      idenfyController.getIdenfyResultWithDismiss(idenfyIdentificationResult: {
+            idenfyIdentificationResult
+            in
+            switch(idenfyIdentificationResult.autoIdentificationStatus){
+                
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .UNVERIFIED:
+                break;
+            }
+            
+            switch(idenfyIdentificationResult.manualIdentificationStatus){
+            case .APPROVED:
+                break;
+            case .FAILED:
+                break;
+            case .WAITING:
+                break;
+            case .INACTIVE:
+                break;
+            }
+            
+        })
+
+```
 
 Information about the IdenfyIdentificationResult **autoIdentificationStatus** statuses:
 
