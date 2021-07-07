@@ -18,8 +18,7 @@ Our SDK versioning conforms to [Semantic Versioning 2.0.0](https://semver.org/).
 
 The structure of our changes follow practices from [keep a changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [6.6.0] - 2021-07-06
-### Added:
+## [6.6.0] - 2021-07-07
 ### Added:
 * Added torch capability to the camera flow.
 * Added live user's action recording during 3D liveness flow and document scanning.
