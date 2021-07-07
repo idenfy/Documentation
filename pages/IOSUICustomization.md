@@ -289,12 +289,12 @@ Since SDK **6.6.0** version instructions are configured with enum. The IdenfyIns
 The dialog instructions should be treated as an experimental feature because it can undergo some modifications. They will include changes to the content of the videos, but not the layout structure. You can test it for yourself, and perhaps the instructions suit your application flow.
 
 #### Using IdenfyInstructionsEnum drawer
-<kbd><img src="https://github.com/idenfy/Documentation/blob/IOS-6.6.0/resources/sdk/ios/integration/instructions/instructions_drawer_1.PNG" alt="Instructions drawer 1" width="300"></kbd>
-<kbd><img src="https://github.com/idenfy/Documentation/blob/IOS-6.6.0/resources/sdk/ios/integration/instructions/instructions_drawer_2.PNG" alt="Instructions drawer 2" width="300"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_drawer_1.PNG" alt="Instructions drawer 1" width="300"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_drawer_2.PNG" alt="Instructions drawer 2" width="300"></kbd>
 #### Using IdenfyInstructionsEnum dialog
-<kbd><img src="https://github.com/idenfy/Documentation/blob/IOS-6.6.0/resources/sdk/ios/integration/instructions/instructions_dialog.PNG" alt="Instructions dialog" width="300"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_dialog.PNG" alt="Instructions dialog" width="300"></kbd>
 #### Using IdenfyInstructionsEnum none
-<kbd><img src="https://github.com/idenfy/Documentation/blob/IOS-6.6.0/resources/sdk/ios/integration/instructions/instructions_none.PNG" alt="Instructions none" width="300"></kbd>
+<kbd><img src="https://github.com/idenfy/Documentation/blob/master/resources/sdk/ios/integration/instructions/instructions_none.PNG" alt="Instructions none" width="300"></kbd>
 
 
 #### 1. Enable instructions in IdenfyUISettingsV2
